@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Sufi Signet Ring illustration">
+  <defs>
+    <linearGradient id="ring-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#E7E0D6"/>
+    </linearGradient>
+    <linearGradient id="ring-silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#C8CDD4"/>
+      <stop offset="100%" stop-color="#767C85"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#ring-bg)"/>
+  <!-- Sterling silver ring band -->
+  <ellipse cx="200" cy="172" rx="74" ry="56" fill="none" stroke="url(#ring-silver)" stroke-width="20"/>
+  <ellipse cx="200" cy="172" rx="64" ry="46" fill="none" stroke="#6E625B" stroke-width="1.2" opacity="0.5"/>
+  <!-- Signet bezel & black onyx stone -->
+  <rect x="162" y="76" width="76" height="58" rx="16" fill="url(#ring-silver)" stroke="#6E625B" stroke-width="2"/>
+  <rect x="172" y="85" width="56" height="40" rx="10" fill="#232024" stroke="#C89B3C" stroke-width="2.5"/>
+  <!-- Subtle matte reflection on onyx -->
+  <path d="M182 94 L204 94" stroke="#6E6B72" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <!-- Engraved band detail -->
+  <circle cx="152" cy="126" r="3" fill="#C89B3C"/>
+  <circle cx="248" cy="126" r="3" fill="#C89B3C"/>
+</svg>
