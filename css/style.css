@@ -123,3 +123,251 @@
     grid-auto-columns: minmax(220px, 78%);
   }
 }
+<<<<<<< Updated upstream
+=======
+
+/* Custom Jewellery Builder */
+.builder-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.builder-steps {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.builder-step {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.builder-step:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.builder-step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.builder-step-header h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--transition), background-color var(--transition), box-shadow var(--transition);
+}
+
+.option-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.option-btn.is-selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-accent-soft);
+  box-shadow: 0 0 0 2px rgba(140, 90, 60, 0.16);
+}
+
+.option-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.option-price {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.swatch-dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(44, 36, 32, 0.25);
+  flex-shrink: 0;
+}
+
+.engraving-input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+.engraving-input:focus {
+  outline: 2px solid rgba(140, 90, 60, 0.25);
+  border-color: var(--color-primary);
+}
+
+.engraving-input.is-invalid {
+  border-color: var(--color-danger);
+  outline-color: rgba(168, 56, 59, 0.2);
+}
+
+.field-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.field-error {
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-danger);
+}
+
+.preview-card {
+  position: sticky;
+  top: 5.75rem;
+}
+
+.preview-stage {
+  background: radial-gradient(circle at center, #ffffff 0%, var(--color-surface-alt) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.preview-svg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.preview-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.price-estimator {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  padding: 0.25rem 0;
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.price-total strong {
+  color: var(--color-primary-dark);
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+}
+
+.builder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.builder-actions .btn {
+  flex: 1 1 auto;
+}
+
+.builder-feedback {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  font-size: 0.9rem;
+}
+
+.builder-feedback.is-success {
+  border-color: var(--color-success);
+  background-color: #eef5f0;
+  color: var(--color-success);
+}
+
+.builder-feedback.is-error {
+  border-color: var(--color-danger);
+  background-color: #faecec;
+  color: var(--color-danger);
+}
+
+@media (max-width: 900px) {
+  .builder-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-card {
+    position: static;
+  }
+}
+>>>>>>> Stashed changes

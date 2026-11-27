@@ -58,9 +58,321 @@
 
     <section class="section">
       <div class="container">
-        <div class="placeholder-panel">
-          <h2>Interactive Customizer Studio</h2>
-          <p>Placeholder for step-by-step piece configurator, live preview card, dynamic price estimator, and state persistence via <code>ZaveratStorage.saveBuilderState()</code>.</p>
+        <div class="builder-layout">
+          <!-- Left Column: Step-by-Step Configurator -->
+          <div class="card builder-steps" aria-label="Jewellery Configurator Steps">
+            <!-- Step 1: Base Silhouette -->
+            <fieldset class="builder-step" style="border: 0; border-bottom: 1px solid var(--color-border); margin: 0; padding: 0 0 1.5rem;">
+              <legend class="builder-step-header">
+                <span class="step-badge">1</span>
+                <h2>Choose Base Silhouette</h2>
+              </legend>
+              <div class="option-grid" id="baseOptions" role="group" aria-label="Base Silhouette">
+                <button type="button" class="option-btn is-selected" data-group="base" data-value="necklace" aria-pressed="true">
+                  <span class="option-title">Necklace</span>
+                  <span class="option-price">PKR 4,500</span>
+                </button>
+                <button type="button" class="option-btn" data-group="base" data-value="ring" aria-pressed="false">
+                  <span class="option-title">Ring</span>
+                  <span class="option-price">PKR 2,500</span>
+                </button>
+                <button type="button" class="option-btn" data-group="base" data-value="bracelet" aria-pressed="false">
+                  <span class="option-title">Bracelet</span>
+                  <span class="option-price">PKR 3,500</span>
+                </button>
+                <button type="button" class="option-btn" data-group="base" data-value="earrings" aria-pressed="false">
+                  <span class="option-title">Earrings</span>
+                  <span class="option-price">PKR 2,800</span>
+                </button>
+              </div>
+            </fieldset>
+
+            <!-- Step 2: Metal Finish -->
+            <fieldset class="builder-step" style="border: 0; border-bottom: 1px solid var(--color-border); margin: 0; padding: 0 0 1.5rem;">
+              <legend class="builder-step-header">
+                <span class="step-badge">2</span>
+                <h2>Select Metal Finish</h2>
+              </legend>
+              <div class="option-grid" id="metalOptions" role="group" aria-label="Metal Finish">
+                <button type="button" class="option-btn is-selected" data-group="metal" data-value="silver" aria-pressed="true">
+                  <span class="option-title">
+                    <span class="swatch-dot" style="background-color: #c8ced4;" aria-hidden="true"></span>
+                    925 Sterling Silver
+                  </span>
+                  <span class="option-price">Included (+PKR 0)</span>
+                </button>
+                <button type="button" class="option-btn" data-group="metal" data-value="gold" aria-pressed="false">
+                  <span class="option-title">
+                    <span class="swatch-dot" style="background-color: #d4a84f;" aria-hidden="true"></span>
+                    18k Gold Vermeil
+                  </span>
+                  <span class="option-price">+PKR 1,500</span>
+                </button>
+                <button type="button" class="option-btn" data-group="metal" data-value="rose-gold" aria-pressed="false">
+                  <span class="option-title">
+                    <span class="swatch-dot" style="background-color: #d89a8c;" aria-hidden="true"></span>
+                    Rose Gold
+                  </span>
+                  <span class="option-price">+PKR 1,200</span>
+                </button>
+              </div>
+            </fieldset>
+
+            <!-- Step 3: Gemstone Accent -->
+            <fieldset class="builder-step" style="border: 0; border-bottom: 1px solid var(--color-border); margin: 0; padding: 0 0 1.5rem;">
+              <legend class="builder-step-header">
+                <span class="step-badge">3</span>
+                <h2>Pick Gemstone Accent</h2>
+              </legend>
+              <div class="option-grid" id="gemstoneOptions" role="group" aria-label="Gemstone Accent">
+                <button type="button" class="option-btn is-selected" data-group="gemstone" data-value="pearl" aria-pressed="true">
+                  <span class="option-title">
+                    <span class="swatch-dot" style="background-color: #f7f3eb;" aria-hidden="true"></span>
+                    Pearl
+                  </span>
+                  <span class="option-price">+PKR 600</span>
+                </button>
+                <button type="button" class="option-btn" data-group="gemstone" data-value="emerald" aria-pressed="false">
+                  <span class="option-title">
+                    <span class="swatch-dot" style="background-color: #2e7d52;" aria-hidden="true"></span>
+                    Emerald
+                  </span>
+                  <span class="option-price">+PKR 1,400</span>
+                </button>
+                <button type="button" class="option-btn" data-group="gemstone" data-value="ruby" aria-pressed="false">
+                  <span class="option-title">
+                    <span class="swatch-dot" style="background-color: #a83244;" aria-hidden="true"></span>
+                    Ruby
+                  </span>
+                  <span class="option-price">+PKR 1,600</span>
+                </button>
+                <button type="button" class="option-btn" data-group="gemstone" data-value="lapis" aria-pressed="false">
+                  <span class="option-title">
+                    <span class="swatch-dot" style="background-color: #284b8c;" aria-hidden="true"></span>
+                    Lapis Lazuli
+                  </span>
+                  <span class="option-price">+PKR 900</span>
+                </button>
+              </div>
+            </fieldset>
+
+            <!-- Step 4: Personal Engraving -->
+            <div class="builder-step">
+              <div class="builder-step-header">
+                <span class="step-badge">4</span>
+                <h2><label for="engravingInput">Personal Engraving (Optional)</label></h2>
+              </div>
+              <input
+                type="text"
+                id="engravingInput"
+                class="engraving-input"
+                placeholder="e.g. Noor, A &amp; Z, 2026"
+                autocomplete="off"
+                aria-describedby="engravingHint engravingError"
+              >
+              <div class="field-meta">
+                <span id="engravingHint">Up to 15 characters (letters, numbers, spaces, . &amp; ' -).</span>
+                <span id="engravingCount">0 / 15</span>
+              </div>
+              <p id="engravingError" class="field-error" role="alert" hidden></p>
+            </div>
+          </div>
+
+          <!-- Right Column: Live SVG Preview & Price Estimator -->
+          <aside class="card preview-card" aria-label="Live Jewellery Preview and Price Estimator">
+            <h2 style="margin-bottom: 0.35rem;">Live Design Preview</h2>
+            <p style="font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+              Updates instantly as you customize your handcrafted piece.
+            </p>
+
+            <div class="preview-stage">
+              <svg
+                id="jewelleryPreviewSvg"
+                class="preview-svg"
+                viewBox="0 0 320 250"
+                role="img"
+                aria-labelledby="svgPreviewTitle"
+              >
+                <title id="svgPreviewTitle">Custom Necklace preview in 925 Sterling Silver with Pearl</title>
+
+                <!-- Subtle studio pedestal shadow -->
+                <ellipse cx="160" cy="198" rx="85" ry="10" fill="#e3d9cc" opacity="0.55" />
+
+                <!-- Shape 1: Necklace -->
+                <g id="svgShapeNecklace">
+                  <path
+                    class="svg-metal-stroke"
+                    d="M 78 44 Q 160 132 242 44"
+                    fill="none"
+                    stroke="#7d858d"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    class="svg-metal-highlight"
+                    d="M 84 44 Q 160 126 236 44"
+                    fill="none"
+                    stroke="#eef2f5"
+                    stroke-width="1.5"
+                    stroke-dasharray="4 4"
+                  />
+                  <circle class="svg-metal-fill svg-metal-stroke" cx="160" cy="96" r="6" fill="#c8ced4" stroke="#7d858d" stroke-width="2" />
+                  <circle class="svg-metal-fill svg-metal-stroke" cx="160" cy="136" r="30" fill="#c8ced4" stroke="#7d858d" stroke-width="3" />
+                  <circle class="svg-metal-highlight" cx="160" cy="136" r="24" fill="none" stroke="#eef2f5" stroke-width="1.5" />
+                  <circle class="svg-gem-fill svg-gem-stroke" cx="160" cy="136" r="17" fill="#f7f3eb" stroke="#cfc6b8" stroke-width="2.5" />
+                  <ellipse class="svg-gem-shine" cx="154" cy="129" rx="5" ry="3.5" fill="#ffffff" opacity="0.75" />
+                </g>
+
+                <!-- Shape 2: Ring -->
+                <g id="svgShapeRing" hidden>
+                  <ellipse
+                    class="svg-metal-stroke"
+                    cx="160"
+                    cy="132"
+                    rx="54"
+                    ry="46"
+                    fill="none"
+                    stroke="#7d858d"
+                    stroke-width="14"
+                  />
+                  <ellipse
+                    class="svg-metal-stroke-main"
+                    cx="160"
+                    cy="132"
+                    rx="54"
+                    ry="46"
+                    fill="none"
+                    stroke="#c8ced4"
+                    stroke-width="10"
+                  />
+                  <path
+                    class="svg-metal-highlight"
+                    d="M 118 148 A 50 42 0 0 0 202 148"
+                    fill="none"
+                    stroke="#eef2f5"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <polygon
+                    class="svg-metal-fill svg-metal-stroke"
+                    points="142,84 178,84 170,98 150,98"
+                    fill="#c8ced4"
+                    stroke="#7d858d"
+                    stroke-width="2"
+                  />
+                  <polygon
+                    class="svg-gem-fill svg-gem-stroke"
+                    points="160,54 182,72 174,90 146,90 138,72"
+                    fill="#f7f3eb"
+                    stroke="#cfc6b8"
+                    stroke-width="2.5"
+                  />
+                  <polygon class="svg-gem-shine" points="160,60 171,71 160,77 149,71" fill="#ffffff" opacity="0.65" />
+                </g>
+
+                <!-- Shape 3: Bracelet -->
+                <g id="svgShapeBracelet" hidden>
+                  <path
+                    class="svg-metal-stroke"
+                    d="M 112 162 A 68 52 0 1 1 208 162"
+                    fill="none"
+                    stroke="#7d858d"
+                    stroke-width="18"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    class="svg-metal-stroke-main"
+                    d="M 112 162 A 68 52 0 1 1 208 162"
+                    fill="none"
+                    stroke="#c8ced4"
+                    stroke-width="13"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    class="svg-metal-highlight"
+                    d="M 106 105 A 62 46 0 0 1 214 105"
+                    fill="none"
+                    stroke="#eef2f5"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <rect class="svg-metal-fill svg-metal-stroke" x="139" y="54" width="42" height="30" rx="14" fill="#c8ced4" stroke="#7d858d" stroke-width="2.5" />
+                  <ellipse class="svg-gem-fill svg-gem-stroke" cx="160" cy="69" rx="14" ry="10" fill="#f7f3eb" stroke="#cfc6b8" stroke-width="2" />
+                  <ellipse class="svg-gem-shine" cx="155" cy="65" rx="4.5" ry="2.5" fill="#ffffff" opacity="0.7" />
+                </g>
+
+                <!-- Shape 4: Earrings -->
+                <g id="svgShapeEarrings" hidden>
+                  <!-- Left Earring -->
+                  <path class="svg-metal-stroke" d="M 114 66 C 114 48, 128 48, 128 62" fill="none" stroke="#7d858d" stroke-width="3" stroke-linecap="round" />
+                  <circle class="svg-metal-fill svg-metal-stroke" cx="121" cy="76" r="7" fill="#c8ced4" stroke="#7d858d" stroke-width="2" />
+                  <path class="svg-metal-fill svg-metal-stroke" d="M 121 88 L 142 126 L 121 162 L 100 126 Z" fill="#c8ced4" stroke="#7d858d" stroke-width="2.5" />
+                  <circle class="svg-gem-fill svg-gem-stroke" cx="121" cy="126" r="13" fill="#f7f3eb" stroke="#cfc6b8" stroke-width="2" />
+                  <circle class="svg-gem-shine" cx="117" cy="121" r="4" fill="#ffffff" opacity="0.75" />
+
+                  <!-- Right Earring -->
+                  <path class="svg-metal-stroke" d="M 192 66 C 192 48, 206 48, 206 62" fill="none" stroke="#7d858d" stroke-width="3" stroke-linecap="round" />
+                  <circle class="svg-metal-fill svg-metal-stroke" cx="199" cy="76" r="7" fill="#c8ced4" stroke="#7d858d" stroke-width="2" />
+                  <path class="svg-metal-fill svg-metal-stroke" d="M 199 88 L 220 126 L 199 162 L 178 126 Z" fill="#c8ced4" stroke="#7d858d" stroke-width="2.5" />
+                  <circle class="svg-gem-fill svg-gem-stroke" cx="199" cy="126" r="13" fill="#f7f3eb" stroke="#cfc6b8" stroke-width="2" />
+                  <circle class="svg-gem-shine" cx="195" cy="121" r="4" fill="#ffffff" opacity="0.75" />
+                </g>
+
+                <!-- Engraving Plaque -->
+                <rect x="65" y="208" width="190" height="28" rx="14" fill="#ffffff" stroke="#e3d9cc" stroke-width="1.5" />
+                <text
+                  id="svgEngravingText"
+                  x="160"
+                  y="226"
+                  text-anchor="middle"
+                  font-family="Georgia, serif"
+                  font-size="12"
+                  font-style="italic"
+                  fill="#6e625b"
+                >No engraving</text>
+              </svg>
+            </div>
+
+            <div class="preview-summary" aria-label="Selected Options Summary">
+              <span class="meta-pill" id="summaryBase">Necklace</span>
+              <span class="meta-pill" id="summaryMetal">925 Sterling Silver</span>
+              <span class="meta-pill" id="summaryGemstone">Pearl</span>
+            </div>
+
+            <!-- Dynamic Price Estimator -->
+            <div class="price-estimator" aria-label="Estimated Price Breakdown">
+              <div class="price-row">
+                <span id="priceBaseLabel">Base: Necklace</span>
+                <span id="priceBaseAmount">PKR 4,500</span>
+              </div>
+              <div class="price-row">
+                <span id="priceMetalLabel">Metal: 925 Sterling Silver</span>
+                <span id="priceMetalAmount">PKR 0</span>
+              </div>
+              <div class="price-row">
+                <span id="priceGemLabel">Gemstone: Pearl</span>
+                <span id="priceGemAmount">PKR 600</span>
+              </div>
+              <div class="price-row">
+                <span>Personal Engraving</span>
+                <span>Complimentary</span>
+              </div>
+              <div class="price-total">
+                <span>Estimated Total</span>
+                <strong id="priceTotalAmount">PKR 5,100</strong>
+              </div>
+            </div>
+
+            <div class="builder-actions">
+              <button type="button" class="btn btn-outline" id="saveDesignBtn">Save Design</button>
+              <button type="button" class="btn btn-primary" id="addToCartBtn">Add Custom Piece to Cart</button>
+              <button type="button" class="btn btn-outline" id="resetBuilderBtn">Reset</button>
+            </div>
+
+            <div id="builderFeedback" class="builder-feedback" role="status" aria-live="polite">
+              No saved design yet &mdash; customize your piece and click <strong>Save Design</strong>.
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -117,5 +429,412 @@
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+    /**
+     * Zaverat — Custom Jewellery Builder Logic
+     * Modular, vanilla JS controller for live SVG preview, PKR pricing,
+     * engraving validation, and ZaveratStorage persistence.
+     */
+    (function () {
+      // 1. Configuration Tables (easy to update prices, labels, and SVG colors)
+      const BASE_OPTIONS = {
+        necklace: { label: "Necklace", price: 4500, svgGroupId: "svgShapeNecklace" },
+        ring: { label: "Ring", price: 2500, svgGroupId: "svgShapeRing" },
+        bracelet: { label: "Bracelet", price: 3500, svgGroupId: "svgShapeBracelet" },
+        earrings: { label: "Earrings", price: 2800, svgGroupId: "svgShapeEarrings" }
+      };
+
+      const METAL_OPTIONS = {
+        silver: {
+          label: "925 Sterling Silver",
+          price: 0,
+          fill: "#c8ced4",
+          stroke: "#7d858d",
+          highlight: "#eef2f5"
+        },
+        gold: {
+          label: "18k Gold Vermeil",
+          price: 1500,
+          fill: "#d4a84f",
+          stroke: "#8f6b23",
+          highlight: "#f5dfa3"
+        },
+        "rose-gold": {
+          label: "Rose Gold",
+          price: 1200,
+          fill: "#d89a8c",
+          stroke: "#965c50",
+          highlight: "#f4cec5"
+        }
+      };
+
+      const GEMSTONE_OPTIONS = {
+        pearl: {
+          label: "Pearl",
+          price: 600,
+          fill: "#f7f3eb",
+          stroke: "#cfc6b8"
+        },
+        emerald: {
+          label: "Emerald",
+          price: 1400,
+          fill: "#2e7d52",
+          stroke: "#1a4d32"
+        },
+        ruby: {
+          label: "Ruby",
+          price: 1600,
+          fill: "#a83244",
+          stroke: "#691b27"
+        },
+        lapis: {
+          label: "Lapis Lazuli",
+          price: 900,
+          fill: "#284b8c",
+          stroke: "#162b54"
+        }
+      };
+
+      const MAX_ENGRAVING_LENGTH = 15;
+      const ENGRAVING_PATTERN = /^[a-zA-Z0-9\s.&'-]*$/;
+
+      const DEFAULT_STATE = {
+        base: "necklace",
+        metal: "silver",
+        gemstone: "pearl",
+        engraving: ""
+      };
+
+      // Current live design state
+      let currentState = Object.assign({}, DEFAULT_STATE);
+
+      // 2. Cached DOM References
+      const optionButtons = document.querySelectorAll(".option-btn[data-group]");
+      const engravingInput = document.getElementById("engravingInput");
+      const engravingCount = document.getElementById("engravingCount");
+      const engravingError = document.getElementById("engravingError");
+
+      const svgTitle = document.getElementById("svgPreviewTitle");
+      const svgEngravingText = document.getElementById("svgEngravingText");
+
+      const summaryBase = document.getElementById("summaryBase");
+      const summaryMetal = document.getElementById("summaryMetal");
+      const summaryGemstone = document.getElementById("summaryGemstone");
+
+      const priceBaseLabel = document.getElementById("priceBaseLabel");
+      const priceBaseAmount = document.getElementById("priceBaseAmount");
+      const priceMetalLabel = document.getElementById("priceMetalLabel");
+      const priceMetalAmount = document.getElementById("priceMetalAmount");
+      const priceGemLabel = document.getElementById("priceGemLabel");
+      const priceGemAmount = document.getElementById("priceGemAmount");
+      const priceTotalAmount = document.getElementById("priceTotalAmount");
+
+      const saveDesignBtn = document.getElementById("saveDesignBtn");
+      const addToCartBtn = document.getElementById("addToCartBtn");
+      const resetBuilderBtn = document.getElementById("resetBuilderBtn");
+      const builderFeedback = document.getElementById("builderFeedback");
+
+      // 3. Helper Functions
+      function formatPKR(amount) {
+        return "PKR " + Number(amount || 0).toLocaleString("en-PK");
+      }
+
+      /**
+       * Validates the engraving string for length (max 15) and allowed characters.
+       * Returns { isValid: boolean, message: string }.
+       */
+      function validateEngraving(value) {
+        const text = String(value || "");
+        const issues = [];
+
+        if (text.length > MAX_ENGRAVING_LENGTH) {
+          issues.push("Maximum " + MAX_ENGRAVING_LENGTH + " characters allowed (currently " + text.length + ").");
+        }
+        if (!ENGRAVING_PATTERN.test(text)) {
+          issues.push("Only letters, numbers, spaces, and . & ' - are allowed.");
+        }
+
+        return {
+          isValid: issues.length === 0,
+          message: issues.join(" ")
+        };
+      }
+
+      /**
+       * Calculates itemized and total PKR price for the current configuration.
+       */
+      function calculatePricing(state) {
+        const base = BASE_OPTIONS[state.base] || BASE_OPTIONS.necklace;
+        const metal = METAL_OPTIONS[state.metal] || METAL_OPTIONS.silver;
+        const gemstone = GEMSTONE_OPTIONS[state.gemstone] || GEMSTONE_OPTIONS.pearl;
+
+        return {
+          base,
+          metal,
+          gemstone,
+          total: base.price + metal.price + gemstone.price
+        };
+      }
+
+      /**
+       * Updates feedback banner with optional status style ("success", "error", or "info").
+       */
+      function showFeedback(htmlMessage, type) {
+        builderFeedback.classList.remove("is-success", "is-error");
+        if (type === "success") builderFeedback.classList.add("is-success");
+        if (type === "error") builderFeedback.classList.add("is-error");
+        builderFeedback.innerHTML = htmlMessage;
+      }
+
+      // 4. UI Render Functions
+      function syncOptionButtons() {
+        optionButtons.forEach((btn) => {
+          const group = btn.dataset.group;
+          const value = btn.dataset.value;
+          const isSelected = currentState[group] === value;
+
+          btn.classList.toggle("is-selected", isSelected);
+          btn.setAttribute("aria-pressed", String(isSelected));
+        });
+      }
+
+      function updateEngravingUI(validation) {
+        const length = currentState.engraving.length;
+        engravingCount.textContent = length + " / " + MAX_ENGRAVING_LENGTH;
+
+        engravingInput.classList.toggle("is-invalid", !validation.isValid);
+        engravingInput.setAttribute("aria-invalid", String(!validation.isValid));
+
+        if (!validation.isValid) {
+          engravingError.textContent = validation.message;
+          engravingError.hidden = false;
+        } else {
+          engravingError.textContent = "";
+          engravingError.hidden = true;
+        }
+      }
+
+      function updateSvgPreview(pricing, validation) {
+        // Show only the selected silhouette <g> group
+        Object.keys(BASE_OPTIONS).forEach((key) => {
+          const groupEl = document.getElementById(BASE_OPTIONS[key].svgGroupId);
+          if (groupEl) {
+            groupEl.hidden = key !== currentState.base;
+          }
+        });
+
+        // Apply selected metal colors to SVG elements
+        document.querySelectorAll(".svg-metal-fill").forEach((el) => {
+          el.setAttribute("fill", pricing.metal.fill);
+        });
+        document.querySelectorAll(".svg-metal-stroke").forEach((el) => {
+          el.setAttribute("stroke", pricing.metal.stroke);
+        });
+        document.querySelectorAll(".svg-metal-stroke-main").forEach((el) => {
+          el.setAttribute("stroke", pricing.metal.fill);
+        });
+        document.querySelectorAll(".svg-metal-highlight").forEach((el) => {
+          el.setAttribute("stroke", pricing.metal.highlight);
+        });
+
+        // Apply selected gemstone colors to SVG elements
+        document.querySelectorAll(".svg-gem-fill").forEach((el) => {
+          el.setAttribute("fill", pricing.gemstone.fill);
+        });
+        document.querySelectorAll(".svg-gem-stroke").forEach((el) => {
+          el.setAttribute("stroke", pricing.gemstone.stroke);
+        });
+
+        // Update engraving plaque safely using textContent
+        const trimmed = currentState.engraving.trim();
+        if (!validation.isValid) {
+          svgEngravingText.textContent = "Invalid engraving";
+          svgEngravingText.setAttribute("fill", "#a8383b");
+        } else if (trimmed) {
+          svgEngravingText.textContent = '"' + trimmed + '"';
+          svgEngravingText.setAttribute("fill", "#2c2420");
+        } else {
+          svgEngravingText.textContent = "No engraving";
+          svgEngravingText.setAttribute("fill", "#6e625b");
+        }
+
+        // Update accessible SVG title
+        svgTitle.textContent =
+          "Custom " + pricing.base.label + " preview in " + pricing.metal.label + " with " + pricing.gemstone.label;
+      }
+
+      function updatePriceAndSummary(pricing) {
+        summaryBase.textContent = pricing.base.label;
+        summaryMetal.textContent = pricing.metal.label;
+        summaryGemstone.textContent = pricing.gemstone.label;
+
+        priceBaseLabel.textContent = "Base: " + pricing.base.label;
+        priceBaseAmount.textContent = formatPKR(pricing.base.price);
+
+        priceMetalLabel.textContent = "Metal: " + pricing.metal.label;
+        priceMetalAmount.textContent = formatPKR(pricing.metal.price);
+
+        priceGemLabel.textContent = "Gemstone: " + pricing.gemstone.label;
+        priceGemAmount.textContent = formatPKR(pricing.gemstone.price);
+
+        priceTotalAmount.textContent = formatPKR(pricing.total);
+      }
+
+      function renderBuilder() {
+        const validation = validateEngraving(currentState.engraving);
+        const pricing = calculatePricing(currentState);
+
+        syncOptionButtons();
+        updateEngravingUI(validation);
+        updateSvgPreview(pricing, validation);
+        updatePriceAndSummary(pricing);
+
+        return validation;
+      }
+
+      // 5. Persistence & Action Handlers
+      function persistCurrentState() {
+        if (!window.ZaveratStorage) return;
+        const validation = validateEngraving(currentState.engraving);
+        if (!validation.isValid) return;
+
+        window.ZaveratStorage.saveBuilderState(Object.assign({}, currentState));
+      }
+
+      function handleSaveDesign() {
+        const validation = validateEngraving(currentState.engraving);
+        if (!validation.isValid) {
+          showFeedback("Please fix the engraving error before saving your design.", "error");
+          engravingInput.focus();
+          return;
+        }
+
+        if (window.ZaveratStorage) {
+          window.ZaveratStorage.saveBuilderState(Object.assign({}, currentState));
+        }
+        showFeedback(
+          "Design saved! Your custom piece will remain loaded when you revisit or reload this page.",
+          "success"
+        );
+      }
+
+      function escapeHtml(value) {
+        return String(value == null ? "" : value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function handleAddToCart() {
+        const validation = validateEngraving(currentState.engraving);
+        if (!validation.isValid) {
+          showFeedback("Please fix the engraving error before adding to cart.", "error");
+          engravingInput.focus();
+          return;
+        }
+
+        const pricing = calculatePricing(currentState);
+        const cleanEngraving = currentState.engraving.trim();
+        const engravingSlug = cleanEngraving
+          ? "-" + cleanEngraving.toLowerCase().replace(/[^a-z0-9]+/g, "_")
+          : "";
+        const customProductId =
+          "custom-" + currentState.base + "-" + currentState.metal + "-" + currentState.gemstone + engravingSlug;
+
+        if (window.ZaveratStorage) {
+          window.ZaveratStorage.saveBuilderState(Object.assign({}, currentState));
+          window.ZaveratStorage.addToCart(customProductId, 1);
+        }
+
+        const engravingNote = cleanEngraving ? ' (Engraving: "' + escapeHtml(cleanEngraving) + '")' : "";
+        showFeedback(
+          "Added custom <strong>" +
+            pricing.metal.label +
+            " " +
+            pricing.base.label +
+            "</strong> with <strong>" +
+            pricing.gemstone.label +
+            "</strong>" +
+            engravingNote +
+            " (" +
+            formatPKR(pricing.total) +
+            ') to your bag. <a href="../pages/cart.html">View Cart &rarr;</a>',
+          "success"
+        );
+      }
+
+      function handleReset() {
+        currentState = Object.assign({}, DEFAULT_STATE);
+        engravingInput.value = "";
+
+        if (window.ZaveratStorage) {
+          window.ZaveratStorage.saveBuilderState(null);
+        }
+
+        renderBuilder();
+        showFeedback("Builder reset to default. No saved design is currently stored.", "info");
+      }
+
+      function loadSavedState() {
+        if (!window.ZaveratStorage) {
+          renderBuilder();
+          return;
+        }
+
+        const saved = window.ZaveratStorage.getBuilderState();
+        if (!saved || typeof saved !== "object") {
+          renderBuilder();
+          showFeedback('No saved design yet &mdash; customize your piece and click <strong>Save Design</strong>.', "info");
+          return;
+        }
+
+        // Safely restore only recognized option keys
+        currentState = {
+          base: BASE_OPTIONS[saved.base] ? saved.base : DEFAULT_STATE.base,
+          metal: METAL_OPTIONS[saved.metal] ? saved.metal : DEFAULT_STATE.metal,
+          gemstone: GEMSTONE_OPTIONS[saved.gemstone] ? saved.gemstone : DEFAULT_STATE.gemstone,
+          engraving: typeof saved.engraving === "string" ? saved.engraving : ""
+        };
+        engravingInput.value = currentState.engraving;
+
+        renderBuilder();
+        showFeedback("Loaded your previously saved custom design.", "info");
+      }
+
+      // 6. Event Binding
+      function bindEvents() {
+        optionButtons.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const group = btn.dataset.group;
+            const value = btn.dataset.value;
+            if (!group || !value) return;
+
+            currentState[group] = value;
+            renderBuilder();
+            persistCurrentState();
+          });
+        });
+
+        engravingInput.addEventListener("input", function () {
+          currentState.engraving = engravingInput.value;
+          const validation = renderBuilder();
+          if (validation.isValid) {
+            persistCurrentState();
+          }
+        });
+
+        saveDesignBtn.addEventListener("click", handleSaveDesign);
+        addToCartBtn.addEventListener("click", handleAddToCart);
+        resetBuilderBtn.addEventListener("click", handleReset);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        bindEvents();
+        loadSavedState();
+      });
+    })();
+  </script>
 </body>
 </html>
