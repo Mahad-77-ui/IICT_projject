@@ -1,6 +1,6 @@
 # AI Usage Log — Session 01
 
-- **Member:** Muhammad Bilal Mahad Sarwar (Member 1)
+- **Member:** Muhammad Bilal Mahad Sarwar GUJJAR (Member 1)
 - **Roll No:** 26i-3090
 - **Branch:** `i263090`
 - **Assigned Pages:** `index.html`, `pages/shop.html`, `pages/product-detail.html`
