@@ -3,120 +3,362 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Jewellery — Zaverat</title>
+  <title>Shop Catalog | LUMIÈRE Handmade Jewellery</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
 </head>
 <body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>✨ Handcrafted with Love in Pakistan • Free Shipping on Orders Over Rs. 3,000</span>
+    <button class="theme-toggle" aria-label="Toggle theme mode" style="font-size: 1rem; color: #FFF;">🌙</button>
+  </div>
+
+  <!-- Main Site Header -->
   <header class="site-header">
-    <div class="announcement-bar">
-      Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
-    </div>
-    <nav class="container navbar" aria-label="Primary Navigation">
-      <a class="brand" href="../index.html">
-        <img src="../images/logo.svg" alt="Zaverat logo" width="40" height="40">
-        <span>Zaverat</span>
+    <div class="container header-inner">
+      <!-- Mobile Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+      <!-- Brand Logo -->
+      <a href="../index.html" class="brand-logo">
+        <svg class="brand-emblem" viewBox="0 0 100 100">
+          <polygon points="50,15 80,38 50,85 20,38" fill="none" stroke="#C59B27" stroke-width="3"/>
+          <polygon points="50,15 35,38 50,85 65,38" fill="none" stroke="#C59B27" stroke-width="1.5"/>
+          <line x1="20" y1="38" x2="80" y2="38" stroke="#C59B27" stroke-width="2"/>
+        </svg>
+        <div class="brand-title">
+          <span>LUMIÈRE</span>
+          <span class="brand-subtitle">Handmade Jewellery</span>
+        </div>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav-menu">
-        &#9776;
-      </button>
+      <!-- Main Navigation Menu -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="custom-builder.html" class="nav-link">Custom Builder</a>
+        <a href="size-guide.html" class="nav-link">Size Guide</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="style-quiz.html" class="nav-link">Style Quiz</a>
+        <a href="workshops.html" class="nav-link">Workshops</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-      <ul class="nav-menu" id="primary-nav-menu">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="../pages/shop.html">Shop</a></li>
-        <li><a class="nav-link" href="../pages/custom-builder.html">Custom Builder</a></li>
-        <li><a class="nav-link" href="../pages/style-quiz.html">Style Quiz</a></li>
-        <li><a class="nav-link" href="../pages/workshops.html">Workshops</a></li>
-        <li><a class="nav-link" href="../pages/about.html">About</a></li>
-        <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
-      </ul>
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <button class="icon-btn search-trigger" aria-label="Search catalog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
 
-      <div class="nav-actions">
-        <a class="icon-link" href="../pages/wishlist.html" aria-label="Wishlist">
-          <span class="label-text">Wishlist</span>
-          <span class="badge-count" id="wishlist-count">0</span>
+        <a href="wishlist.html" class="icon-btn" aria-label="View wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="badge-counter wish-count-badge" style="display: none;">0</span>
         </a>
-        <a class="icon-link" href="../pages/cart.html" aria-label="Shopping Cart">
-          <span class="label-text">Cart</span>
-          <span class="badge-count" id="cart-count">0</span>
-        </a>
+
+        <button class="icon-btn cart-drawer-trigger" aria-label="Open shopping cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> <span>/</span> <span>Shop</span>
-        </nav>
-        <span class="eyebrow">Member 1 &middot; 26i-3090 (Muhammad Bilal Mahad Sarwar)</span>
-        <h1>Shop Handmade Jewellery</h1>
-        <p class="lead">Filterable catalogue of necklaces, earrings, cuffs, and rings crafted by Zaverat artisans.</p>
-      </div>
-    </section>
+  <main class="site-main">
 
-    <section class="section">
-      <div class="container">
-        <div class="placeholder-panel">
-          <h2>Catalogue &amp; Filter Workspace</h2>
-          <p>Placeholder for category filters, price range sorting, search bar, and dynamic product grid rendered from <code>window.ZAVERAT_DATA.products</code>.</p>
-          <a class="btn btn-primary" href="../pages/product-detail.html">Preview Product Detail</a>
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="section-tagline">Artisanal Archive</span>
+        <h1 class="section-title">The Jewellery Collection</h1>
+        <p>Explore heirloom bracelets, necklaces, earrings, and rings slow-crafted with precious metals and ethically mined raw gemstones.</p>
+      </div>
+
+      <!-- Filter Controls Toolbar -->
+      <div class="card" style="margin-bottom: 2rem; padding: 1.25rem;">
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 1rem; align-items: end;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="catalogSearch">Search Pieces</label>
+            <input type="text" id="catalogSearch" class="form-control" placeholder="Search by name, stone (e.g. emerald)...">
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="categoryFilter">Category</label>
+            <select id="categoryFilter" class="form-control">
+              <option value="All">All Categories</option>
+              <option value="Necklaces">Necklaces</option>
+              <option value="Earrings">Earrings</option>
+              <option value="Rings">Rings</option>
+              <option value="Bracelets">Bracelets</option>
+              <option value="Bridal">Bridal</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="metalFilter">Metal</label>
+            <select id="metalFilter" class="form-control">
+              <option value="All">All Metals</option>
+              <option value="18K Gold Vermeil">18K Gold Vermeil</option>
+              <option value="925 Sterling Silver">925 Sterling Silver</option>
+              <option value="Antiqued Brass">Antiqued Brass</option>
+              <option value="Rose Gold Plated">Rose Gold Plated</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="sortFilter">Sort By</label>
+            <select id="sortFilter" class="form-control">
+              <option value="featured">Featured Artisans</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.85rem; color: var(--text-muted);">
+          <div id="resultsCount">Showing all items</div>
+          <button id="resetFiltersBtn" class="btn btn-secondary btn-sm" style="display: none;">Reset Filters ✕</button>
         </div>
       </div>
-    </section>
+
+      <!-- Catalog Grid -->
+      <div id="shopGrid" class="grid-4"></div>
+      <div id="noResults" style="display: none; text-align: center; padding: 4rem 1rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px dashed var(--border-color);">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
+        <h3 style="font-family: var(--font-serif);">No Jewellery Matches Found</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 400px; margin: 0 auto 1.5rem;">
+          Try adjusting your search criteria, switching categories, or clearing filters to view all handcrafted pieces.
+        </p>
+        <button onclick="resetShopFilters()" class="btn btn-primary">View All Pieces</button>
+      </div>
+    </div>
+
+    <script>
+      var currentSearch = "";
+      var currentCat = "All";
+      var currentMetal = "All";
+      var currentSort = "featured";
+
+      document.addEventListener("DOMContentLoaded", function() {
+        initCatalog();
+      });
+
+      function initCatalog() {
+        document.getElementById("catalogSearch").addEventListener("input", function(e) {
+          currentSearch = e.target.value.toLowerCase().trim();
+          filterAndRender();
+        });
+        document.getElementById("categoryFilter").addEventListener("change", function(e) {
+          currentCat = e.target.value;
+          filterAndRender();
+        });
+        document.getElementById("metalFilter").addEventListener("change", function(e) {
+          currentMetal = e.target.value;
+          filterAndRender();
+        });
+        document.getElementById("sortFilter").addEventListener("change", function(e) {
+          currentSort = e.target.value;
+          filterAndRender();
+        });
+        document.getElementById("resetFiltersBtn").addEventListener("click", resetShopFilters);
+        filterAndRender();
+      }
+
+      function resetShopFilters() {
+        currentSearch = "";
+        currentCat = "All";
+        currentMetal = "All";
+        currentSort = "featured";
+        document.getElementById("catalogSearch").value = "";
+        document.getElementById("categoryFilter").value = "All";
+        document.getElementById("metalFilter").value = "All";
+        document.getElementById("sortFilter").value = "featured";
+        filterAndRender();
+      }
+
+      function filterAndRender() {
+        var items = LUMIERE_DATA.products.filter(function(p) {
+          var matchSearch = !currentSearch || 
+            p.name.toLowerCase().includes(currentSearch) || 
+            p.gemstone.toLowerCase().includes(currentSearch) ||
+            p.tags.some(function(t) { return t.includes(currentSearch); });
+          var matchCat = currentCat === "All" || p.category === currentCat;
+          var matchMetal = currentMetal === "All" || p.metal === currentMetal;
+          return matchSearch && matchCat && matchMetal;
+        });
+
+        if (currentSort === "price-asc") items.sort(function(a, b) { return a.price - b.price; });
+        else if (currentSort === "price-desc") items.sort(function(a, b) { return b.price - a.price; });
+        else if (currentSort === "rating") items.sort(function(a, b) { return b.rating - a.rating; });
+
+        var grid = document.getElementById("shopGrid");
+        var noResults = document.getElementById("noResults");
+        var countEl = document.getElementById("resultsCount");
+        var resetBtn = document.getElementById("resetFiltersBtn");
+
+        var hasFilter = currentSearch || currentCat !== "All" || currentMetal !== "All";
+        resetBtn.style.display = hasFilter ? "inline-flex" : "none";
+        countEl.textContent = "Showing " + items.length + " of " + LUMIERE_DATA.products.length + " handcrafted pieces";
+
+        if (items.length === 0) {
+          grid.style.display = "none";
+          noResults.style.display = "block";
+          return;
+        }
+
+        grid.style.display = "grid";
+        noResults.style.display = "none";
+
+        grid.innerHTML = items.map(function(p) {
+          var isWish = LumiereStorage.isInWishlist(p.id);
+          var imgUrl = getAssetUrl(p.image);
+          return '<div class="product-card" data-id="' + p.id + '">' +
+            '<div class="product-media">' +
+              '<img src="' + imgUrl + '" alt="' + p.name + '">' +
+              '<button class="product-wish-btn ' + (isWish ? 'active' : '') + '" onclick="toggleShopWish(event, '' + p.id + '')" aria-label="Save to Wishlist">' + (isWish ? '❤️' : '♡') + '</button>' +
+            '</div>' +
+            '<div class="product-info">' +
+              '<div class="product-category">' + p.category + ' &bull; ' + p.metal + '</div>' +
+              '<h3 class="product-name"><a href="product-detail.html?id=' + p.id + '">' + p.name + '</a></h3>' +
+              '<div class="product-meta">' +
+                '<span class="product-price">' + formatPrice(p.price) + '</span>' +
+                '<span class="badge badge-stock">★ ' + p.rating + '</span>' +
+              '</div>' +
+              '<div class="product-actions">' +
+                '<button class="btn btn-primary btn-sm btn-block" onclick="addShopItem('' + p.id + '')">Add to Bag</button>' +
+                '<a href="product-detail.html?id=' + p.id + '" class="btn btn-secondary btn-sm" title="View details">Details</a>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        }).join("");
+      }
+
+      function toggleShopWish(e, id) {
+        e.stopPropagation();
+        var res = LumiereStorage.toggleWishlist(id);
+        showToast(res.added ? "Saved to Wishlist ♡" : "Removed from Wishlist", "gold");
+        filterAndRender();
+      }
+
+      function addShopItem(id) {
+        var res = LumiereStorage.addToCart(id, 1);
+        showToast(res.message, "success");
+      }
+    </script>
+
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <h3>Zaverat</h3>
-          <p>Handcrafted heritage jewellery store built by Group 07 for CL1000 ICT Final Project.</p>
+        <div class="footer-col">
+          <div class="brand-title" style="color: #FFF; margin-bottom: 0.8rem;">
+            <span>LUMIÈRE</span>
+            <span class="brand-subtitle" style="color: var(--color-gold);">Handmade Jewellery</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #9AAEA4; margin-bottom: 1.25rem;">
+            Reviving Pakistan's rich jewellery heritage through ethical silversmithing, natural local gemstones, and slow, artisanal craftsmanship.
+          </p>
+          <div class="footer-disclosure">
+            <strong>AI Tool Disclosure:</strong> Images on this website were generated using Google Imagen & DALL-E AI for academic prototyping purposes.
+          </div>
         </div>
-        <div>
-          <h4>Shop &amp; Discover</h4>
+
+        <div class="footer-col">
+          <h4>Artisanal Shop</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/shop.html">Shop All</a></li>
-            <li><a href="../pages/product-detail.html">Product Detail</a></li>
-            <li><a href="../pages/style-quiz.html">Style Quiz</a></li>
-            <li><a href="../pages/reviews.html">Customer Reviews</a></li>
+            <li><a href="shop.html">Full Collection</a></li>
+            <li><a href="custom-builder.html">Custom Jewellery Builder</a></li>
+            <li><a href="materials.html">Gemstone Guide</a></li>
+            <li><a href="size-guide.html">Ring & Chain Sizing</a></li>
+            <li><a href="style-quiz.html">Style Recommendation Quiz</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Bespoke &amp; Craft</h4>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
           <ul class="footer-links">
-            <li><a href="../pages/custom-builder.html">Custom Builder</a></li>
-            <li><a href="../pages/materials.html">Materials &amp; Gemstones</a></li>
-            <li><a href="../pages/size-guide.html">Size Guide</a></li>
-            <li><a href="../pages/about.html">About &amp; Artisans</a></li>
-            <li><a href="../pages/sustainability.html">Sustainability</a></li>
-            <li><a href="../pages/workshops.html">Workshops</a></li>
+            <li><a href="faqs.html">Frequently Asked Questions</a></li>
+            <li><a href="care-repair.html">Jewellery Care & Repairs</a></li>
+            <li><a href="order-tracking.html">Track Order Status</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+            <li><a href="contact.html">Studio & Bridal Consultation</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Care &amp; Orders</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/cart.html">Shopping Cart</a></li>
-            <li><a href="../pages/checkout.html">Checkout</a></li>
-            <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
-            <li><a href="../pages/wishlist.html">Wishlist</a></li>
-            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
-            <li><a href="../pages/faqs.html">FAQs</a></li>
-            <li><a href="../pages/contact.html">Contact Us</a></li>
-          </ul>
+
+        <div class="footer-col">
+          <h4>Artisan Newsletter</h4>
+          <p style="font-size: 0.85rem; color: #9AAEA4; margin-bottom: 0.8rem;">Subscribe to receive studio updates, private collection previews, and Rs. 500 off your first bespoke piece.</p>
+          <form class="newsletter-form" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid #2F423B; background: #1B2622; color: #FFF; flex: 1; font-size: 0.85rem;">
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+          <div style="margin-top: 1rem; font-size: 0.8rem; color: #82948B;">
+            📍 Studio: F-7 Markaz, Islamabad, Pakistan<br>
+            📞 Phone: +92 (51) 843-2291
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+        <div>&copy; 2026 LUMIÈRE Handmade Jewellery. All Rights Reserved.</div>
+        <div>IICT Fall 2026 Project &bull; Section SE-A &bull; Group 07</div>
       </div>
     </div>
   </footer>
 
+  <!-- Search Overlay Modal -->
+  <div id="searchModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-content" style="max-width: 600px;">
+      <button id="searchClose" class="modal-close" aria-label="Close search modal">✕</button>
+      <h3 id="searchModalTitle" style="font-family: var(--font-serif); margin-bottom: 1rem;">Search Artisanal Pieces</h3>
+      <div class="form-group">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by name, gemstone (emerald, pearl), metal..." autocomplete="off">
+      </div>
+      <div id="searchResults" style="max-height: 350px; overflow-y: auto; margin-top: 1rem;">
+        <p class="text-muted" style="text-align: center; padding: 2rem 0;">Type jewellery name or category...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-out Drawer -->
+  <aside id="cartDrawer" class="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-header">
+      <h3 id="drawerTitle" style="font-family: var(--font-serif); font-size: 1.25rem;">Shopping Bag</h3>
+      <button id="cartDrawerClose" class="modal-close" style="position: static;" aria-label="Close shopping bag">✕</button>
+    </div>
+    <div id="cartDrawerItems" class="drawer-body">
+      <!-- Injected via JavaScript -->
+    </div>
+    <div id="cartDrawerFooter" class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 700;">
+        <span>Subtotal:</span>
+        <span id="drawerSubtotal">Rs. 0</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="cart.html" class="btn btn-secondary btn-block">View Bag</a>
+        <a href="checkout.html" class="btn btn-primary btn-block">Checkout</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Global Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Base Path Definition & Shared Scripts -->
+  <script>
+    window.LUMIERE_ROOT = "../";
+  </script>
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+
 </body>
 </html>

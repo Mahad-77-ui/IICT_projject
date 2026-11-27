@@ -1,0 +1,14 @@
+Section: SE-A
+Group No: 07
+Website Name: LUMIÈRE Handmade Jewellery
+Theme: Handmade jewellery store (Theme #6)
+Members:
+  1. Muhammad Bilal Mahad Sarwar (26i-3090)
+  2. Fatima Ajmal Abbasi (26i-3093)
+  3. Hasana Fatima (26i-3089)
+  4. Haad Harris (26i-3091)
+  5. Muhammad Ali (26i-3092)
+  6. Adeena Zaeem (26i-3088)
+GitHub Repository: https://github.com/Mahad-77-ui/IICT_projject
+Live Website: https://mahad-77-ui.github.io/IICT_projject/
+Google Form: https://forms.gle/vP9kLumiereJewelFeedback2026

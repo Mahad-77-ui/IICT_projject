@@ -3,119 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Care &amp; Repair — Zaverat</title>
+  <title>Care & Repair Service | LUMIÈRE Handmade Jewellery</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
 </head>
 <body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>✨ Handcrafted with Love in Pakistan • Free Shipping on Orders Over Rs. 3,000</span>
+    <button class="theme-toggle" aria-label="Toggle theme mode" style="font-size: 1rem; color: #FFF;">🌙</button>
+  </div>
+
+  <!-- Main Site Header -->
   <header class="site-header">
-    <div class="announcement-bar">
-      Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
-    </div>
-    <nav class="container navbar" aria-label="Primary Navigation">
-      <a class="brand" href="../index.html">
-        <img src="../images/logo.svg" alt="Zaverat logo" width="40" height="40">
-        <span>Zaverat</span>
+    <div class="container header-inner">
+      <!-- Mobile Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+      <!-- Brand Logo -->
+      <a href="../index.html" class="brand-logo">
+        <svg class="brand-emblem" viewBox="0 0 100 100">
+          <polygon points="50,15 80,38 50,85 20,38" fill="none" stroke="#C59B27" stroke-width="3"/>
+          <polygon points="50,15 35,38 50,85 65,38" fill="none" stroke="#C59B27" stroke-width="1.5"/>
+          <line x1="20" y1="38" x2="80" y2="38" stroke="#C59B27" stroke-width="2"/>
+        </svg>
+        <div class="brand-title">
+          <span>LUMIÈRE</span>
+          <span class="brand-subtitle">Handmade Jewellery</span>
+        </div>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav-menu">
-        &#9776;
-      </button>
+      <!-- Main Navigation Menu -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="custom-builder.html" class="nav-link">Custom Builder</a>
+        <a href="size-guide.html" class="nav-link">Size Guide</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="style-quiz.html" class="nav-link">Style Quiz</a>
+        <a href="workshops.html" class="nav-link">Workshops</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-      <ul class="nav-menu" id="primary-nav-menu">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="../pages/shop.html">Shop</a></li>
-        <li><a class="nav-link" href="../pages/custom-builder.html">Custom Builder</a></li>
-        <li><a class="nav-link" href="../pages/style-quiz.html">Style Quiz</a></li>
-        <li><a class="nav-link" href="../pages/workshops.html">Workshops</a></li>
-        <li><a class="nav-link" href="../pages/about.html">About</a></li>
-        <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
-      </ul>
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <button class="icon-btn search-trigger" aria-label="Search catalog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
 
-      <div class="nav-actions">
-        <a class="icon-link" href="../pages/wishlist.html" aria-label="Wishlist">
-          <span class="label-text">Wishlist</span>
-          <span class="badge-count" id="wishlist-count">0</span>
+        <a href="wishlist.html" class="icon-btn" aria-label="View wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="badge-counter wish-count-badge" style="display: none;">0</span>
         </a>
-        <a class="icon-link" href="../pages/cart.html" aria-label="Shopping Cart">
-          <span class="label-text">Cart</span>
-          <span class="badge-count" id="cart-count">0</span>
-        </a>
+
+        <button class="icon-btn cart-drawer-trigger" aria-label="Open shopping cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> <span>/</span> <span>Care &amp; Repair</span>
-        </nav>
-        <span class="eyebrow">Member 5 &middot; 26i-3088 (Adeena Zaeem)</span>
-        <h1>Jewellery Care &amp; Repair Services</h1>
-        <p class="lead">Keep your heirloom pieces radiant with metal-specific cleaning steps, re-plating, and stone-setting repairs.</p>
-      </div>
-    </section>
+  <main class="site-main">
 
-    <section class="section">
-      <div class="container">
-        <div class="placeholder-panel">
-          <h2>Care Instructions &amp; Repair Request Form</h2>
-          <p>Placeholder for metal care cards (silver, brass, kundan, pearls) and an interactive repair/re-plating booking form.</p>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tagline">Heirloom Longevity</span>
+        <h1 class="section-title">Jewellery Care & Repair Atelier</h1>
+        <p>Expert restoration for treasured pieces: clasp re-soldering, ring resizing, stone resetting, and gold replating.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 3rem; padding: 2rem;">
+        <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1.25rem;">Daily Care Recommendations</h2>
+        <div class="tabs-nav">
+          <button class="tab-btn active" onclick="switchCareTab('gold', this)">18K Gold Vermeil</button>
+          <button class="tab-btn" onclick="switchCareTab('silver', this)">925 Sterling Silver</button>
+          <button class="tab-btn" onclick="switchCareTab('pearl', this)">Freshwater Pearls</button>
+          <button class="tab-btn" onclick="switchCareTab('brass', this)">Antiqued Brass</button>
+        </div>
+
+        <div id="tab-gold" class="tab-pane active">
+          <h4 style="font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.5rem;">Preserving Your 18K Gold Vermeil:</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+            Vermeil is a thick 2.5 micron 18k gold coat over 925 silver. Keep it away from saltwater, chlorine pools, and perfume mist. Clean only with a dry flannel or microfiber polishing cloth. Never use ultrasonic baths.
+          </p>
+        </div>
+        <div id="tab-silver" class="tab-pane">
+          <h4 style="font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.5rem;">Caring for 925 Sterling Silver:</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+            Silver naturally reacts with sulfur in the air over time. The best prevention is wearing it frequently, as skin oils maintain its luster! To remove tarnish, use gentle warm soapy water and a soft toothbrush.
+          </p>
+        </div>
+        <div id="tab-pearl" class="tab-pane">
+          <h4 style="font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.5rem;">Caring for Organic Pearls:</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+            "Last on, first off." Put pearls on after makeup and perfumes have completely dried. Wipe down after each wear with a soft damp cloth to remove perspiration. Store flat so silk cord does not stretch.
+          </p>
+        </div>
+        <div id="tab-brass" class="tab-pane">
+          <h4 style="font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.5rem;">Caring for Hand-Forged Brass:</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+            Brass develops a rich, antique patina with age. If you prefer high golden shine, rub gently with lemon juice and a pinch of baking soda, rinse with water, and thoroughly dry.
+          </p>
         </div>
       </div>
-    </section>
+
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start;">
+        <div class="card" style="padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+          <span class="badge badge-gold" style="margin-bottom: 0.5rem;">Live Estimator</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 1rem;">Repair Cost Calculator</h3>
+          <div class="form-group">
+            <label class="form-label">Jewellery Category:</label>
+            <select id="repairCat" class="form-control" onchange="calculateRepair()">
+              <option value="Ring">Finger Ring</option>
+              <option value="Necklace" selected>Chain / Pendant Necklace</option>
+              <option value="Earrings">Earrings Pair</option>
+              <option value="Bracelet">Bangle / Cuff Bracelet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Service Type:</label>
+            <select id="repairService" class="form-control" onchange="calculateRepair()">
+              <option value="Clasp" data-base="650">Broken Clasp Replacement (Rs. 650)</option>
+              <option value="Solder" data-base="850" selected>Chain Link / Band Re-Soldering (Rs. 850)</option>
+              <option value="Resize" data-base="1100">Ring Resizing (+/- 2 sizes) (Rs. 1,100)</option>
+              <option value="Stone" data-base="1450">Gemstone Prong Tightening & Reset (Rs. 1,450)</option>
+              <option value="Replate" data-base="1600">Full 18K Gold Dip Re-plating (Rs. 1,600)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Turnaround Urgency:</label>
+            <select id="repairUrgency" class="form-control" onchange="calculateRepair()">
+              <option value="Standard" data-mult="1.0">Standard Atelier (5-7 business days)</option>
+              <option value="Priority" data-mult="1.4">Express Priority (48 Hours) &bull; +40%</option>
+            </select>
+          </div>
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: bold; color: var(--text-secondary);">Estimated Atelier Fee:</span>
+            <span id="repairQuoteDisplay" style="font-size: 1.6rem; font-weight: 800; color: var(--color-primary);">Rs. 850</span>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 2rem;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 1rem;">Book A Repair Ticket</h3>
+          <form onsubmit="handleRepairSubmit(event)">
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="repairName">Your Name *</label>
+                <input type="text" id="repairName" class="form-control" required placeholder="Sara Khan">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="repairPhone">Mobile Number *</label>
+                <input type="tel" id="repairPhone" class="form-control" required placeholder="0300-1234567">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="repairIssue">Describe the Damage or Request *</label>
+              <textarea id="repairIssue" class="form-control" rows="3" required placeholder="e.g. Broken lobster clasp on pearl necklace..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="repairDropoff">Service Mode *</label>
+              <select id="repairDropoff" class="form-control">
+                <option value="Dropoff">In-person Studio Drop-off (F-7 Markaz, Islamabad)</option>
+                <option value="Courier">Courier Pickup from My Address (Nationwide)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="padding: 0.85rem;">Generate Repair Ticket 🔨</button>
+          </form>
+          <div id="repairTicketResult" style="display: none; margin-top: 1.5rem; padding: 1.25rem; background: var(--color-success-bg); border-radius: var(--radius-md); border: 1px solid var(--color-success);"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function switchCareTab(tabId, btn) {
+        document.querySelectorAll(".tab-pane").forEach(function(p) { p.classList.remove("active"); });
+        document.querySelectorAll(".tab-btn").forEach(function(b) { b.classList.remove("active"); });
+        document.getElementById("tab-" + tabId).classList.add("active");
+        btn.classList.add("active");
+      }
+
+      function calculateRepair() {
+        var serviceSelect = document.getElementById("repairService");
+        var basePrice = parseInt(serviceSelect.options[serviceSelect.selectedIndex].getAttribute("data-base"));
+        var urgencySelect = document.getElementById("repairUrgency");
+        var multiplier = parseFloat(urgencySelect.options[urgencySelect.selectedIndex].getAttribute("data-mult"));
+        var total = Math.round(basePrice * multiplier);
+        document.getElementById("repairQuoteDisplay").textContent = formatPrice(total);
+      }
+
+      function handleRepairSubmit(e) {
+        e.preventDefault();
+        var name = document.getElementById("repairName").value.trim();
+        var mode = document.getElementById("repairDropoff").value;
+        var quote = document.getElementById("repairQuoteDisplay").textContent;
+        var ticketNumber = "REP-" + Math.floor(1000 + Math.random() * 9000);
+        var resultDiv = document.getElementById("repairTicketResult");
+
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = 
+          '<h4 style="color: var(--color-success); margin-bottom: 0.5rem;">✓ Repair Ticket Created: #' + ticketNumber + '</h4>' +
+          '<p style="font-size: 0.85rem; margin: 0; color: var(--text-primary);">' +
+            'Dear ' + name + ', your ticket has been logged with an initial estimate of <strong>' + quote + '</strong>. ' +
+            'Our master goldsmith will inspect your piece upon ' + mode + '.' +
+          '</p>';
+        showToast("Repair Ticket #" + ticketNumber + " Generated!", "success");
+      }
+    </script>
+
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <h3>Zaverat</h3>
-          <p>Handcrafted heritage jewellery store built by Group 07 for CL1000 ICT Final Project.</p>
+        <div class="footer-col">
+          <div class="brand-title" style="color: #FFF; margin-bottom: 0.8rem;">
+            <span>LUMIÈRE</span>
+            <span class="brand-subtitle" style="color: var(--color-gold);">Handmade Jewellery</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #9AAEA4; margin-bottom: 1.25rem;">
+            Reviving Pakistan's rich jewellery heritage through ethical silversmithing, natural local gemstones, and slow, artisanal craftsmanship.
+          </p>
+          <div class="footer-disclosure">
+            <strong>AI Tool Disclosure:</strong> Images on this website were generated using Google Imagen & DALL-E AI for academic prototyping purposes.
+          </div>
         </div>
-        <div>
-          <h4>Shop &amp; Discover</h4>
+
+        <div class="footer-col">
+          <h4>Artisanal Shop</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/shop.html">Shop All</a></li>
-            <li><a href="../pages/product-detail.html">Product Detail</a></li>
-            <li><a href="../pages/style-quiz.html">Style Quiz</a></li>
-            <li><a href="../pages/reviews.html">Customer Reviews</a></li>
+            <li><a href="shop.html">Full Collection</a></li>
+            <li><a href="custom-builder.html">Custom Jewellery Builder</a></li>
+            <li><a href="materials.html">Gemstone Guide</a></li>
+            <li><a href="size-guide.html">Ring & Chain Sizing</a></li>
+            <li><a href="style-quiz.html">Style Recommendation Quiz</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Bespoke &amp; Craft</h4>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
           <ul class="footer-links">
-            <li><a href="../pages/custom-builder.html">Custom Builder</a></li>
-            <li><a href="../pages/materials.html">Materials &amp; Gemstones</a></li>
-            <li><a href="../pages/size-guide.html">Size Guide</a></li>
-            <li><a href="../pages/about.html">About &amp; Artisans</a></li>
-            <li><a href="../pages/sustainability.html">Sustainability</a></li>
-            <li><a href="../pages/workshops.html">Workshops</a></li>
+            <li><a href="faqs.html">Frequently Asked Questions</a></li>
+            <li><a href="care-repair.html">Jewellery Care & Repairs</a></li>
+            <li><a href="order-tracking.html">Track Order Status</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+            <li><a href="contact.html">Studio & Bridal Consultation</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Care &amp; Orders</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/cart.html">Shopping Cart</a></li>
-            <li><a href="../pages/checkout.html">Checkout</a></li>
-            <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
-            <li><a href="../pages/wishlist.html">Wishlist</a></li>
-            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
-            <li><a href="../pages/faqs.html">FAQs</a></li>
-            <li><a href="../pages/contact.html">Contact Us</a></li>
-          </ul>
+
+        <div class="footer-col">
+          <h4>Artisan Newsletter</h4>
+          <p style="font-size: 0.85rem; color: #9AAEA4; margin-bottom: 0.8rem;">Subscribe to receive studio updates, private collection previews, and Rs. 500 off your first bespoke piece.</p>
+          <form class="newsletter-form" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid #2F423B; background: #1B2622; color: #FFF; flex: 1; font-size: 0.85rem;">
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+          <div style="margin-top: 1rem; font-size: 0.8rem; color: #82948B;">
+            📍 Studio: F-7 Markaz, Islamabad, Pakistan<br>
+            📞 Phone: +92 (51) 843-2291
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+        <div>&copy; 2026 LUMIÈRE Handmade Jewellery. All Rights Reserved.</div>
+        <div>IICT Fall 2026 Project &bull; Section SE-A &bull; Group 07</div>
       </div>
     </div>
   </footer>
 
+  <!-- Search Overlay Modal -->
+  <div id="searchModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-content" style="max-width: 600px;">
+      <button id="searchClose" class="modal-close" aria-label="Close search modal">✕</button>
+      <h3 id="searchModalTitle" style="font-family: var(--font-serif); margin-bottom: 1rem;">Search Artisanal Pieces</h3>
+      <div class="form-group">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by name, gemstone (emerald, pearl), metal..." autocomplete="off">
+      </div>
+      <div id="searchResults" style="max-height: 350px; overflow-y: auto; margin-top: 1rem;">
+        <p class="text-muted" style="text-align: center; padding: 2rem 0;">Type jewellery name or category...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-out Drawer -->
+  <aside id="cartDrawer" class="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-header">
+      <h3 id="drawerTitle" style="font-family: var(--font-serif); font-size: 1.25rem;">Shopping Bag</h3>
+      <button id="cartDrawerClose" class="modal-close" style="position: static;" aria-label="Close shopping bag">✕</button>
+    </div>
+    <div id="cartDrawerItems" class="drawer-body">
+      <!-- Injected via JavaScript -->
+    </div>
+    <div id="cartDrawerFooter" class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 700;">
+        <span>Subtotal:</span>
+        <span id="drawerSubtotal">Rs. 0</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="cart.html" class="btn btn-secondary btn-block">View Bag</a>
+        <a href="checkout.html" class="btn btn-primary btn-block">Checkout</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Global Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Base Path Definition & Shared Scripts -->
+  <script>
+    window.LUMIERE_ROOT = "../";
+  </script>
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+
 </body>
 </html>

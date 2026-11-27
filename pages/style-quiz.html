@@ -3,119 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Style Quiz — Zaverat</title>
+  <title>Style Finder Quiz | LUMIÈRE Handmade Jewellery</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
 </head>
 <body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>✨ Handcrafted with Love in Pakistan • Free Shipping on Orders Over Rs. 3,000</span>
+    <button class="theme-toggle" aria-label="Toggle theme mode" style="font-size: 1rem; color: #FFF;">🌙</button>
+  </div>
+
+  <!-- Main Site Header -->
   <header class="site-header">
-    <div class="announcement-bar">
-      Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
-    </div>
-    <nav class="container navbar" aria-label="Primary Navigation">
-      <a class="brand" href="../index.html">
-        <img src="../images/logo.svg" alt="Zaverat logo" width="40" height="40">
-        <span>Zaverat</span>
+    <div class="container header-inner">
+      <!-- Mobile Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+      <!-- Brand Logo -->
+      <a href="../index.html" class="brand-logo">
+        <svg class="brand-emblem" viewBox="0 0 100 100">
+          <polygon points="50,15 80,38 50,85 20,38" fill="none" stroke="#C59B27" stroke-width="3"/>
+          <polygon points="50,15 35,38 50,85 65,38" fill="none" stroke="#C59B27" stroke-width="1.5"/>
+          <line x1="20" y1="38" x2="80" y2="38" stroke="#C59B27" stroke-width="2"/>
+        </svg>
+        <div class="brand-title">
+          <span>LUMIÈRE</span>
+          <span class="brand-subtitle">Handmade Jewellery</span>
+        </div>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav-menu">
-        &#9776;
-      </button>
+      <!-- Main Navigation Menu -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="custom-builder.html" class="nav-link">Custom Builder</a>
+        <a href="size-guide.html" class="nav-link">Size Guide</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="style-quiz.html" class="nav-link">Style Quiz</a>
+        <a href="workshops.html" class="nav-link">Workshops</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-      <ul class="nav-menu" id="primary-nav-menu">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="../pages/shop.html">Shop</a></li>
-        <li><a class="nav-link" href="../pages/custom-builder.html">Custom Builder</a></li>
-        <li><a class="nav-link" href="../pages/style-quiz.html">Style Quiz</a></li>
-        <li><a class="nav-link" href="../pages/workshops.html">Workshops</a></li>
-        <li><a class="nav-link" href="../pages/about.html">About</a></li>
-        <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
-      </ul>
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <button class="icon-btn search-trigger" aria-label="Search catalog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
 
-      <div class="nav-actions">
-        <a class="icon-link" href="../pages/wishlist.html" aria-label="Wishlist">
-          <span class="label-text">Wishlist</span>
-          <span class="badge-count" id="wishlist-count">0</span>
+        <a href="wishlist.html" class="icon-btn" aria-label="View wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="badge-counter wish-count-badge" style="display: none;">0</span>
         </a>
-        <a class="icon-link" href="../pages/cart.html" aria-label="Shopping Cart">
-          <span class="label-text">Cart</span>
-          <span class="badge-count" id="cart-count">0</span>
-        </a>
+
+        <button class="icon-btn cart-drawer-trigger" aria-label="Open shopping cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> <span>/</span> <span>Style Quiz</span>
-        </nav>
-        <span class="eyebrow">Member 6 &middot; 26i-3091 (Haad Harris)</span>
-        <h1>Personal Jewellery Style Quiz</h1>
-        <p class="lead">Answer five quick questions about occasion, metal tone, and aesthetic to receive tailored piece recommendations.</p>
-      </div>
-    </section>
+  <main class="site-main">
 
-    <section class="section">
-      <div class="container">
-        <div class="placeholder-panel">
-          <h2>Quiz Flow &amp; Curated Match Results</h2>
-          <p>Placeholder for multi-step quiz questions, progress bar, saved result persistence via <code>ZaveratStorage.saveQuizState()</code>, and matched product cards.</p>
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header">
+        <span class="section-tagline">Personalized Curation</span>
+        <h1 class="section-title">Jewellery Style & Aura Quiz</h1>
+        <p>Answer 5 quick questions about your style, preferred metal, and occasion to reveal your signature jewellery profile.</p>
+      </div>
+
+      <div id="quizContainer" class="card" style="padding: 2.5rem; background: var(--bg-card); border: 2px solid var(--border-color); box-shadow: var(--shadow-md);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+          <span id="quizStepIndicator">Question 1 of 5</span>
+          <div style="width: 150px; height: 6px; background: #EFE8DC; border-radius: var(--radius-full); overflow: hidden;">
+            <div id="quizProgressBar" style="width: 20%; height: 100%; background: var(--color-gold); transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+        <div id="quizQuestionArea"></div>
+        <div style="display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-light);">
+          <button id="quizPrevBtn" onclick="prevQuizQuestion()" class="btn btn-secondary btn-sm" style="display: none;">← Previous</button>
+          <button id="quizNextBtn" onclick="nextQuizQuestion()" class="btn btn-primary btn-sm" style="margin-left: auto;">Next Question →</button>
         </div>
       </div>
-    </section>
+
+      <div id="quizResultContainer" class="card" style="display: none; padding: 2.5rem; text-align: center; border: 2px solid var(--color-gold); background: radial-gradient(circle, var(--color-gold-soft) 0%, var(--bg-card) 100%);">
+        <span class="badge badge-gold" style="margin-bottom: 0.75rem;">Your Curated Match</span>
+        <h2 id="resultArchetypeTitle" style="font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--color-primary);">
+          The Celestial Romantic
+        </h2>
+        <p id="resultArchetypeDesc" style="color: var(--text-secondary); font-size: 1rem; max-width: 600px; margin: 0 auto 2rem; line-height: 1.7;">
+          You appreciate soft moonlit luminescence, delicate filigree wires, and jewellery that carries timeless poetic sentiment.
+        </p>
+        <h3 style="font-family: var(--font-serif); margin-bottom: 1.5rem;">Recommended Artisanal Matches:</h3>
+        <div id="quizRecommendedGrid" class="grid-2" style="margin-bottom: 2rem; text-align: left;"></div>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <button onclick="restartQuiz()" class="btn btn-secondary">Retake Quiz ↺</button>
+          <a href="shop.html" class="btn btn-primary">Shop All Recommended Pieces →</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var currentQuizStep = 0;
+      var userAnswers = {};
+      var quizQuestions = [
+        {
+          question: "1. What is your primary jewellery occasion?",
+          options: [
+            { text: "Daily Minimalist Elegance (University / Work)", style: "minimalist" },
+            { text: "Festive Weddings & Traditional Celebrations", style: "heritage" },
+            { text: "Spiritual Energy & Gemstone Healing", style: "gemstone" },
+            { text: "Evening Soirées & Statement Dining", style: "statement" }
+          ]
+        },
+        {
+          question: "2. Which noble metal resonates most with your complexion?",
+          options: [
+            { text: "18K Warm Gold Vermeil (Radiant & Classic)" },
+            { text: "925 Pure Sterling Silver (Cool, Lunar & Timeless)" },
+            { text: "Rose Gold (Soft, Warm & Romantic)" },
+            { text: "Antiqued Brass (Bohemian & Earthy)" }
+          ]
+        },
+        {
+          question: "3. Which natural mineral calls to your soul?",
+          options: [
+            { text: "Swat Valley Emerald (Abundance & Wisdom)" },
+            { text: "Freshwater Baroque Pearl (Purity & Calm)" },
+            { text: "Rainbow Moonstone (Intuition & Serenity)" },
+            { text: "Badakhshan Lapis Lazuli (Inner Truth & Royalty)" }
+          ]
+        },
+        {
+          question: "4. How do you prefer your jewellery to feel on your skin?",
+          options: [
+            { text: "Featherlight, delicate, and barely noticeable" },
+            { text: "Substantial, solid, and reassuringly heavy" },
+            { text: "Intricately detailed with texture you can touch" }
+          ]
+        },
+        {
+          question: "5. What is your comfortable investment budget?",
+          options: [
+            { text: "Under Rs. 2,500 (Everyday Accent)" },
+            { text: "Rs. 2,500 to Rs. 5,000 (Artisanal Statement)" },
+            { text: "Rs. 5,000 to Rs. 15,000+ (Heirloom Masterpiece)" }
+          ]
+        }
+      ];
+
+      document.addEventListener("DOMContentLoaded", function() {
+        renderQuizStep();
+      });
+
+      function renderQuizStep() {
+        var q = quizQuestions[currentQuizStep];
+        var area = document.getElementById("quizQuestionArea");
+        var indicator = document.getElementById("quizStepIndicator");
+        var bar = document.getElementById("quizProgressBar");
+        var prevBtn = document.getElementById("quizPrevBtn");
+        var nextBtn = document.getElementById("quizNextBtn");
+
+        indicator.textContent = "Question " + (currentQuizStep + 1) + " of " + quizQuestions.length;
+        bar.style.width = ((currentQuizStep + 1) / quizQuestions.length * 100) + "%";
+        prevBtn.style.display = currentQuizStep > 0 ? "inline-flex" : "none";
+        nextBtn.textContent = currentQuizStep === quizQuestions.length - 1 ? "Calculate My Style ✦" : "Next Question →";
+
+        area.innerHTML = 
+          '<h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--color-primary);">' + q.question + '</h3>' +
+          '<div style="display: flex; flex-direction: column; gap: 0.75rem;">' +
+            q.options.map(function(opt, idx) {
+              var isSelected = userAnswers[currentQuizStep] === idx;
+              return '<label style="border: 2px solid ' + (isSelected ? 'var(--color-gold)' : 'var(--border-color)') + '; background: ' + (isSelected ? 'var(--color-gold-soft)' : 'var(--bg-secondary)') + '; border-radius: var(--radius-md); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; cursor: pointer; transition: all 0.2s ease;">' +
+                '<input type="radio" name="quizOpt" value="' + idx + '" ' + (isSelected ? 'checked' : '') + ' onchange="selectQuizOption(' + idx + ')">' +
+                '<span style="font-weight: 500; font-size: 0.95rem;">' + opt.text + '</span>' +
+              '</label>';
+            }).join("") +
+          '</div>';
+      }
+
+      function selectQuizOption(idx) {
+        userAnswers[currentQuizStep] = idx;
+        renderQuizStep();
+      }
+
+      function nextQuizQuestion() {
+        if (userAnswers[currentQuizStep] === undefined) {
+          showToast("Please choose an answer to continue.", "error");
+          return;
+        }
+        if (currentQuizStep < quizQuestions.length - 1) {
+          currentQuizStep++;
+          renderQuizStep();
+        } else {
+          computeQuizResults();
+        }
+      }
+
+      function prevQuizQuestion() {
+        if (currentQuizStep > 0) {
+          currentQuizStep--;
+          renderQuizStep();
+        }
+      }
+
+      function computeQuizResults() {
+        document.getElementById("quizContainer").style.display = "none";
+        var resContainer = document.getElementById("quizResultContainer");
+        resContainer.style.display = "block";
+        var recommended = [LUMIERE_DATA.products[0], LUMIERE_DATA.products[3]];
+        var grid = document.getElementById("quizRecommendedGrid");
+
+        grid.innerHTML = recommended.map(function(p) {
+          var imgUrl = getAssetUrl(p.image);
+          return '<div class="product-card">' +
+            '<div class="product-media"><img src="' + imgUrl + '" alt="' + p.name + '"></div>' +
+            '<div class="product-info">' +
+              '<h4 class="product-name">' + p.name + '</h4>' +
+              '<div class="product-price" style="margin-bottom: 0.5rem;">' + formatPrice(p.price) + '</div>' +
+              '<button class="btn btn-primary btn-sm btn-block" onclick="LumiereStorage.addToCart('' + p.id + '', 1); showToast('Added to Bag!', 'success');">Add to Bag</button>' +
+            '</div>' +
+          '</div>';
+        }).join("");
+
+        showToast("Your personalized jewellery aura has been calculated!", "gold");
+        resContainer.scrollIntoView({ behavior: "smooth" });
+      }
+
+      function restartQuiz() {
+        currentQuizStep = 0;
+        userAnswers = {};
+        document.getElementById("quizContainer").style.display = "block";
+        document.getElementById("quizResultContainer").style.display = "none";
+        renderQuizStep();
+      }
+    </script>
+
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <h3>Zaverat</h3>
-          <p>Handcrafted heritage jewellery store built by Group 07 for CL1000 ICT Final Project.</p>
+        <div class="footer-col">
+          <div class="brand-title" style="color: #FFF; margin-bottom: 0.8rem;">
+            <span>LUMIÈRE</span>
+            <span class="brand-subtitle" style="color: var(--color-gold);">Handmade Jewellery</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #9AAEA4; margin-bottom: 1.25rem;">
+            Reviving Pakistan's rich jewellery heritage through ethical silversmithing, natural local gemstones, and slow, artisanal craftsmanship.
+          </p>
+          <div class="footer-disclosure">
+            <strong>AI Tool Disclosure:</strong> Images on this website were generated using Google Imagen & DALL-E AI for academic prototyping purposes.
+          </div>
         </div>
-        <div>
-          <h4>Shop &amp; Discover</h4>
+
+        <div class="footer-col">
+          <h4>Artisanal Shop</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/shop.html">Shop All</a></li>
-            <li><a href="../pages/product-detail.html">Product Detail</a></li>
-            <li><a href="../pages/style-quiz.html">Style Quiz</a></li>
-            <li><a href="../pages/reviews.html">Customer Reviews</a></li>
+            <li><a href="shop.html">Full Collection</a></li>
+            <li><a href="custom-builder.html">Custom Jewellery Builder</a></li>
+            <li><a href="materials.html">Gemstone Guide</a></li>
+            <li><a href="size-guide.html">Ring & Chain Sizing</a></li>
+            <li><a href="style-quiz.html">Style Recommendation Quiz</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Bespoke &amp; Craft</h4>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
           <ul class="footer-links">
-            <li><a href="../pages/custom-builder.html">Custom Builder</a></li>
-            <li><a href="../pages/materials.html">Materials &amp; Gemstones</a></li>
-            <li><a href="../pages/size-guide.html">Size Guide</a></li>
-            <li><a href="../pages/about.html">About &amp; Artisans</a></li>
-            <li><a href="../pages/sustainability.html">Sustainability</a></li>
-            <li><a href="../pages/workshops.html">Workshops</a></li>
+            <li><a href="faqs.html">Frequently Asked Questions</a></li>
+            <li><a href="care-repair.html">Jewellery Care & Repairs</a></li>
+            <li><a href="order-tracking.html">Track Order Status</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+            <li><a href="contact.html">Studio & Bridal Consultation</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Care &amp; Orders</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/cart.html">Shopping Cart</a></li>
-            <li><a href="../pages/checkout.html">Checkout</a></li>
-            <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
-            <li><a href="../pages/wishlist.html">Wishlist</a></li>
-            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
-            <li><a href="../pages/faqs.html">FAQs</a></li>
-            <li><a href="../pages/contact.html">Contact Us</a></li>
-          </ul>
+
+        <div class="footer-col">
+          <h4>Artisan Newsletter</h4>
+          <p style="font-size: 0.85rem; color: #9AAEA4; margin-bottom: 0.8rem;">Subscribe to receive studio updates, private collection previews, and Rs. 500 off your first bespoke piece.</p>
+          <form class="newsletter-form" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid #2F423B; background: #1B2622; color: #FFF; flex: 1; font-size: 0.85rem;">
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+          <div style="margin-top: 1rem; font-size: 0.8rem; color: #82948B;">
+            📍 Studio: F-7 Markaz, Islamabad, Pakistan<br>
+            📞 Phone: +92 (51) 843-2291
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+        <div>&copy; 2026 LUMIÈRE Handmade Jewellery. All Rights Reserved.</div>
+        <div>IICT Fall 2026 Project &bull; Section SE-A &bull; Group 07</div>
       </div>
     </div>
   </footer>
 
+  <!-- Search Overlay Modal -->
+  <div id="searchModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-content" style="max-width: 600px;">
+      <button id="searchClose" class="modal-close" aria-label="Close search modal">✕</button>
+      <h3 id="searchModalTitle" style="font-family: var(--font-serif); margin-bottom: 1rem;">Search Artisanal Pieces</h3>
+      <div class="form-group">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by name, gemstone (emerald, pearl), metal..." autocomplete="off">
+      </div>
+      <div id="searchResults" style="max-height: 350px; overflow-y: auto; margin-top: 1rem;">
+        <p class="text-muted" style="text-align: center; padding: 2rem 0;">Type jewellery name or category...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-out Drawer -->
+  <aside id="cartDrawer" class="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-header">
+      <h3 id="drawerTitle" style="font-family: var(--font-serif); font-size: 1.25rem;">Shopping Bag</h3>
+      <button id="cartDrawerClose" class="modal-close" style="position: static;" aria-label="Close shopping bag">✕</button>
+    </div>
+    <div id="cartDrawerItems" class="drawer-body">
+      <!-- Injected via JavaScript -->
+    </div>
+    <div id="cartDrawerFooter" class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 700;">
+        <span>Subtotal:</span>
+        <span id="drawerSubtotal">Rs. 0</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="cart.html" class="btn btn-secondary btn-block">View Bag</a>
+        <a href="checkout.html" class="btn btn-primary btn-block">Checkout</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Global Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Base Path Definition & Shared Scripts -->
+  <script>
+    window.LUMIERE_ROOT = "../";
+  </script>
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+
 </body>
 </html>

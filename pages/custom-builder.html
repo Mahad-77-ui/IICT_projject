@@ -3,119 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Jewellery Builder — Zaverat</title>
+  <title>Custom Jewellery Builder | LUMIÈRE Handmade Jewellery</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
 </head>
 <body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>✨ Handcrafted with Love in Pakistan • Free Shipping on Orders Over Rs. 3,000</span>
+    <button class="theme-toggle" aria-label="Toggle theme mode" style="font-size: 1rem; color: #FFF;">🌙</button>
+  </div>
+
+  <!-- Main Site Header -->
   <header class="site-header">
-    <div class="announcement-bar">
-      Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
-    </div>
-    <nav class="container navbar" aria-label="Primary Navigation">
-      <a class="brand" href="../index.html">
-        <img src="../images/logo.svg" alt="Zaverat logo" width="40" height="40">
-        <span>Zaverat</span>
+    <div class="container header-inner">
+      <!-- Mobile Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+      <!-- Brand Logo -->
+      <a href="../index.html" class="brand-logo">
+        <svg class="brand-emblem" viewBox="0 0 100 100">
+          <polygon points="50,15 80,38 50,85 20,38" fill="none" stroke="#C59B27" stroke-width="3"/>
+          <polygon points="50,15 35,38 50,85 65,38" fill="none" stroke="#C59B27" stroke-width="1.5"/>
+          <line x1="20" y1="38" x2="80" y2="38" stroke="#C59B27" stroke-width="2"/>
+        </svg>
+        <div class="brand-title">
+          <span>LUMIÈRE</span>
+          <span class="brand-subtitle">Handmade Jewellery</span>
+        </div>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav-menu">
-        &#9776;
-      </button>
+      <!-- Main Navigation Menu -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="custom-builder.html" class="nav-link">Custom Builder</a>
+        <a href="size-guide.html" class="nav-link">Size Guide</a>
+        <a href="reviews.html" class="nav-link">Reviews</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="style-quiz.html" class="nav-link">Style Quiz</a>
+        <a href="workshops.html" class="nav-link">Workshops</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-      <ul class="nav-menu" id="primary-nav-menu">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="../pages/shop.html">Shop</a></li>
-        <li><a class="nav-link" href="../pages/custom-builder.html">Custom Builder</a></li>
-        <li><a class="nav-link" href="../pages/style-quiz.html">Style Quiz</a></li>
-        <li><a class="nav-link" href="../pages/workshops.html">Workshops</a></li>
-        <li><a class="nav-link" href="../pages/about.html">About</a></li>
-        <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
-      </ul>
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <button class="icon-btn search-trigger" aria-label="Search catalog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
 
-      <div class="nav-actions">
-        <a class="icon-link" href="../pages/wishlist.html" aria-label="Wishlist">
-          <span class="label-text">Wishlist</span>
-          <span class="badge-count" id="wishlist-count">0</span>
+        <a href="wishlist.html" class="icon-btn" aria-label="View wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="badge-counter wish-count-badge" style="display: none;">0</span>
         </a>
-        <a class="icon-link" href="../pages/cart.html" aria-label="Shopping Cart">
-          <span class="label-text">Cart</span>
-          <span class="badge-count" id="cart-count">0</span>
-        </a>
+
+        <button class="icon-btn cart-drawer-trigger" aria-label="Open shopping cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> <span>/</span> <span>Custom Builder</span>
-        </nav>
-        <span class="eyebrow">Member 3 &middot; 26i-3093 (Fatima Ajmal Abbasi)</span>
-        <h1>Custom Jewellery Builder</h1>
-        <p class="lead">Design a bespoke piece by choosing base silhouette, metal finish, gemstone accent, and personal engraving.</p>
-      </div>
-    </section>
+  <main class="site-main">
 
-    <section class="section">
-      <div class="container">
-        <div class="placeholder-panel">
-          <h2>Interactive Customizer Studio</h2>
-          <p>Placeholder for step-by-step piece configurator, live preview card, dynamic price estimator, and state persistence via <code>ZaveratStorage.saveBuilderState()</code>.</p>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tagline">Bespoke Atelier</span>
+        <h1 class="section-title">Custom Jewellery Configurator</h1>
+        <p>Design a bespoke heirloom piece. Handpick your noble metal, authentic Pakistani gemstone, chain length, and personal engraved inscription.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 2.5rem; align-items: start;">
+        <div style="position: sticky; top: 90px;">
+          <div class="card" style="text-align: center; background: radial-gradient(circle, #FFFDF8 0%, #F5ECE1 100%); padding: 2.5rem 1.5rem; border: 2px solid var(--border-color);">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); font-weight: 700; margin-bottom: 1rem;">
+              ✦ Live Visual Preview
+            </div>
+            
+            <div id="previewArtwork" style="width: 220px; height: 220px; margin: 0 auto 1.5rem; border-radius: var(--radius-full); background: #FAF6F0; border: 2px dashed var(--color-gold); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; box-shadow: var(--shadow-md);">
+              <div id="previewGemstone" style="width: 44px; height: 44px; border-radius: 8px; background: #2ECC71; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 0.5rem; border: 2px solid #FFF;"></div>
+              <div id="previewMetalBand" style="width: 140px; height: 16px; border-radius: 8px; background: #C59B27; border: 1px solid rgba(0,0,0,0.1);"></div>
+              <div id="previewEngraving" style="font-family: var(--font-hand); font-size: 0.85rem; color: #1B3B32; margin-top: 0.5rem; font-weight: bold;">"Your Name"</div>
+            </div>
+
+            <h3 id="previewTitle" style="font-family: var(--font-serif); font-size: 1.35rem; margin-bottom: 0.25rem;">Custom Swat Emerald Pendant</h3>
+            <div id="previewSpecs" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">18K Gold Vermeil &bull; Swat Emerald &bull; 45 cm Chain</div>
+            <div id="previewPrice" style="font-size: 1.7rem; font-weight: 800; color: var(--color-primary); margin-bottom: 1rem;">Rs. 5,250</div>
+            
+            <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.4;">
+              Hand-forged upon order placement. Requires 4-5 artisan business days for hallmarking and laser engraving.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form id="customJewelleryForm" class="card" onsubmit="handleCustomOrder(event)">
+            <div class="form-group">
+              <label class="form-label" style="font-size: 0.95rem; display: flex; justify-content: space-between;">
+                <span>1. Select Noble Metal:</span>
+                <span id="metalCostLabel" style="color: var(--color-gold); font-weight: bold;">Included</span>
+              </label>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+                <label style="border: 2px solid var(--color-gold); border-radius: var(--radius-md); padding: 0.75rem; text-align: center; cursor: pointer; background: var(--bg-card);">
+                  <input type="radio" name="metalChoice" value="18K Gold Vermeil" data-price="2000" data-color="#C59B27" checked onchange="updateCustomizer()">
+                  <div style="font-size: 0.85rem; font-weight: bold; margin-top: 0.25rem;">18K Gold Vermeil</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">+Rs. 2,000</div>
+                </label>
+                <label style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; text-align: center; cursor: pointer; background: var(--bg-card);">
+                  <input type="radio" name="metalChoice" value="925 Sterling Silver" data-price="1200" data-color="#BDC3C7" onchange="updateCustomizer()">
+                  <div style="font-size: 0.85rem; font-weight: bold; margin-top: 0.25rem;">925 Silver</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">+Rs. 1,200</div>
+                </label>
+                <label style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; text-align: center; cursor: pointer; background: var(--bg-card);">
+                  <input type="radio" name="metalChoice" value="Rose Gold Plated" data-price="1800" data-color="#E59866" onchange="updateCustomizer()">
+                  <div style="font-size: 0.85rem; font-weight: bold; margin-top: 0.25rem;">Rose Gold</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">+Rs. 1,800</div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" style="font-size: 0.95rem;">2. Centerpiece Gemstone:</label>
+              <select id="gemstoneChoice" class="form-control" onchange="updateCustomizer()">
+                <option value="Swat Valley Emerald" data-price="2400" data-gemcolor="#2ECC71">Swat Valley Emerald (+Rs. 2,400)</option>
+                <option value="Rainbow Moonstone" data-price="1600" data-gemcolor="#85C1E9">Rainbow Moonstone (+Rs. 1,600)</option>
+                <option value="Freshwater Baroque Pearl" data-price="1800" data-gemcolor="#FFFFF0">Freshwater Pearl (+Rs. 1,800)</option>
+                <option value="Badakhshan Lapis Lazuli" data-price="1400" data-gemcolor="#2471A3">Badakhshan Lapis (+Rs. 1,400)</option>
+                <option value="Skardu Rose Quartz" data-price="1200" data-gemcolor="#FADBD8">Skardu Rose Quartz (+Rs. 1,200)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" style="font-size: 0.95rem;">3. Chain / Band Size:</label>
+              <select id="chainChoice" class="form-control" onchange="updateCustomizer()">
+                <option value="Choker (38 cm)" data-price="450">Choker Length (38 cm) &bull; +Rs. 450</option>
+                <option value="Princess (45 cm)" data-price="600" selected>Princess Standard (45 cm) &bull; +Rs. 600</option>
+                <option value="Matinee (50 cm)" data-price="850">Matinee Length (50 cm) &bull; +Rs. 850</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="customEngravingText" style="display: flex; justify-content: space-between;">
+                <span>4. Laser Inscription (Optional):</span>
+                <span id="charCount" style="color: var(--text-muted); font-size: 0.8rem;">0 / 12 chars</span>
+              </label>
+              <input type="text" id="customEngravingText" class="form-control" maxlength="12" placeholder="e.g. Noor, 26.11, Z&H" oninput="handleEngravingInput(this)">
+              <div class="form-hint">Precision microscopic laser engraving on inner clasp or pendant back (+Rs. 400).</div>
+            </div>
+
+            <div class="form-group" style="padding: 0.8rem; background: var(--bg-secondary); border-radius: var(--radius-md);">
+              <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.9rem; margin-bottom: 0;">
+                <input type="checkbox" id="gemCertCheckbox" onchange="updateCustomizer()">
+                <span>Include Hand-Signed Gemologist Authenticity Certificate (+Rs. 350)</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="padding: 0.9rem; font-size: 1rem;">
+              Save & Add Bespoke Piece to Bag ✦
+            </button>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
+
+    <script>
+      var baseCraftPrice = 1200;
+
+      function updateCustomizer() {
+        var metalRadio = document.querySelector('input[name="metalChoice"]:checked');
+        var metalName = metalRadio ? metalRadio.value : "18K Gold Vermeil";
+        var metalPrice = parseInt(metalRadio ? metalRadio.getAttribute("data-price") : 2000);
+        var metalColor = metalRadio ? metalRadio.getAttribute("data-color") : "#C59B27";
+
+        var gemSelect = document.getElementById("gemstoneChoice");
+        var gemOption = gemSelect.options[gemSelect.selectedIndex];
+        var gemName = gemSelect.value;
+        var gemPrice = parseInt(gemOption.getAttribute("data-price") || 2400);
+        var gemColor = gemOption.getAttribute("data-gemcolor") || "#2ECC71";
+
+        var chainSelect = document.getElementById("chainChoice");
+        var chainOption = chainSelect.options[chainSelect.selectedIndex];
+        var chainName = chainSelect.value;
+        var chainPrice = parseInt(chainOption.getAttribute("data-price") || 600);
+
+        var engravingInput = document.getElementById("customEngravingText");
+        var engravingText = engravingInput.value.trim();
+        var engravingPrice = engravingText ? 400 : 0;
+
+        var certCheckbox = document.getElementById("gemCertCheckbox");
+        var certPrice = certCheckbox.checked ? 350 : 0;
+
+        var totalPrice = baseCraftPrice + metalPrice + gemPrice + chainPrice + engravingPrice + certPrice;
+
+        document.getElementById("previewMetalBand").style.backgroundColor = metalColor;
+        document.getElementById("previewGemstone").style.backgroundColor = gemColor;
+        document.getElementById("previewEngraving").textContent = engravingText ? '"' + engravingText + '"' : '"Lumière"';
+
+        document.getElementById("previewTitle").textContent = "Custom " + gemName.replace("Valley ", "").replace("Badakhshan ", "").replace("Skardu ", "") + " Piece";
+        document.getElementById("previewSpecs").textContent = metalName + " • " + gemName + " • " + chainName;
+        document.getElementById("previewPrice").textContent = formatPrice(totalPrice);
+      }
+
+      function handleEngravingInput(input) {
+        var count = input.value.length;
+        document.getElementById("charCount").textContent = count + " / 12 chars";
+        updateCustomizer();
+      }
+
+      function handleCustomOrder(e) {
+        e.preventDefault();
+        var metal = document.querySelector('input[name="metalChoice"]:checked').value;
+        var gem = document.getElementById("gemstoneChoice").value;
+        var chain = document.getElementById("chainChoice").value;
+        var engraving = document.getElementById("customEngravingText").value.trim();
+        var cert = document.getElementById("gemCertCheckbox").checked;
+
+        var customOptions = {
+          metal: metal,
+          gemstone: gem,
+          chain: chain,
+          engraving: engraving || "None",
+          certificate: cert
+        };
+
+        var customDesign = {
+          id: "custom-" + Date.now(),
+          name: "Bespoke " + gem + " Piece",
+          price: parseInt(document.getElementById("previewPrice").textContent.replace(/[^0-9]/g, "")),
+          image: "images/products/emerald-ring.svg",
+          category: "Custom",
+          options: customOptions
+        };
+
+        var cart = LumiereStorage.getCart();
+        cart.push({
+          key: customDesign.id,
+          id: "lum-custom",
+          name: customDesign.name,
+          price: customDesign.price,
+          image: customDesign.image,
+          category: "Custom",
+          quantity: 1,
+          customOptions: customOptions
+        });
+        LumiereStorage.saveCart(cart);
+
+        showToast("Bespoke jewellery piece added to your shopping bag!", "success");
+        setTimeout(function() {
+          window.location.href = "cart.html";
+        }, 1200);
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        updateCustomizer();
+      });
+    </script>
+
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <h3>Zaverat</h3>
-          <p>Handcrafted heritage jewellery store built by Group 07 for CL1000 ICT Final Project.</p>
+        <div class="footer-col">
+          <div class="brand-title" style="color: #FFF; margin-bottom: 0.8rem;">
+            <span>LUMIÈRE</span>
+            <span class="brand-subtitle" style="color: var(--color-gold);">Handmade Jewellery</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #9AAEA4; margin-bottom: 1.25rem;">
+            Reviving Pakistan's rich jewellery heritage through ethical silversmithing, natural local gemstones, and slow, artisanal craftsmanship.
+          </p>
+          <div class="footer-disclosure">
+            <strong>AI Tool Disclosure:</strong> Images on this website were generated using Google Imagen & DALL-E AI for academic prototyping purposes.
+          </div>
         </div>
-        <div>
-          <h4>Shop &amp; Discover</h4>
+
+        <div class="footer-col">
+          <h4>Artisanal Shop</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/shop.html">Shop All</a></li>
-            <li><a href="../pages/product-detail.html">Product Detail</a></li>
-            <li><a href="../pages/style-quiz.html">Style Quiz</a></li>
-            <li><a href="../pages/reviews.html">Customer Reviews</a></li>
+            <li><a href="shop.html">Full Collection</a></li>
+            <li><a href="custom-builder.html">Custom Jewellery Builder</a></li>
+            <li><a href="materials.html">Gemstone Guide</a></li>
+            <li><a href="size-guide.html">Ring & Chain Sizing</a></li>
+            <li><a href="style-quiz.html">Style Recommendation Quiz</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Bespoke &amp; Craft</h4>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
           <ul class="footer-links">
-            <li><a href="../pages/custom-builder.html">Custom Builder</a></li>
-            <li><a href="../pages/materials.html">Materials &amp; Gemstones</a></li>
-            <li><a href="../pages/size-guide.html">Size Guide</a></li>
-            <li><a href="../pages/about.html">About &amp; Artisans</a></li>
-            <li><a href="../pages/sustainability.html">Sustainability</a></li>
-            <li><a href="../pages/workshops.html">Workshops</a></li>
+            <li><a href="faqs.html">Frequently Asked Questions</a></li>
+            <li><a href="care-repair.html">Jewellery Care & Repairs</a></li>
+            <li><a href="order-tracking.html">Track Order Status</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+            <li><a href="contact.html">Studio & Bridal Consultation</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Care &amp; Orders</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/cart.html">Shopping Cart</a></li>
-            <li><a href="../pages/checkout.html">Checkout</a></li>
-            <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
-            <li><a href="../pages/wishlist.html">Wishlist</a></li>
-            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
-            <li><a href="../pages/faqs.html">FAQs</a></li>
-            <li><a href="../pages/contact.html">Contact Us</a></li>
-          </ul>
+
+        <div class="footer-col">
+          <h4>Artisan Newsletter</h4>
+          <p style="font-size: 0.85rem; color: #9AAEA4; margin-bottom: 0.8rem;">Subscribe to receive studio updates, private collection previews, and Rs. 500 off your first bespoke piece.</p>
+          <form class="newsletter-form" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid #2F423B; background: #1B2622; color: #FFF; flex: 1; font-size: 0.85rem;">
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+          <div style="margin-top: 1rem; font-size: 0.8rem; color: #82948B;">
+            📍 Studio: F-7 Markaz, Islamabad, Pakistan<br>
+            📞 Phone: +92 (51) 843-2291
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+        <div>&copy; 2026 LUMIÈRE Handmade Jewellery. All Rights Reserved.</div>
+        <div>IICT Fall 2026 Project &bull; Section SE-A &bull; Group 07</div>
       </div>
     </div>
   </footer>
 
+  <!-- Search Overlay Modal -->
+  <div id="searchModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-content" style="max-width: 600px;">
+      <button id="searchClose" class="modal-close" aria-label="Close search modal">✕</button>
+      <h3 id="searchModalTitle" style="font-family: var(--font-serif); margin-bottom: 1rem;">Search Artisanal Pieces</h3>
+      <div class="form-group">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by name, gemstone (emerald, pearl), metal..." autocomplete="off">
+      </div>
+      <div id="searchResults" style="max-height: 350px; overflow-y: auto; margin-top: 1rem;">
+        <p class="text-muted" style="text-align: center; padding: 2rem 0;">Type jewellery name or category...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-out Drawer -->
+  <aside id="cartDrawer" class="drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-header">
+      <h3 id="drawerTitle" style="font-family: var(--font-serif); font-size: 1.25rem;">Shopping Bag</h3>
+      <button id="cartDrawerClose" class="modal-close" style="position: static;" aria-label="Close shopping bag">✕</button>
+    </div>
+    <div id="cartDrawerItems" class="drawer-body">
+      <!-- Injected via JavaScript -->
+    </div>
+    <div id="cartDrawerFooter" class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 700;">
+        <span>Subtotal:</span>
+        <span id="drawerSubtotal">Rs. 0</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="cart.html" class="btn btn-secondary btn-block">View Bag</a>
+        <a href="checkout.html" class="btn btn-primary btn-block">Checkout</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Global Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Base Path Definition & Shared Scripts -->
+  <script>
+    window.LUMIERE_ROOT = "../";
+  </script>
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+
 </body>
 </html>
