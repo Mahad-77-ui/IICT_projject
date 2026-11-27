@@ -1,121 +1,1600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Care &amp; Repair — Zaverat</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta
+    name="description"
+    content="Preserving the brilliance, structure, and sentimental value of every Zaverat creation through mindful daily care and workshop restoration."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --espresso: #4A3222;
+      --bronze: #8C583A;
+      --bronze-hover: #6E4229;
+      --sand-banner: #EBDCC6;
+      --cream-bg: #FAF6F0;
+      --surface-white: #FFFFFF;
+      --warm-border: #E6D9C6;
+      --ink-primary: #1F1A17;
+      --ink-muted: #544C46;
+      --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+      --shadow-subtle: 0 6px 22px rgba(74, 50, 34, 0.05);
+      --shadow-lift: 0 12px 28px rgba(74, 50, 34, 0.09);
+      --transition: 0.22s ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--cream-bg);
+      color: var(--ink-primary);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    svg {
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background-color: var(--espresso);
+      color: var(--surface-white);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    /* Navigation Bar */
+    .site-header {
+      background-color: var(--surface-white);
+      border-bottom: 1px solid var(--warm-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      color: var(--espresso);
+    }
+
+    .brand-wordmark {
+      font-family: var(--font-serif);
+      font-size: 1.52rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      padding: 6px 2px;
+      position: relative;
+      transition: color var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--bronze);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--bronze);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-self: end;
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--warm-border);
+      background-color: var(--surface-white);
+      color: var(--ink-primary);
+      font-size: 0.84rem;
+      font-weight: 500;
+      transition: border-color var(--transition), background-color var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+
+    .pill-btn:hover,
+    .pill-btn:focus-visible {
+      border-color: var(--bronze);
+      color: var(--bronze);
+      background-color: var(--cream-bg);
+    }
+
+    .pill-btn--cart {
+      background-color: var(--espresso);
+      border-color: var(--espresso);
+      color: var(--surface-white);
+    }
+
+    .pill-btn--cart:hover,
+    .pill-btn--cart:focus-visible {
+      background-color: var(--bronze);
+      border-color: var(--bronze);
+      color: var(--surface-white);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--warm-border);
+      background-color: var(--surface-white);
+      color: var(--ink-primary);
+      cursor: pointer;
+      justify-self: end;
+    }
+
+    .mobile-drawer {
+      display: none;
+      border-top: 1px solid var(--warm-border);
+      background-color: var(--surface-white);
+      padding: 16px 24px 22px;
+    }
+
+    .mobile-drawer.is-open {
+      display: block;
+    }
+
+    .mobile-drawer-links {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .mobile-drawer-links a {
+      display: block;
+      padding: 9px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+    }
+
+    .mobile-drawer-links a:hover {
+      background-color: var(--cream-bg);
+      color: var(--bronze);
+    }
+
+    .mobile-drawer-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Hero / Title Banner */
+    .hero-banner {
+      background-color: var(--sand-banner);
+      border-bottom: 1px solid var(--warm-border);
+      padding: 64px 0 72px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin-bottom: 18px;
+    }
+
+    .breadcrumb a {
+      transition: color var(--transition);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--bronze);
+    }
+
+    .breadcrumb-sep {
+      color: var(--bronze);
+    }
+
+    .breadcrumb-current {
+      color: var(--ink-primary);
+      font-weight: 500;
+    }
+
+    .eyebrow-member {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.25rem, 4.6vw, 3.35rem);
+      font-weight: 600;
+      line-height: 1.14;
+      color: var(--ink-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subtitle {
+      max-width: 640px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      padding: 64px 0 84px;
+    }
+
+    .section {
+      margin-bottom: 68px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.65rem, 2.8vw, 2.15rem);
+      font-weight: 600;
+      color: var(--ink-primary);
+      line-height: 1.24;
+      margin-bottom: 8px;
+    }
+
+    .section-lead {
+      max-width: 620px;
+      font-size: 0.96rem;
+      color: var(--ink-muted);
+    }
+
+    /* Section 1: 4-Step Care Routine */
+    .routine-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .step-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--warm-border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lift);
+      border-color: var(--bronze);
+    }
+
+    .step-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--bronze);
+      line-height: 1;
+    }
+
+    .step-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--cream-bg);
+      border: 1px solid var(--warm-border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--espresso);
+    }
+
+    .step-title {
+      font-family: var(--font-serif);
+      font-size: 1.24rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .step-copy {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* Section 2: Repair & Workshop Services Overview */
+    .services-shell {
+      background-color: var(--surface-white);
+      border: 1px solid var(--warm-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-subtle);
+      overflow: hidden;
+    }
+
+    .services-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .services-table thead th {
+      background-color: var(--sand-banner);
+      color: var(--espresso);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--warm-border);
+      white-space: nowrap;
+    }
+
+    .services-table tbody td {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--warm-border);
+      vertical-align: top;
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+    }
+
+    .services-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .services-table tbody tr:hover {
+      background-color: var(--cream-bg);
+    }
+
+    .service-name {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin-bottom: 4px;
+    }
+
+    .service-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--bronze);
+    }
+
+    .turnaround-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background-color: var(--cream-bg);
+      border: 1px solid var(--warm-border);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--espresso);
+      white-space: nowrap;
+    }
+
+    .fee-value {
+      font-weight: 600;
+      color: var(--ink-primary);
+      white-space: nowrap;
+    }
+
+    .services-footnote {
+      padding: 15px 24px;
+      background-color: var(--cream-bg);
+      border-top: 1px solid var(--warm-border);
+      font-size: 0.84rem;
+      color: var(--ink-muted);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .services-footnote strong {
+      color: var(--espresso);
+    }
+
+    /* Section 3: Interactive Care & Repair Booking Form */
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.45fr;
+      background-color: var(--surface-white);
+      border: 1px solid var(--warm-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-subtle);
+      overflow: hidden;
+    }
+
+    .booking-info {
+      background-color: var(--sand-banner);
+      padding: 38px 32px;
+      border-right: 1px solid var(--warm-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .booking-info-title {
+      font-family: var(--font-serif);
+      font-size: 1.72rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      line-height: 1.24;
+      margin-bottom: 12px;
+    }
+
+    .booking-info-copy {
+      font-size: 0.94rem;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+
+    .booking-highlights {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .booking-highlights li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--ink-primary);
+    }
+
+    .highlight-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: var(--espresso);
+      color: var(--surface-white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .booking-studio-box {
+      background-color: var(--surface-white);
+      border: 1px solid var(--warm-border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .booking-studio-box strong {
+      display: block;
+      color: var(--espresso);
+      margin-bottom: 4px;
+    }
+
+    .booking-form-pane {
+      padding: 38px 36px;
+      background-color: var(--surface-white);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-field--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+    }
+
+    .form-label span {
+      color: var(--bronze);
+    }
+
+    .form-input {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: 0.94rem;
+      color: var(--ink-primary);
+      background-color: var(--cream-bg);
+      border: 1px solid var(--warm-border);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      transition: border-color var(--transition), background-color var(--transition), box-shadow var(--transition);
+    }
+
+    .form-input::placeholder {
+      color: #8A7F76;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--bronze);
+      background-color: var(--surface-white);
+      box-shadow: 0 0 0 3px rgba(140, 88, 58, 0.14);
+    }
+
+    textarea.form-input {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    .field-error {
+      display: none;
+      font-size: 0.8rem;
+      color: var(--bronze-hover);
+    }
+
+    .form-field.has-error .form-input {
+      border-color: var(--bronze-hover);
+    }
+
+    .form-field.has-error .field-error {
+      display: block;
+    }
+
+    .form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .form-hint {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+    }
+
+    .bronze-btn {
+      font-family: var(--font-sans);
+      background-color: var(--bronze);
+      color: var(--surface-white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 13px 26px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: background-color var(--transition), transform var(--transition);
+    }
+
+    .bronze-btn:hover,
+    .bronze-btn:focus-visible {
+      background-color: var(--bronze-hover);
+      outline: none;
+    }
+
+    .bronze-btn:active {
+      transform: translateY(1px);
+    }
+
+    /* Confirmation Panel */
+    .booking-confirmation {
+      display: none;
+      padding: 26px 24px;
+      background-color: var(--cream-bg);
+      border: 1px solid var(--warm-border);
+      border-left: 4px solid var(--bronze);
+      border-radius: var(--radius-md);
+    }
+
+    .booking-confirmation.is-visible {
+      display: block;
+    }
+
+    .confirmation-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .confirmation-badge {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: var(--espresso);
+      color: var(--surface-white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .confirmation-title {
+      font-family: var(--font-serif);
+      font-size: 1.32rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+    }
+
+    .confirmation-copy {
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+
+    .confirmation-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      padding: 14px 16px;
+      background-color: var(--surface-white);
+      border: 1px solid var(--warm-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.86rem;
+      margin-bottom: 16px;
+    }
+
+    .confirmation-details dt {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--bronze);
+      font-weight: 600;
+    }
+
+    .confirmation-details dd {
+      color: var(--ink-primary);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .reset-link-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: var(--font-sans);
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--bronze);
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .reset-link-btn:hover {
+      color: var(--bronze-hover);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--sand-banner);
+      border-top: 1px solid var(--warm-border);
+      color: var(--ink-primary);
+    }
+
+    .footer-grid {
+      padding: 50px 0 40px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1.2fr;
+      gap: 36px;
+    }
+
+    .footer-desc {
+      margin-top: 14px;
+      font-size: 0.91rem;
+      color: var(--ink-muted);
+      max-width: 340px;
+    }
+
+    .footer-heading {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px 18px;
+    }
+
+    .footer-links a {
+      font-size: 0.89rem;
+      color: var(--ink-muted);
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--bronze);
+    }
+
+    .footer-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--warm-border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+    }
+
+    .footer-card strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--espresso);
+      margin-bottom: 6px;
+    }
+
+    .footer-bottom {
+      background-color: var(--espresso);
+      color: var(--sand-banner);
+      padding: 14px 0;
+      font-size: 0.82rem;
+    }
+
+    .footer-bottom-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1060px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .routine-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-info {
+        border-right: none;
+        border-bottom: 1px solid var(--warm-border);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        grid-template-columns: auto auto;
+      }
+
+      .nav-links,
+      .nav-pills {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding-inline: 18px;
+      }
+
+      .hero-banner {
+        padding: 46px 0 54px;
+      }
+
+      main {
+        padding: 46px 0 64px;
+      }
+
+      .section {
+        margin-bottom: 50px;
+      }
+
+      .routine-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Responsive Services Table */
+      .services-table thead {
+        display: none;
+      }
+
+      .services-table,
+      .services-table tbody,
+      .services-table tr,
+      .services-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .services-table tbody tr {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--warm-border);
+      }
+
+      .services-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      .services-table tbody td {
+        padding: 5px 0;
+        border-bottom: none;
+      }
+
+      .services-table tbody td[data-label]::before {
+        content: attr(data-label) ': ';
+        font-weight: 600;
+        color: var(--bronze);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .booking-info,
+      .booking-form-pane {
+        padding: 26px 20px;
+      }
+
+      .form-grid,
+      .confirmation-details {
+        grid-template-columns: 1fr;
+      }
+
+      .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .bronze-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 40px 0 32px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Top Espresso Announcement Bar -->
+  <div class="top-bar" role="region" aria-label="Store announcement">
+    Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
+  </div>
+
+  <!-- Navigation Bar -->
   <header class="site-header">
-    <div class="announcement-bar">
-      Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
+    <div class="container">
+      <nav class="navbar" aria-label="Primary Navigation">
+        <a href="../index.html" class="brand" aria-label="Zaverat Home">
+          <svg
+            class="brand-icon"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <polygon points="16,3 29,16 16,29 3,16" stroke="currentColor" stroke-width="1.8" />
+            <polygon points="16,9 23,16 16,23 9,16" stroke="#8C583A" stroke-width="1.5" />
+            <circle cx="16" cy="16" r="1.7" fill="#8C583A" />
+          </svg>
+          <span class="brand-wordmark">Zaverat</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="custom-builder.html">Custom Builder</a></li>
+          <li><a href="style-quiz.html">Style Quiz</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-pills">
+          <a href="wishlist.html" class="pill-btn">Wishlist <span>0</span></a>
+          <a href="cart.html" class="pill-btn pill-btn--cart">Cart <span>0</span></a>
+        </div>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mobileDrawer"
+          aria-label="Open navigation menu"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </nav>
     </div>
-    <nav class="container navbar" aria-label="Primary Navigation">
-      <a class="brand" href="../index.html">
-        <img src="../images/logo.svg" alt="Zaverat logo" width="40" height="40">
-        <span>Zaverat</span>
-      </a>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav-menu">
-        &#9776;
-      </button>
-
-      <ul class="nav-menu" id="primary-nav-menu">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="../pages/shop.html">Shop</a></li>
-        <li><a class="nav-link" href="../pages/custom-builder.html">Custom Builder</a></li>
-        <li><a class="nav-link" href="../pages/style-quiz.html">Style Quiz</a></li>
-        <li><a class="nav-link" href="../pages/workshops.html">Workshops</a></li>
-        <li><a class="nav-link" href="../pages/about.html">About</a></li>
-        <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-drawer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="custom-builder.html">Custom Builder</a></li>
+        <li><a href="style-quiz.html">Style Quiz</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-
-      <div class="nav-actions">
-        <a class="icon-link" href="../pages/wishlist.html" aria-label="Wishlist">
-          <span class="label-text">Wishlist</span>
-          <span class="badge-count" id="wishlist-count">0</span>
-        </a>
-        <a class="icon-link" href="../pages/cart.html" aria-label="Shopping Cart">
-          <span class="label-text">Cart</span>
-          <span class="badge-count" id="cart-count">0</span>
-        </a>
+      <div class="mobile-drawer-pills">
+        <a href="wishlist.html" class="pill-btn">Wishlist 0</a>
+        <a href="cart.html" class="pill-btn pill-btn--cart">Cart 0</a>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> <span>/</span> <span>Care &amp; Repair</span>
-        </nav>
-        <span class="eyebrow">Member 5 &middot; 26i-3088 (Adeena Zaeem)</span>
-        <h1>Jewellery Care &amp; Repair Services</h1>
-        <p class="lead">Keep your heirloom pieces radiant with metal-specific cleaning steps, re-plating, and stone-setting repairs.</p>
-      </div>
-    </section>
+  <!-- Hero / Title Banner -->
+  <section class="hero-banner">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="breadcrumb-current" aria-current="page">Care &amp; Repair</span>
+      </nav>
 
-    <section class="section">
-      <div class="container">
-        <div class="placeholder-panel">
-          <h2>Care Instructions &amp; Repair Request Form</h2>
-          <p>Placeholder for metal care cards (silver, brass, kundan, pearls) and an interactive repair/re-plating booking form.</p>
+      <span class="eyebrow-member">MEMBER 5 &middot; 26I-3088 (ADEENA ZAEEM)</span>
+      <h1 class="hero-title">Care &amp; Repair</h1>
+      <p class="hero-subtitle">
+        Preserving the brilliance, structure, and sentimental value of every Zaverat creation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Section 1: Step-by-Step Care Routine -->
+      <section class="section" aria-labelledby="routine-heading">
+        <div class="section-head">
+          <p class="section-eyebrow">Daily Preservation</p>
+          <h2 class="section-title" id="routine-heading">Step-by-Step Care Routine</h2>
+          <p class="section-lead">
+            Four mindful habits designed to keep precious metals luminous and delicate stone settings secure through years of wear.
+          </p>
         </div>
-      </div>
-    </section>
+
+        <div class="routine-grid">
+          <article class="step-card">
+            <div class="step-top">
+              <span class="step-number">01</span>
+              <span class="step-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3v12" />
+                  <path d="M8 11l4 4 4-4" />
+                  <circle cx="12" cy="19" r="2" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="step-title">Wear Last</h3>
+            <p class="step-copy">
+              Put jewellery on after skincare, perfumes, and hair products have dried.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-top">
+              <span class="step-number">02</span>
+              <span class="step-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.5C12 2.5 6 9.5 6 14a6 6 0 0 0 12 0c0-4.5-6-11.5-6-11.5z" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="step-title">Clean Gently</h3>
+            <p class="step-copy">
+              Wipe with a soft lint-free cloth or mild soap and lukewarm water where appropriate.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-top">
+              <span class="step-number">03</span>
+              <span class="step-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="7" width="16" height="13" rx="2" />
+                  <path d="M8 7V5a4 4 0 0 1 8 0v2" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="step-title">Store Separately</h3>
+            <p class="step-copy">
+              Keep pieces in individual soft pouches or lined compartments to prevent scratches.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-top">
+              <span class="step-number">04</span>
+              <span class="step-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="7" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </span>
+            </div>
+            <h3 class="step-title">Inspect Periodically</h3>
+            <p class="step-copy">
+              Check clasps, jump rings, and stone settings every few months.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 2: Repair & Workshop Services Overview -->
+      <section class="section" aria-labelledby="services-heading">
+        <div class="section-head">
+          <p class="section-eyebrow">Atelier Bench Services</p>
+          <h2 class="section-title" id="services-heading">Repair &amp; Workshop Services Overview</h2>
+          <p class="section-lead">
+            Our Islamabad artisans carry out precision resizing, soldering, stone checks, and finish restoration in-house.
+          </p>
+        </div>
+
+        <div class="services-shell">
+          <div class="services-table-wrap">
+            <table class="services-table">
+              <thead>
+                <tr>
+                  <th scope="col">Service</th>
+                  <th scope="col">Typical Turnaround</th>
+                  <th scope="col">Estimated Fee (PKR)</th>
+                  <th scope="col">Service Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="service-name">Ring &amp; Bracelet Resizing</div>
+                    <span class="service-tag">Precision Sizing &amp; Balance</span>
+                  </td>
+                  <td data-label="Turnaround">
+                    <span class="turnaround-pill">4&ndash;6 business days</span>
+                  </td>
+                  <td data-label="Fee" class="fee-value">PKR 1,800 &ndash; 3,800</td>
+                  <td data-label="Details">
+                    Seamless sizing up or down on gold, vermeil, and sterling bands, followed by joint buffing and structural shaping.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="service-name">Chain &amp; Clasp Repair</div>
+                    <span class="service-tag">Links, Soldering &amp; Closures</span>
+                  </td>
+                  <td data-label="Turnaround">
+                    <span class="turnaround-pill">2&ndash;4 business days</span>
+                  </td>
+                  <td data-label="Fee" class="fee-value">PKR 1,200 &ndash; 2,600</td>
+                  <td data-label="Details">
+                    Micro-soldering broken links, reinforcing jump rings, and replacing worn lobster clasps, spring rings, or extender chains.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="service-name">Stone Setting &amp; Prong Check</div>
+                    <span class="service-tag">Security &amp; Alignment</span>
+                  </td>
+                  <td data-label="Turnaround">
+                    <span class="turnaround-pill">3&ndash;5 business days</span>
+                  </td>
+                  <td data-label="Fee" class="fee-value">PKR 1,500 &ndash; 4,200</td>
+                  <td data-label="Details">
+                    Magnified inspection of claws and bezels, re-tipping worn prongs, and tightening or resetting loose gemstones safely.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="service-name">Polish &amp; Refresh</div>
+                    <span class="service-tag">Lustre &amp; Re-Plating</span>
+                  </td>
+                  <td data-label="Turnaround">
+                    <span class="turnaround-pill">3&ndash;5 business days</span>
+                  </td>
+                  <td data-label="Fee" class="fee-value">PKR 1,000 &ndash; 2,800</td>
+                  <td data-label="Details">
+                    Deep studio cleaning, tarnish removal, surface scratch buffing, and optional 18k gold-vermeil micron re-plating.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="services-footnote">
+            <span><strong>First-Year Complimentary Care:</strong> Zaverat pieces within 12 months of purchase receive free prong checks and studio polishing.</span>
+            <span>All estimates confirmed before bench work begins.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Interactive Care & Repair Booking Form -->
+      <section class="section" aria-labelledby="booking-heading">
+        <div class="booking-layout">
+          <aside class="booking-info">
+            <div>
+              <p class="section-eyebrow">Schedule a Bench Visit</p>
+              <h2 class="booking-info-title" id="booking-heading">Book a Care &amp; Repair Assessment</h2>
+              <p class="booking-info-copy">
+                Share a few details about your piece and the service you need. Our care specialist will send a confirmed estimate and drop-off or insured courier options.
+              </p>
+
+              <ul class="booking-highlights">
+                <li>
+                  <span class="highlight-dot" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span>Direct bench inspection by Zaverat craftspeople</span>
+                </li>
+                <li>
+                  <span class="highlight-dot" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span>Transparent PKR quote before any restoration starts</span>
+                </li>
+                <li>
+                  <span class="highlight-dot" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span>Returned in a protective anti-tarnish Zaverat pouch</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="booking-studio-box">
+              <strong>Workshop Hours</strong>
+              Monday &ndash; Saturday, 11:00 AM &ndash; 7:00 PM PKT &middot; Insured nationwide return courier available across Pakistan.
+            </div>
+          </aside>
+
+          <div class="booking-form-pane">
+            <form id="careBookingForm" novalidate>
+              <div class="form-grid">
+                <div class="form-field" data-field="customerName">
+                  <label class="form-label" for="customerName">Customer Name <span>*</span></label>
+                  <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    class="form-input"
+                    placeholder="e.g., Adeena Zaeem"
+                    required
+                  />
+                  <span class="field-error">Please enter your full name.</span>
+                </div>
+
+                <div class="form-field" data-field="contactEmail">
+                  <label class="form-label" for="contactEmail">Contact Email <span>*</span></label>
+                  <input
+                    type="email"
+                    id="contactEmail"
+                    name="contactEmail"
+                    class="form-input"
+                    placeholder="name@example.com"
+                    required
+                  />
+                  <span class="field-error">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-field" data-field="jewelleryType">
+                  <label class="form-label" for="jewelleryType">Jewellery Type <span>*</span></label>
+                  <select id="jewelleryType" name="jewelleryType" class="form-input" required>
+                    <option value="" disabled selected>Select jewellery type</option>
+                    <option value="Ring">Ring</option>
+                    <option value="Necklace / Chain">Necklace / Chain</option>
+                    <option value="Bracelet / Bangle">Bracelet / Bangle</option>
+                    <option value="Earrings">Earrings</option>
+                    <option value="Heirloom / Custom Set">Heirloom / Custom Set</option>
+                  </select>
+                  <span class="field-error">Please select the jewellery type.</span>
+                </div>
+
+                <div class="form-field" data-field="serviceNeeded">
+                  <label class="form-label" for="serviceNeeded">Service Needed <span>*</span></label>
+                  <select id="serviceNeeded" name="serviceNeeded" class="form-input" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="Ring &amp; Bracelet Resizing">Ring &amp; Bracelet Resizing</option>
+                    <option value="Chain &amp; Clasp Repair">Chain &amp; Clasp Repair</option>
+                    <option value="Stone Setting &amp; Prong Check">Stone Setting &amp; Prong Check</option>
+                    <option value="Polish &amp; Refresh">Polish &amp; Refresh</option>
+                    <option value="Full Restoration Assessment">Full Restoration Assessment</option>
+                  </select>
+                  <span class="field-error">Please choose the service needed.</span>
+                </div>
+
+                <div class="form-field form-field--full" data-field="careNotes">
+                  <label class="form-label" for="careNotes">Care Notes <span>*</span></label>
+                  <textarea
+                    id="careNotes"
+                    name="careNotes"
+                    class="form-input"
+                    placeholder="Share your order reference (if available), metal finish, stone type, or the specific repair needed..."
+                    required
+                  ></textarea>
+                  <span class="field-error">Please describe what your piece needs.</span>
+                </div>
+
+                <div class="form-actions">
+                  <span class="form-hint">We respond to all repair bookings within one business day.</span>
+                  <button type="submit" class="bronze-btn">Book Care &amp; Repair</button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Confirmation Feedback -->
+            <div class="booking-confirmation" id="bookingConfirmation" role="status" aria-live="polite">
+              <div class="confirmation-head">
+                <span class="confirmation-badge" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <h3 class="confirmation-title">Care &amp; Repair Booking Confirmed</h3>
+              </div>
+              <p class="confirmation-copy" id="confirmationText"></p>
+              <dl class="confirmation-details" id="confirmationDetails"></dl>
+              <button type="button" class="reset-link-btn" id="newBookingBtn">
+                Book another care or repair service
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
+  <!-- Matching Zaverat Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3>Zaverat</h3>
-          <p>Handcrafted heritage jewellery store built by Group 07 for CL1000 ICT Final Project.</p>
+          <a href="../index.html" class="brand" aria-label="Zaverat Home">
+            <svg
+              class="brand-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <polygon points="16,3 29,16 16,29 3,16" stroke="currentColor" stroke-width="1.8" />
+              <polygon points="16,9 23,16 16,23 9,16" stroke="#8C583A" stroke-width="1.5" />
+              <circle cx="16" cy="16" r="1.7" fill="#8C583A" />
+            </svg>
+            <span class="brand-wordmark">Zaverat</span>
+          </a>
+          <p class="footer-desc">
+            Handcrafted in small batches with precious metals and ethically sourced stones, supported by lifetime workshop care.
+          </p>
         </div>
+
         <div>
-          <h4>Shop &amp; Discover</h4>
+          <h2 class="footer-heading">Explore Zaverat</h2>
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/shop.html">Shop All</a></li>
-            <li><a href="../pages/product-detail.html">Product Detail</a></li>
-            <li><a href="../pages/style-quiz.html">Style Quiz</a></li>
-            <li><a href="../pages/reviews.html">Customer Reviews</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="custom-builder.html">Custom Builder</a></li>
+            <li><a href="style-quiz.html">Style Quiz</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="care-repair.html">Care &amp; Repair</a></li>
           </ul>
         </div>
+
         <div>
-          <h4>Bespoke &amp; Craft</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/custom-builder.html">Custom Builder</a></li>
-            <li><a href="../pages/materials.html">Materials &amp; Gemstones</a></li>
-            <li><a href="../pages/size-guide.html">Size Guide</a></li>
-            <li><a href="../pages/about.html">About &amp; Artisans</a></li>
-            <li><a href="../pages/sustainability.html">Sustainability</a></li>
-            <li><a href="../pages/workshops.html">Workshops</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Care &amp; Orders</h4>
-          <ul class="footer-links">
-            <li><a href="../pages/cart.html">Shopping Cart</a></li>
-            <li><a href="../pages/checkout.html">Checkout</a></li>
-            <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
-            <li><a href="../pages/wishlist.html">Wishlist</a></li>
-            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
-            <li><a href="../pages/faqs.html">FAQs</a></li>
-            <li><a href="../pages/contact.html">Contact Us</a></li>
-          </ul>
+          <div class="footer-card">
+            <strong>Zaverat Care Bench</strong>
+            Need sizing advice before ordering or restoration on an heirloom piece? Our jewellers are always glad to inspect, refresh, and preserve your pieces.
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>&copy; 2026 Zaverat Jewellery. All rights reserved.</span>
+        <span>Handcrafted in small batches &middot; Care &amp; Restoration Studio</span>
       </div>
     </div>
   </footer>
 
-  <script src="../js/data.js"></script>
-  <script src="../js/storage.js"></script>
-  <script src="../js/app.js"></script>
+  <script>
+    (function () {
+      // Mobile Drawer Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+
+      if (menuToggle && mobileDrawer) {
+        menuToggle.addEventListener('click', function () {
+          const open = mobileDrawer.classList.toggle('is-open');
+          menuToggle.setAttribute('aria-expanded', String(open));
+        });
+      }
+
+      // Interactive Care & Repair Booking Form
+      const form = document.getElementById('careBookingForm');
+      const confirmation = document.getElementById('bookingConfirmation');
+      const confirmationText = document.getElementById('confirmationText');
+      const confirmationDetails = document.getElementById('confirmationDetails');
+      const newBookingBtn = document.getElementById('newBookingBtn');
+
+      const inputs = {
+        customerName: document.getElementById('customerName'),
+        contactEmail: document.getElementById('contactEmail'),
+        jewelleryType: document.getElementById('jewelleryType'),
+        serviceNeeded: document.getElementById('serviceNeeded'),
+        careNotes: document.getElementById('careNotes')
+      };
+
+      function toggleError(key, show) {
+        const field = document.querySelector('[data-field="' + key + '"]');
+        if (field) {
+          field.classList.toggle('has-error', show);
+        }
+      }
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      Object.keys(inputs).forEach(function (key) {
+        const control = inputs[key];
+        if (!control) return;
+        const evt = control.tagName === 'SELECT' ? 'change' : 'input';
+        control.addEventListener(evt, function () {
+          toggleError(key, false);
+        });
+      });
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const data = {
+            customerName: inputs.customerName.value.trim(),
+            contactEmail: inputs.contactEmail.value.trim(),
+            jewelleryType: inputs.jewelleryType.value.trim(),
+            serviceNeeded: inputs.serviceNeeded.value.trim(),
+            careNotes: inputs.careNotes.value.trim()
+          };
+
+          let valid = true;
+
+          if (!data.customerName) {
+            toggleError('customerName', true);
+            valid = false;
+          }
+          if (!data.contactEmail || !isValidEmail(data.contactEmail)) {
+            toggleError('contactEmail', true);
+            valid = false;
+          }
+          if (!data.jewelleryType) {
+            toggleError('jewelleryType', true);
+            valid = false;
+          }
+          if (!data.serviceNeeded) {
+            toggleError('serviceNeeded', true);
+            valid = false;
+          }
+          if (!data.careNotes) {
+            toggleError('careNotes', true);
+            valid = false;
+          }
+
+          if (!valid) {
+            const firstInvalid = form.querySelector('.has-error .form-input');
+            if (firstInvalid) firstInvalid.focus();
+            return;
+          }
+
+          const bookingRef = 'ZAV-CR-' + Math.floor(1000 + Math.random() * 9000);
+
+          confirmationText.textContent =
+            'Thank you, ' +
+            data.customerName +
+            '. Your booking request has been logged with our care bench, and a confirmation note with drop-off and insured courier details will be sent to ' +
+            data.contactEmail +
+            '.';
+
+          confirmationDetails.replaceChildren();
+          [
+            ['Booking Reference', bookingRef],
+            ['Jewellery Type', data.jewelleryType],
+            ['Service Needed', data.serviceNeeded],
+            ['Contact Email', data.contactEmail]
+          ].forEach(function (item) {
+            const group = document.createElement('div');
+            const dt = document.createElement('dt');
+            const dd = document.createElement('dd');
+            dt.textContent = item[0];
+            dd.textContent = item[1];
+            group.appendChild(dt);
+            group.appendChild(dd);
+            confirmationDetails.appendChild(group);
+          });
+
+          form.hidden = true;
+          confirmation.classList.add('is-visible');
+          confirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      }
+
+      if (newBookingBtn && form) {
+        newBookingBtn.addEventListener('click', function () {
+          form.reset();
+          Object.keys(inputs).forEach(function (key) {
+            toggleError(key, false);
+          });
+          confirmation.classList.remove('is-visible');
+          form.hidden = false;
+          inputs.customerName.focus();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
