@@ -9,7 +9,7 @@
 <body>
   <header class="site-header">
     <div class="announcement-bar">
-      Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
+      Handcrafted in small batches · Free insured shipping on orders over PKR 10,000
     </div>
     <nav class="container navbar" aria-label="Primary Navigation">
       <a class="brand" href="../index.html">
@@ -18,7 +18,7 @@
       </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav-menu">
-        &#9776;
+        ☰
       </button>
 
       <ul class="nav-menu" id="primary-nav-menu">
@@ -50,7 +50,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="../index.html">Home</a> <span>/</span> <a href="../pages/cart.html">Cart</a> <span>/</span> <span>Checkout</span>
         </nav>
-        <span class="eyebrow">Member 2 &middot; 26i-3089 (Hasana Fatima)</span>
+        <span class="eyebrow">Member 2 · 26i-3089 (Hasana Fatima)</span>
         <h1>Secure Checkout</h1>
         <p class="lead">Enter shipping details, choose delivery method, and complete your handmade jewellery order.</p>
       </div>
@@ -58,13 +58,190 @@
 
     <section class="section">
       <div class="container">
-        <div class="placeholder-panel">
-          <h2>Shipping, Payment &amp; Confirmation</h2>
-          <p>Placeholder for validated shipping address form, payment method selection (COD / card simulation), order summary, and generated tracking number linking to <a href="../pages/order-tracking.html">Order Tracking</a>.</p>
+        <div class="checkout-grid">
+          <div class="checkout-forms">
+            <form id="checkout-form">
+              <h2 class="section-title">Contact Information</h2>
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required class="input" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required class="input" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="phone">Pakistani Mobile / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" required class="input" placeholder="+92 3XX XXXXXXX">
+              </div>
+
+              <h2 class="section-title">Delivery Address</h2>
+              <div class="form-group">
+                <label for="address">Street Address / House & Sector</label>
+                <input type="text" id="address" name="address" required class="input" placeholder="Street, House, Sector">
+              </div>
+              <div class="form-group">
+                <label for="apartment">Apartment / Landmark (optional)</label>
+                <input type="text" id="apartment" name="apartment" class="input" placeholder="Apt #, Landmark">
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <select id="city" name="city" required class="input">
+                  <option value="" disabled selected>Select city</option>
+                  <option>Islamabad</option>
+                  <option>Rawalpindi</option>
+                  <option>Lahore</option>
+                  <option>Karachi</option>
+                  <option>Peshawar</option>
+                  <option>Faisalabad</option>
+                  <option>Multan</option>
+                  <option>Sialkot</option>
+                  <option>Quetta</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="postal">Postal Code</label>
+                <input type="text" id="postal" name="postal" required class="input" placeholder="XXXXX">
+              </div>
+              <div class="form-group">
+                <label for="instructions">Delivery Instructions (optional)</label>
+                <textarea id="instructions" name="instructions" class="input" rows="2" placeholder="Gate code, preferred time, etc."></textarea>
+              </div>
+
+              <h2 class="section-title">Shipping Method</h2>
+              <div class="delivery-options">
+                <label class="delivery-card">
+                  <input type="radio" name="delivery" value="standard" checked>
+                  <span class="card-title">Standard Insured Courier</span>
+                  <span class="card-desc">3–5 Business Days – FREE on orders over PKR 10,000, otherwise PKR 250</span>
+                </label>
+                <label class="delivery-card">
+                  <input type="radio" name="delivery" value="express">
+                  <span class="card-title">Express Insured Delivery</span>
+                  <span class="card-desc">1–2 Business Days – PKR 500</span>
+                </label>
+              </div>
+
+              <h2 class="section-title">Payment Method</h2>
+              <div class="payment-options">
+                <label class="payment-card">
+                  <input type="radio" name="payment" value="cod" checked>
+                  <span class="card-title">Cash on Delivery (COD)</span>
+                </label>
+                <label class="payment-card">
+                  <input type="radio" name="payment" value="card">
+                  <span class="card-title">Credit / Debit Card</span>
+                </label>
+                <label class="payment-card">
+                  <input type="radio" name="payment" value="jazzcash">
+                  <span class="card-title">JazzCash / EasyPaisa</span>
+                </label>
+                <label class="payment-card">
+                  <input type="radio" name="payment" value="ibft">
+                  <span class="card-title">Direct Bank Transfer (IBFT)</span>
+                </label>
+              </div>
+
+              <div id="card-details" class="hidden payment-details">
+                <div class="form-group">
+                  <label for="cardNumber">Card Number</label>
+                  <input type="text" id="cardNumber" name="cardNumber" class="input" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-group">
+                  <label for="cardName">Cardholder Name</label>
+                  <input type="text" id="cardName" name="cardName" class="input" placeholder="Name as on card">
+                </div>
+                <div class="form-group">
+                  <label for="expiry">Expiry (MM/YY)</label>
+                  <input type="text" id="expiry" name="expiry" class="input" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" class="input" placeholder="123">
+                </div>
+              </div>
+
+              <div id="jazzcash-details" class="hidden payment-details">
+                <div class="form-group">
+                  <label for="jazzNumber">JazzCash / EasyPaisa Number</label>
+                  <input type="text" id="jazzNumber" name="jazzNumber" class="input" placeholder="03XX-XXXXXXX">
+                </div>
+              </div>
+
+              <div id="ibft-details" class="hidden payment-details">
+                <div class="form-group">
+                  <label for="bankAccount">Bank Account / IBAN</label>
+                  <input type="text" id="bankAccount" name="bankAccount" class="input" placeholder="PKxx xxxx xxxx xxxx xxxx">
+                </div>
+                <div class="form-group">
+                  <label for="reference">Transaction Reference</label>
+                  <input type="text" id="reference" name="reference" class="input" placeholder="Reference ID">
+                </div>
+              </div>
+            </form>
+
+            <div id="order-receipt" class="hidden">
+              <h2>Order Confirmation</h2>
+              <p>Thank you for your purchase! Your order number is <strong id="order-number"></strong>.</p>
+              <button type="button" onclick="window.print()" class="btn">Print Receipt</button>
+              <a href="../index.html" class="btn primary">Continue Shopping</a>
+            </div>
+
+            <div id="empty-cart" class="hidden">
+              <p>Your cart is empty.</p>
+              <a href="../pages/shop.html" class="btn">Continue Shopping</a>
+            </div>
+          </div>
+
+          <div class="sticky-summary">
+            <div class="checkout-summary card" id="order-summary">
+              <h2>Order Summary</h2>
+              <div id="summary-items" class="summary-items"></div>
+              <div class="price-breakdown">
+                <p>Subtotal: <span id="summary-subtotal"></span> PKR</p>
+                <p>Promo Discount: <span id="summary-discount">0</span> PKR</p>
+                <p>Shipping: <span id="summary-shipping"></span> PKR</p>
+                <p class="total">Total: <span id="summary-total"></span> PKR</p>
+              </div>
+              <div class="promo-code">
+                <input type="text" id="promo-code" placeholder="Enter promo code" class="input">
+                <button type="button" id="apply-promo" class="btn">Apply</button>
+              </div>
+              <div class="gift-box">
+                <label for="gift-note">Gift Note (optional)</label>
+                <textarea id="gift-note" class="input" rows="2" placeholder="Add a personal note"></textarea>
+              </div>
+              <button type="button" class="place-order-btn btn primary full-width" id="place-order-btn">Place Order — PKR <span id="btn-total"></span></button>
+              <div class="trust-badges">
+                <p>✓ 100% Hallmarked Authenticity</p>
+                <p>✓ Insured Tamper‑Proof Packaging</p>
+                <p>✓ 7‑Day Easy Exchange</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Order Confirmation Pop-Up Modal -->
+  <div id="order-confirm-modal" class="checkout-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="checkout-modal-card">
+      <h3 id="modal-title">Confirm Your Zaverat Order</h3>
+      <p>Please review your final order details before placing your order:</p>
+      <div class="checkout-modal-summary">
+        <p><strong>Recipient:</strong> <span id="modal-name"></span></p>
+        <p><strong>Delivery City:</strong> <span id="modal-city"></span></p>
+        <p><strong>Payment Method:</strong> <span id="modal-payment"></span></p>
+        <p><strong>Total Amount:</strong> PKR <span id="modal-total"></span></p>
+      </div>
+      <div class="checkout-modal-actions">
+        <button type="button" id="modal-cancel" class="btn">Cancel / Review</button>
+        <button type="button" id="modal-confirm" class="btn primary">Confirm Order</button>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
@@ -74,7 +251,7 @@
           <p>Handcrafted heritage jewellery store built by Group 07 for CL1000 ICT Final Project.</p>
         </div>
         <div>
-          <h4>Shop &amp; Discover</h4>
+          <h4>Shop & Discover</h4>
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../pages/shop.html">Shop All</a></li>
@@ -84,32 +261,32 @@
           </ul>
         </div>
         <div>
-          <h4>Bespoke &amp; Craft</h4>
+          <h4>Bespoke & Craft</h4>
           <ul class="footer-links">
             <li><a href="../pages/custom-builder.html">Custom Builder</a></li>
-            <li><a href="../pages/materials.html">Materials &amp; Gemstones</a></li>
+            <li><a href="../pages/materials.html">Materials & Gemstones</a></li>
             <li><a href="../pages/size-guide.html">Size Guide</a></li>
-            <li><a href="../pages/about.html">About &amp; Artisans</a></li>
+            <li><a href="../pages/about.html">About & Artisans</a></li>
             <li><a href="../pages/sustainability.html">Sustainability</a></li>
             <li><a href="../pages/workshops.html">Workshops</a></li>
           </ul>
         </div>
         <div>
-          <h4>Care &amp; Orders</h4>
+          <h4>Care & Orders</h4>
           <ul class="footer-links">
             <li><a href="../pages/cart.html">Shopping Cart</a></li>
             <li><a href="../pages/checkout.html">Checkout</a></li>
             <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
             <li><a href="../pages/wishlist.html">Wishlist</a></li>
-            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
+            <li><a href="../pages/care-repair.html">Care & Repair</a></li>
             <li><a href="../pages/faqs.html">FAQs</a></li>
             <li><a href="../pages/contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+        <p>© <span data-current-year>2026</span> Zaverat — Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
+        <p class="ai-disclosure">AI Image Disclosure: [Placeholder — List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
       </div>
     </div>
   </footer>
@@ -117,5 +294,286 @@
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+  (() => {
+    const formatPKR = n => n.toLocaleString('en-PK');
+
+    // Load cart from shared storage helper
+    let rawCart = ZaveratStorage.getCart();
+    if (rawCart.length === 0) {
+      rawCart = [
+        { productId: 'zv-001', quantity: 1 },
+        { productId: 'zv-002', quantity: 1 },
+        { productId: 'zv-003', quantity: 1 }
+      ];
+    }
+
+    const productMap = ZAVERAT_DATA.products.reduce((m, p) => { m[p.id] = p; return m; }, {});
+    const cart = rawCart.map(it => {
+      const prod = productMap[it.productId] || {};
+      return {
+        productId: it.productId,
+        name: prod.name || 'Item',
+        price: prod.price || 0,
+        quantity: it.quantity,
+        image: prod.image ? `../${prod.image}` : '../images/placeholder.png'
+      };
+    });
+
+    const formContainer = document.querySelector('.checkout-forms');
+    const summaryColumn = document.querySelector('.sticky-summary');
+    const emptyMsg = document.getElementById('empty-cart');
+    const receipt = document.getElementById('order-receipt');
+    const summaryItems = document.getElementById('summary-items');
+    const subEl = document.getElementById('summary-subtotal');
+    const discountEl = document.getElementById('summary-discount');
+    const shipEl = document.getElementById('summary-shipping');
+    const totalEl = document.getElementById('summary-total');
+    const btnTotal = document.getElementById('btn-total');
+    const promoInput = document.getElementById('promo-code');
+    const applyPromoBtn = document.getElementById('apply-promo');
+    const giftNoteEl = document.getElementById('gift-note');
+    const form = document.getElementById('checkout-form');
+    const cardDetails = document.getElementById('card-details');
+    const jazzDetails = document.getElementById('jazzcash-details');
+    const ibftDetails = document.getElementById('ibft-details');
+
+    const PROMO_CODE = 'ZAVERAT10';
+    const PROMO_RATE = 0.10;
+    let promoApplied = false;
+
+    const toggle = (el, show) => {
+      if (!el) return;
+      el.classList.toggle('hidden', !show);
+    };
+
+    if (cart.length === 0) {
+      if (formContainer) formContainer.style.display = 'none';
+      if (emptyMsg) emptyMsg.classList.remove('hidden');
+    } else {
+      if (formContainer) formContainer.style.display = '';
+      if (emptyMsg) emptyMsg.classList.add('hidden');
+    }
+
+    const renderCart = () => {
+      summaryItems.innerHTML = '';
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'summary-item';
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.name;
+        img.style.width = '48px';
+        img.style.height = '48px';
+        img.style.objectFit = 'cover';
+        img.style.marginRight = '8px';
+        const txt = document.createElement('span');
+        txt.textContent = `${item.name} × ${item.quantity} — ${formatPKR(item.price * item.quantity)} PKR`;
+        div.appendChild(img);
+        div.appendChild(txt);
+        summaryItems.appendChild(div);
+      });
+    };
+
+    const calculateTotals = () => {
+      const subtotal = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
+      const delivery = document.querySelector('input[name="delivery"]:checked').value;
+      const shipping = subtotal > 10000 ? 0 : (delivery === 'express' ? 500 : 250);
+      const discount = promoApplied ? Math.round(subtotal * PROMO_RATE) : 0;
+      const total = subtotal - discount + shipping;
+      if (subEl) subEl.textContent = formatPKR(subtotal);
+      if (discountEl) discountEl.textContent = formatPKR(discount);
+      if (shipEl) shipEl.textContent = formatPKR(shipping);
+      if (totalEl) totalEl.textContent = formatPKR(total);
+      if (btnTotal) btnTotal.textContent = formatPKR(total);
+      return { subtotal, discount, shipping, total };
+    };
+
+    const applyPromo = () => {
+      const code = promoInput.value.trim().toUpperCase();
+      if (code === PROMO_CODE && !promoApplied) {
+        promoApplied = true;
+        calculateTotals();
+        alert('Promo applied – 10% discount');
+      } else if (promoApplied) {
+        alert('Promo already applied');
+      } else {
+        alert('Invalid promo code');
+      }
+    };
+
+    if (cart.length > 0) {
+      renderCart();
+      calculateTotals();
+    }
+
+    document.querySelectorAll('input[name="delivery"]').forEach(r => {
+      r.addEventListener('change', calculateTotals);
+    });
+
+    document.querySelectorAll('input[name="payment"]').forEach(r => {
+      r.addEventListener('change', () => {
+        toggle(cardDetails, r.value === 'card' && r.checked);
+        toggle(jazzDetails, r.value === 'jazzcash' && r.checked);
+        toggle(ibftDetails, r.value === 'ibft' && r.checked);
+      });
+    });
+
+    if (applyPromoBtn) applyPromoBtn.addEventListener('click', applyPromo);
+
+    const showError = (el, msg) => {
+      let err = el.parentElement.querySelector('.error-msg');
+      if (!err) {
+        err = document.createElement('div');
+        err.className = 'error-msg';
+        err.style.color = 'red';
+        err.style.fontSize = '0.85rem';
+        el.parentElement.appendChild(err);
+      }
+      err.textContent = msg;
+      el.classList.add('invalid');
+    };
+
+    const clearError = el => {
+      const err = el.parentElement.querySelector('.error-msg');
+      if (err) err.remove();
+      el.classList.remove('invalid');
+    };
+
+    const validateForm = () => {
+      let ok = true;
+      const required = ['fullName', 'email', 'phone', 'address', 'city', 'postal'];
+      required.forEach(id => {
+        const el = document.getElementById(id);
+        clearError(el);
+        if (!el.value.trim()) { showError(el, 'Required'); ok = false; }
+      });
+      const email = document.getElementById('email');
+      if (email.value && !/^\S+@\S+\.\S+$/.test(email.value)) { showError(email, 'Invalid email'); ok = false; }
+      const phone = document.getElementById('phone');
+      if (phone.value && !/^(\+?92|0)3[0-9]{9}$/.test(phone.value.replace(/[\s-]/g, ''))) { showError(phone, 'Invalid PK phone'); ok = false; }
+      const payment = document.querySelector('input[name="payment"]:checked').value;
+      if (payment === 'card') {
+        ['cardNumber', 'expiry', 'cvv'].forEach(id => {
+          const el = document.getElementById(id);
+          clearError(el);
+          if (!el.value.trim()) { showError(el, 'Required'); ok = false; }
+        });
+        const card = document.getElementById('cardNumber');
+        if (card.value && !/^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$/.test(card.value)) { showError(card, 'Invalid card'); ok = false; }
+        const exp = document.getElementById('expiry');
+        if (exp.value && !/^(0[1-9]|1[0-2])\/\d{2}$/.test(exp.value)) { showError(exp, 'Invalid expiry'); ok = false; }
+        const cvv = document.getElementById('cvv');
+        if (cvv.value && !/^\d{3}$/.test(cvv.value)) { showError(cvv, 'Invalid CVV'); ok = false; }
+      } else if (payment === 'jazzcash') {
+        const jazz = document.getElementById('jazzNumber');
+        clearError(jazz);
+        if (!jazz.value.trim()) { showError(jazz, 'Required'); ok = false; }
+      } else if (payment === 'ibft') {
+        ['bankAccount', 'reference'].forEach(id => {
+          const el = document.getElementById(id);
+          clearError(el);
+          if (!el.value.trim()) { showError(el, 'Required'); ok = false; }
+        });
+      }
+      return ok;
+    };
+
+    const paymentLabels = {
+      cod: 'Cash on Delivery (COD)',
+      card: 'Credit / Debit Card',
+      jazzcash: 'JazzCash / EasyPaisa',
+      ibft: 'Direct Bank Transfer (IBFT)'
+    };
+
+    // Open confirmation modal on Place Order click
+    const placeOrderBtn = document.getElementById('place-order-btn');
+    placeOrderBtn.addEventListener('click', e => {
+      e.preventDefault();
+      form.querySelectorAll('.error-msg').forEach(el => el.remove());
+      if (!validateForm()) {
+        const firstError = form.querySelector('.invalid');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstError.focus();
+        }
+        return;
+      }
+
+      const paymentVal = document.querySelector('input[name="payment"]:checked').value;
+      const totals = calculateTotals();
+      document.getElementById('modal-name').textContent = document.getElementById('fullName').value.trim();
+      document.getElementById('modal-city').textContent = document.getElementById('city').value.trim();
+      document.getElementById('modal-payment').textContent = paymentLabels[paymentVal] || paymentVal;
+      document.getElementById('modal-total').textContent = formatPKR(totals.total);
+      document.getElementById('order-confirm-modal').classList.remove('hidden');
+    });
+
+    // Cancel modal
+    document.getElementById('modal-cancel').addEventListener('click', () => {
+      document.getElementById('order-confirm-modal').classList.add('hidden');
+        // Close modal when clicking outside the card (backdrop)
+        document.getElementById('order-confirm-modal').addEventListener('click', e => {
+          if (e.target === e.currentTarget) {
+            e.currentTarget.classList.add('hidden');
+          }
+        });
+        // Close modal on Escape key press
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && !document.getElementById('order-confirm-modal').classList.contains('hidden')) {
+            document.getElementById('order-confirm-modal').classList.add('hidden');
+          }
+        });
+    });
+
+    // Finalize order on Confirm Order click
+    document.getElementById('modal-confirm').addEventListener('click', () => {
+      const totals = calculateTotals();
+      const order = {
+        tracking: `ZVR-2026-${Math.random().toString(36).substring(2, 6).toUpperCase()}`,
+        items: cart,
+        shippingInfo: {
+          fullName: document.getElementById('fullName').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          address: document.getElementById('address').value.trim(),
+          apartment: document.getElementById('apartment')?.value.trim() || '',
+          city: document.getElementById('city').value.trim(),
+          postal: document.getElementById('postal').value.trim(),
+          instructions: document.getElementById('instructions')?.value.trim() || '',
+          delivery: document.querySelector('input[name="delivery"]:checked').value,
+          giftNote: giftNoteEl?.value.trim() || ''
+        },
+        paymentMethod: document.querySelector('input[name="payment"]:checked').value,
+        totals,
+        placedAt: new Date().toISOString()
+      };
+
+      ZaveratStorage.saveCart([]);
+      window.localStorage.setItem('zaverat_last_order', JSON.stringify(order));
+
+      const cartBadge = document.getElementById('cart-count');
+      if (cartBadge) cartBadge.textContent = '0';
+
+      document.getElementById('order-confirm-modal').classList.add('hidden');
+        // Close modal when clicking outside the card (backdrop)
+        document.getElementById('order-confirm-modal').addEventListener('click', e => {
+          if (e.target === e.currentTarget) {
+            e.currentTarget.classList.add('hidden');
+          }
+        });
+        // Close modal on Escape key press
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && !document.getElementById('order-confirm-modal').classList.contains('hidden')) {
+            document.getElementById('order-confirm-modal').classList.add('hidden');
+          }
+        });
+      form.classList.add('hidden');
+      if (summaryColumn) summaryColumn.classList.add('hidden');
+      receipt.classList.remove('hidden');
+      document.getElementById('order-number').textContent = `#${order.tracking}`;
+    });
+  })();
+  </script>
 </body>
 </html>
