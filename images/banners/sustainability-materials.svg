@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <defs>
+    <radialGradient id="bg3" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2A1508"/>
+      <stop offset="100%" stop-color="#100806"/>
+    </radialGradient>
+    <radialGradient id="metal1" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#E8D5A0"/>
+      <stop offset="40%" stop-color="#C29963"/>
+      <stop offset="100%" stop-color="#8B6032"/>
+    </radialGradient>
+    <radialGradient id="silver1" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#E8E4E0"/>
+      <stop offset="40%" stop-color="#C8C2BC"/>
+      <stop offset="100%" stop-color="#8A8480"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="560" fill="url(#bg3)"/>
+
+  <!-- Frame -->
+  <rect x="14" y="14" width="772" height="532" fill="none" stroke="#C29963" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Surface/bench -->
+  <rect x="0" y="340" width="800" height="220" fill="#1E0C06" opacity="0.9"/>
+  <line x1="0" y1="340" x2="800" y2="340" stroke="#C29963" stroke-width="1" opacity="0.4"/>
+
+  <!-- Recycled metal ingots / sheets -->
+  <!-- Brass ingot 1 -->
+  <g transform="translate(80, 300)">
+    <rect x="-45" y="-20" width="90" height="40" rx="4" fill="#C29963" opacity="0.8"/>
+    <rect x="-40" y="-15" width="80" height="30" rx="3" fill="#E8D5A0" opacity="0.4"/>
+    <rect x="-45" y="-20" width="90" height="40" rx="4" fill="none" stroke="#E8C870" stroke-width="1" opacity="0.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Georgia" font-size="9" fill="#6B4420" opacity="0.8">BRASS</text>
+  </g>
+
+  <!-- Silver ingot -->
+  <g transform="translate(220, 295)">
+    <rect x="-40" y="-18" width="80" height="36" rx="4" fill="#C8C2BC" opacity="0.8"/>
+    <rect x="-35" y="-13" width="70" height="26" rx="3" fill="#E8E4E0" opacity="0.4"/>
+    <rect x="-40" y="-18" width="80" height="36" rx="4" fill="none" stroke="#D8D2CC" stroke-width="1" opacity="0.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Georgia" font-size="9" fill="#4A4440" opacity="0.8">SILVER</text>
+  </g>
+
+  <!-- Wire coils -->
+  <g transform="translate(360, 300)">
+    <circle cx="0" cy="0" r="38" fill="#C29963" opacity="0.7"/>
+    <circle cx="0" cy="0" r="30" fill="#1E0C06" opacity="0.9"/>
+    <circle cx="0" cy="0" r="22" fill="#C29963" opacity="0.5"/>
+    <circle cx="0" cy="0" r="14" fill="#1E0C06" opacity="0.9"/>
+    <circle cx="0" cy="0" r="6" fill="#C29963" opacity="0.4"/>
+  </g>
+
+  <!-- Silver wire coil -->
+  <g transform="translate(500, 302)">
+    <circle cx="0" cy="0" r="34" fill="#B0ABA6" opacity="0.7"/>
+    <circle cx="0" cy="0" r="27" fill="#1E0C06" opacity="0.9"/>
+    <circle cx="0" cy="0" r="19" fill="#B0ABA6" opacity="0.5"/>
+    <circle cx="0" cy="0" r="11" fill="#1E0C06" opacity="0.9"/>
+    <circle cx="0" cy="0" r="4" fill="#B0ABA6" opacity="0.4"/>
+  </g>
+
+  <!-- Sheet metal pieces -->
+  <g transform="translate(640, 285)">
+    <rect x="-55" y="0" width="110" height="4" rx="2" fill="#C29963" opacity="0.7"/>
+    <rect x="-55" y="8" width="110" height="4" rx="2" fill="#C29963" opacity="0.6"/>
+    <rect x="-55" y="16" width="110" height="4" rx="2" fill="#C29963" opacity="0.5"/>
+    <rect x="-55" y="24" width="110" height="4" rx="2" fill="#C29963" opacity="0.4"/>
+    <rect x="-55" y="32" width="110" height="4" rx="2" fill="#C29963" opacity="0.3"/>
+  </g>
+
+  <!-- Tools on bench -->
+  <line x1="100" y1="360" x2="100" y2="490" stroke="#8B7355" stroke-width="4" opacity="0.5" stroke-linecap="round"/>
+  <ellipse cx="100" cy="358" rx="10" ry="6" fill="#6B5435" opacity="0.6"/>
+
+  <line x1="150" y1="355" x2="155" y2="490" stroke="#6B5B45" stroke-width="3" opacity="0.4" stroke-linecap="round"/>
+  <rect x="145" y="345" width="15" height="12" rx="2" fill="#8B7355" opacity="0.5"/>
+
+  <!-- Natural gemstones / minerals display -->
+  <!-- Raw crystal 1 -->
+  <g transform="translate(380, 380)">
+    <polygon points="-15,0 -8,-28 8,-28 15,0 0,8" fill="#C29963" opacity="0.5"/>
+    <polygon points="-15,0 -8,-28 0,-35 8,-28 15,0" fill="#E8D5A0" opacity="0.4"/>
+    <polygon points="-15,0 0,8 15,0 8,-28 -8,-28" fill="none" stroke="#C29963" stroke-width="1" opacity="0.7"/>
+  </g>
+
+  <!-- Raw crystal 2 -->
+  <g transform="translate(450, 390)">
+    <polygon points="-10,0 -5,-20 5,-20 10,0 0,5" fill="#B0ABA6" opacity="0.5"/>
+    <polygon points="-10,0 -5,-20 0,-25 5,-20 10,0" fill="#D8D2CC" opacity="0.4"/>
+  </g>
+
+  <!-- Natural rough stones -->
+  <ellipse cx="520" cy="385" rx="25" ry="18" fill="#8B7040" opacity="0.5"/>
+  <ellipse cx="520" cy="385" rx="20" ry="14" fill="#C29963" opacity="0.3"/>
+  <ellipse cx="560" cy="390" rx="18" ry="13" fill="#A09060" opacity="0.4"/>
+  <ellipse cx="600" cy="378" rx="20" ry="15" fill="#C29963" opacity="0.5"/>
+  <ellipse cx="600" cy="378" rx="13" ry="10" fill="#E0C880" opacity="0.3"/>
+
+  <!-- Recycling symbol (subtle) -->
+  <g transform="translate(680, 180)" opacity="0.25">
+    <path d="M 0,-40 A 40,40 0 0,1 34.6,-20 L 24.2,-14 L 40,20 L 20,20 L 20,8 A 40,40 0 0,0 0,-30 Z" fill="#C29963"/>
+    <path d="M 34.6,20 A 40,40 0 0,1 -34.6,20 L -24.2,14 L -40,-20 L -20,-20 L -20,-8 A 40,40 0 0,0 34.6,10 Z" fill="#C29963"/>
+    <path d="M -34.6,-20 A 40,40 0 0,1 0,-40 L 0,-28 A 28,28 0 0,0 -24.2,-14 Z" fill="#C29963"/>
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#C29963" stroke-width="2"/>
+  </g>
+
+  <!-- Top decorative pattern -->
+  <g transform="translate(400, 100)" opacity="0.2">
+    <rect x="-80" y="-80" width="160" height="160" fill="none" stroke="#C29963" stroke-width="0.5" transform="rotate(45)"/>
+    <rect x="-55" y="-55" width="110" height="110" fill="none" stroke="#C29963" stroke-width="0.3" transform="rotate(45)"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#C29963" stroke-width="0.4"/>
+    <circle cx="0" cy="0" r="6" fill="#C29963" opacity="0.5"/>
+  </g>
+
+  <!-- Label text -->
+  <text x="400" y="520" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#C29963" opacity="0.5" letter-spacing="4">RECLAIMED METALS · RESPONSIBLE SOURCING</text>
+
+  <!-- Corner ornaments -->
+  <g opacity="0.4">
+    <line x1="30" y1="30" x2="70" y2="30" stroke="#C29963" stroke-width="1.5"/>
+    <line x1="30" y1="30" x2="30" y2="70" stroke="#C29963" stroke-width="1.5"/>
+    <line x1="770" y1="30" x2="730" y2="30" stroke="#C29963" stroke-width="1.5"/>
+    <line x1="770" y1="30" x2="770" y2="70" stroke="#C29963" stroke-width="1.5"/>
+    <line x1="30" y1="530" x2="70" y2="530" stroke="#C29963" stroke-width="1.5"/>
+    <line x1="30" y1="530" x2="30" y2="490" stroke="#C29963" stroke-width="1.5"/>
+    <line x1="770" y1="530" x2="730" y2="530" stroke="#C29963" stroke-width="1.5"/>
+    <line x1="770" y1="530" x2="770" y2="490" stroke="#C29963" stroke-width="1.5"/>
+  </g>
+</svg>

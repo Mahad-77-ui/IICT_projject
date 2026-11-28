@@ -459,6 +459,7 @@ main {
   }
 }
 
+
 /* ==========================================================================
    Member 6 (26i-3091): Wishlist & Recently Viewed Scoped Styles
    ========================================================================== */
@@ -846,8 +847,6 @@ main {
     grid-auto-columns: minmax(220px, 78%);
   }
 }
-<<<<<<< Updated upstream
-=======
 
 
 /* ================= CART PAGE STYLES ================= */
@@ -2859,4 +2858,3 @@ button.icon-link {
     width: 100%;
   }
 }
->>>>>>> Stashed changes

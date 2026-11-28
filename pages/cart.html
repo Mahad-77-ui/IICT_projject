@@ -3,120 +3,475 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Cart — Zaverat</title>
+  <title>Your Shopping Bag — Zaverat</title>
+  <meta name="description" content="Review your handcrafted Zaverat jewellery bag, adjust quantities, apply promo codes, and proceed to secure checkout.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+  <!-- Member 2: Hasana Fatima | Roll No: 26i-3089 | Branch: i263089 -->
   <header class="site-header">
     <div class="announcement-bar">
-      Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
+      <div class="container announcement-inner cart-announcement-inner">
+        <p class="announcement-text cart-announcement-text">Handcrafted with Love in Pakistan &bull; Free Shipping on Orders Over Rs. 3,000</p>
+        <button class="theme-toggle cart-theme-toggle" id="cartThemeToggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+          <span aria-hidden="true">&#9788;</span>
+          <span class="theme-toggle-label">Theme</span>
+        </button>
+      </div>
     </div>
-    <nav class="container navbar" aria-label="Primary Navigation">
-      <a class="brand" href="../index.html">
-        <img src="../images/logo.svg" alt="Zaverat logo" width="40" height="40">
-        <span>Zaverat</span>
-      </a>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav-menu">
+    <div class="container navbar">
+      <button class="mobile-toggle nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
         &#9776;
       </button>
 
-      <ul class="nav-menu" id="primary-nav-menu">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-        <li><a class="nav-link" href="../pages/shop.html">Shop</a></li>
-        <li><a class="nav-link" href="../pages/custom-builder.html">Custom Builder</a></li>
-        <li><a class="nav-link" href="../pages/style-quiz.html">Style Quiz</a></li>
-        <li><a class="nav-link" href="../pages/workshops.html">Workshops</a></li>
-        <li><a class="nav-link" href="../pages/about.html">About</a></li>
-        <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
-      </ul>
+      <a class="brand" href="../index.html" aria-label="Zaverat Home">
+        <img src="../images/logo.svg" alt="Zaverat diamond gem emblem" width="40" height="40">
+        <span class="brand-name">Zaverat</span>
+      </a>
+
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="../index.html">Home</a></li>
+          <li><a class="nav-link" href="../pages/shop.html">Shop</a></li>
+          <li><a class="nav-link" href="../pages/custom-builder.html">Custom Builder</a></li>
+          <li><a class="nav-link" href="../pages/size-guide.html">Size Guide</a></li>
+          <li><a class="nav-link" href="../pages/reviews.html">Reviews</a></li>
+          <li><a class="nav-link" href="../pages/faqs.html">FAQs</a></li>
+          <li><a class="nav-link" href="../pages/style-quiz.html">Style Quiz</a></li>
+          <li><a class="nav-link" href="../pages/workshops.html">Workshops</a></li>
+          <li><a class="nav-link" href="../pages/about.html">About</a></li>
+          <li><a class="nav-link" href="../pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions">
+        <button class="search-trigger icon-link" id="cartSearchTrigger" type="button" aria-label="Open product search" aria-controls="cartSearchModal" aria-expanded="false">
+          <span aria-hidden="true">&#128269;</span>
+          <span class="label-text">Search</span>
+        </button>
         <a class="icon-link" href="../pages/wishlist.html" aria-label="Wishlist">
           <span class="label-text">Wishlist</span>
-          <span class="badge-count" id="wishlist-count">0</span>
+          <span class="wish-count-badge badge-count" id="wishlist-count">0</span>
         </a>
-        <a class="icon-link" href="../pages/cart.html" aria-label="Shopping Cart">
+        <a class="icon-link cart-nav-active" href="../pages/cart.html" aria-label="Shopping Cart" aria-current="page">
           <span class="label-text">Cart</span>
-          <span class="badge-count" id="cart-count">0</span>
+          <span class="cart-count-badge badge-count" id="cart-count">3</span>
         </a>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="page-hero">
+  <main class="cart-main">
+    <!-- Compact Header & Free-Shipping Meter -->
+    <section class="cart-header-section" aria-labelledby="cart-page-heading">
       <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> <span>/</span> <span>Shopping Cart</span>
+        <nav class="breadcrumb cart-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Shopping Bag</span>
         </nav>
-        <span class="eyebrow">Member 2 &middot; 26i-3089 (Hasana Fatima)</span>
-        <h1>Your Shopping Cart</h1>
-        <p class="lead">Review selected jewellery pieces, adjust quantities, apply gift-wrap options, and proceed to checkout.</p>
+
+        <div class="cart-title-row">
+          <div>
+            <h1 id="cart-page-heading" class="cart-heading">Your Shopping Bag</h1>
+            <p class="cart-subtitle" id="cartItemCountLabel">3 handcrafted pieces ready for insured dispatch</p>
+          </div>
+          <a class="cart-continue-link" href="../pages/shop.html">&larr; Continue Shopping</a>
+        </div>
+
+        <div class="cart-shipping-meter" role="region" aria-label="Free Shipping Progress">
+          <div class="cart-shipping-meta">
+            <span class="cart-shipping-title" id="cartShippingStatus">
+              You have unlocked <strong>Complimentary Insured Nationwide Shipping over Rs. 3,000</strong>
+            </span>
+            <span class="cart-shipping-badge" id="cartShippingBadge">Free Shipping Active</span>
+          </div>
+          <div class="cart-shipping-track" role="progressbar" aria-valuemin="0" aria-valuemax="3000" aria-valuenow="3000" id="cartShippingProgressBar">
+            <div class="cart-shipping-fill" id="cartShippingFill" style="width: 100%;"></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Asymmetric Two-Column Split Layout (65% Left / 35% Right) -->
+    <section class="cart-workspace-section" aria-label="Shopping Bag Contents and Order Summary">
       <div class="container">
-        <div class="placeholder-panel">
-          <h2>Cart Items &amp; Order Summary</h2>
-          <p>Placeholder for interactive cart line items synchronized with <code>ZaveratStorage.getCart()</code>, promo code input, subtotal calculation, and link to checkout.</p>
-          <a class="btn btn-primary" href="../pages/checkout.html">Proceed to Checkout</a>
+        <div class="cart-layout">
+          <!-- Left Column: Horizontal Line-Item List -->
+          <div class="cart-items-column">
+            <div class="cart-items-panel">
+              <div class="cart-panel-header">
+                <h2 class="cart-panel-title">Selected Jewellery Pieces</h2>
+                <button type="button" class="cart-clear-btn" id="cartClearBtn">Clear Bag</button>
+              </div>
+
+              <div class="cart-items-list" id="cartItemsList">
+                <!-- Item 1 -->
+                <article class="cart-item-row" data-product-id="zv-001">
+                  <div class="cart-item-thumb">
+                    <!-- REPLACE IMAGE: swap src with your own product photo -->
+                    <img
+                      src="../images/products/placeholder-necklace.jpg"
+                      alt="Mehrunisa Kundan Choker"
+                      onerror="this.onerror=null;this.src='../images/products/placeholder-necklace.svg';"
+                    >
+                  </div>
+                  <div class="cart-item-details">
+                    <h3 class="cart-item-name">
+                      <a href="../pages/product-detail.html?id=zv-001">Mehrunisa Kundan Choker</a>
+                    </h3>
+                    <p class="cart-item-specs">
+                      22k Gold-Plated Brass &amp; Kundan Stones &bull; <span class="cart-stock-tag">In Stock</span>
+                    </p>
+                    <p class="cart-item-unit-price">Rs. 14,500 each</p>
+                    <div class="cart-item-actions">
+                      <button type="button" class="cart-action-link" data-action="wishlist" data-id="zv-001">Move to Wishlist</button>
+                      <span class="cart-action-sep" aria-hidden="true">&middot;</span>
+                      <button type="button" class="cart-action-link cart-remove-link" data-action="remove" data-id="zv-001">Remove</button>
+                    </div>
+                  </div>
+                  <div class="cart-item-controls">
+                    <div class="cart-qty-stepper" aria-label="Quantity for Mehrunisa Kundan Choker">
+                      <button type="button" class="cart-qty-btn" data-action="decrease" data-id="zv-001" aria-label="Decrease quantity" disabled>&minus;</button>
+                      <span class="cart-qty-value">1</span>
+                      <button type="button" class="cart-qty-btn" data-action="increase" data-id="zv-001" aria-label="Increase quantity">+</button>
+                    </div>
+                    <strong class="cart-item-subtotal">Rs. 14,500</strong>
+                  </div>
+                </article>
+
+                <!-- Item 2 -->
+                <article class="cart-item-row" data-product-id="zv-002">
+                  <div class="cart-item-thumb">
+                    <!-- REPLACE IMAGE: swap src with your own product photo -->
+                    <img
+                      src="../images/products/placeholder-earrings.jpg"
+                      alt="Lahori Jhumka Drops"
+                      onerror="this.onerror=null;this.src='../images/products/placeholder-earrings.svg';"
+                    >
+                  </div>
+                  <div class="cart-item-details">
+                    <h3 class="cart-item-name">
+                      <a href="../pages/product-detail.html?id=zv-002">Lahori Jhumka Drops</a>
+                    </h3>
+                    <p class="cart-item-specs">
+                      925 Sterling Silver &amp; Freshwater Pearls &bull; <span class="cart-stock-tag">In Stock</span>
+                    </p>
+                    <p class="cart-item-unit-price">Rs. 4,800 each</p>
+                    <div class="cart-item-actions">
+                      <button type="button" class="cart-action-link" data-action="wishlist" data-id="zv-002">Move to Wishlist</button>
+                      <span class="cart-action-sep" aria-hidden="true">&middot;</span>
+                      <button type="button" class="cart-action-link cart-remove-link" data-action="remove" data-id="zv-002">Remove</button>
+                    </div>
+                  </div>
+                  <div class="cart-item-controls">
+                    <div class="cart-qty-stepper" aria-label="Quantity for Lahori Jhumka Drops">
+                      <button type="button" class="cart-qty-btn" data-action="decrease" data-id="zv-002" aria-label="Decrease quantity" disabled>&minus;</button>
+                      <span class="cart-qty-value">1</span>
+                      <button type="button" class="cart-qty-btn" data-action="increase" data-id="zv-002" aria-label="Increase quantity">+</button>
+                    </div>
+                    <strong class="cart-item-subtotal">Rs. 4,800</strong>
+                  </div>
+                </article>
+
+                <!-- Item 3 -->
+                <article class="cart-item-row" data-product-id="zv-004">
+                  <div class="cart-item-thumb">
+                    <!-- REPLACE IMAGE: swap src with your own product photo -->
+                    <img
+                      src="../images/products/placeholder-ring.jpg"
+                      alt="Sufi Signet Ring"
+                      onerror="this.onerror=null;this.src='../images/products/placeholder-ring.svg';"
+                    >
+                  </div>
+                  <div class="cart-item-details">
+                    <h3 class="cart-item-name">
+                      <a href="../pages/product-detail.html?id=zv-004">Sufi Signet Ring</a>
+                    </h3>
+                    <p class="cart-item-specs">
+                      925 Sterling Silver &amp; Onyx &bull; Size: 7 &bull; <span class="cart-stock-tag">In Stock</span>
+                    </p>
+                    <p class="cart-item-unit-price">Rs. 3,900 each</p>
+                    <div class="cart-item-actions">
+                      <button type="button" class="cart-action-link" data-action="wishlist" data-id="zv-004">Move to Wishlist</button>
+                      <span class="cart-action-sep" aria-hidden="true">&middot;</span>
+                      <button type="button" class="cart-action-link cart-remove-link" data-action="remove" data-id="zv-004">Remove</button>
+                    </div>
+                  </div>
+                  <div class="cart-item-controls">
+                    <div class="cart-qty-stepper" aria-label="Quantity for Sufi Signet Ring">
+                      <button type="button" class="cart-qty-btn" data-action="decrease" data-id="zv-004" aria-label="Decrease quantity" disabled>&minus;</button>
+                      <span class="cart-qty-value">1</span>
+                      <button type="button" class="cart-qty-btn" data-action="increase" data-id="zv-004" aria-label="Increase quantity">+</button>
+                    </div>
+                    <strong class="cart-item-subtotal">Rs. 3,900</strong>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Empty Bag State (Hidden when items exist) -->
+              <div class="cart-empty-state" id="cartEmptyState" hidden>
+                <h3>Your shopping bag is currently empty</h3>
+                <p>Discover hand-forged kundan chokers, sterling silver jhumkas, and northern valley gemstone rings.</p>
+                <div class="cart-empty-actions">
+                  <a class="btn btn-primary" href="../pages/shop.html">Explore Collection</a>
+                  <button type="button" class="btn btn-outline" id="cartRestoreDefaultBtn">Restore Sample Items</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Sticky Order Summary Card -->
+          <aside class="cart-summary-column" aria-label="Order Summary">
+            <div class="cart-summary-card">
+              <h2 class="cart-summary-title">Order Summary</h2>
+
+              <form class="cart-promo-form" id="cartPromoForm" novalidate>
+                <label class="cart-promo-label" for="cartPromoInput">Promo or Gift Code</label>
+                <div class="cart-promo-input-row">
+                  <input id="cartPromoInput" class="cart-promo-input" type="text" placeholder="Try ZAVERAT10" autocomplete="off">
+                  <button type="submit" class="btn btn-primary cart-promo-btn">Apply</button>
+                </div>
+                <p class="cart-promo-feedback" id="cartPromoFeedback" aria-live="polite"></p>
+              </form>
+
+              <div class="cart-gift-box">
+                <label class="cart-gift-check-label" for="cartGiftCheckbox">
+                  <input type="checkbox" id="cartGiftCheckbox" class="cart-gift-checkbox">
+                  <span>Add complimentary heirloom gift box &amp; handwritten note (Free)</span>
+                </label>
+                <div class="cart-gift-note-wrap" id="cartGiftNoteWrap" hidden>
+                  <label class="sr-only" for="cartGiftNoteInput">Handwritten gift note</label>
+                  <input
+                    type="text"
+                    id="cartGiftNoteInput"
+                    class="cart-gift-note-input"
+                    maxlength="140"
+                    placeholder="Write your personalized gift message..."
+                  >
+                </div>
+              </div>
+
+              <dl class="cart-summary-rows">
+                <div class="cart-summary-line">
+                  <dt id="cartSummarySubtotalLabel">Subtotal (3 items)</dt>
+                  <dd id="cartSummarySubtotal">Rs. 23,200</dd>
+                </div>
+                <div class="cart-summary-line cart-discount-line" id="cartDiscountRow">
+                  <dt id="cartDiscountLabel">Promo Discount</dt>
+                  <dd id="cartDiscountAmount">Rs. 0</dd>
+                </div>
+                <div class="cart-summary-line">
+                  <dt>Insured Shipping</dt>
+                  <dd id="cartSummaryShipping" class="cart-shipping-free">FREE</dd>
+                </div>
+              </dl>
+
+              <hr class="cart-summary-divider">
+
+              <div class="cart-summary-total">
+                <span>Total (PKR)</span>
+                <strong id="cartSummaryTotal">PKR 23,200</strong>
+              </div>
+
+              <div class="cart-summary-actions">
+                <a class="btn btn-primary cart-checkout-btn" id="cartCheckoutBtn" href="../pages/checkout.html">Proceed to Checkout</a>
+                <a class="btn btn-outline cart-continue-btn" href="../pages/shop.html">Continue Shopping</a>
+              </div>
+
+              <div class="cart-trust-block">
+                <p class="cart-trust-caption">Accepted Payment Methods &amp; Guarantees</p>
+                <ul class="cart-trust-badges" aria-label="Accepted payment methods">
+                  <li class="cart-trust-badge">Cash on Delivery</li>
+                  <li class="cart-trust-badge">Visa</li>
+                  <li class="cart-trust-badge">Mastercard</li>
+                  <li class="cart-trust-badge">JazzCash</li>
+                  <li class="cart-trust-badge">EasyPaisa</li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compact Bottom Upsell Strip ("Complete Your Look") -->
+    <section class="cart-upsell-section" aria-labelledby="cart-upsell-heading">
+      <div class="container">
+        <div class="cart-upsell-header">
+          <h2 id="cart-upsell-heading" class="cart-upsell-heading">Complete Your Look</h2>
+          <p class="cart-upsell-note">Quick-add small-batch artisan pieces crafted to pair with your bag</p>
+        </div>
+
+        <div class="cart-upsell-strip" id="cartUpsellStrip">
+          <article class="cart-upsell-card">
+            <div class="cart-upsell-thumb">
+              <!-- REPLACE IMAGE: swap src with your own product photo -->
+              <img
+                src="../images/products/placeholder-cuff.jpg"
+                alt="Chitrali Filigree Cuff"
+                onerror="this.onerror=null;this.src='../images/products/placeholder-cuff.svg';"
+              >
+            </div>
+            <div class="cart-upsell-info">
+              <h3 class="cart-upsell-name">Chitrali Filigree Cuff</h3>
+              <p class="cart-upsell-price">Rs. 6,200</p>
+            </div>
+            <button type="button" class="btn btn-outline cart-upsell-add-btn" data-upsell-id="zv-003">+ Add</button>
+          </article>
+
+          <article class="cart-upsell-card">
+            <div class="cart-upsell-thumb">
+              <!-- REPLACE IMAGE: swap src with your own product photo -->
+              <img
+                src="../images/products/pearl-elegance.jpg"
+                alt="Pearl Elegance Necklace"
+                onerror="this.onerror=null;this.src='../images/products/pearl-elegance.svg';"
+              >
+            </div>
+            <div class="cart-upsell-info">
+              <h3 class="cart-upsell-name">Pearl Elegance Necklace</h3>
+              <p class="cart-upsell-price">Rs. 2,850</p>
+            </div>
+            <button type="button" class="btn btn-outline cart-upsell-add-btn" data-upsell-id="zv-pearl">+ Add</button>
+          </article>
+
+          <article class="cart-upsell-card">
+            <div class="cart-upsell-thumb">
+              <!-- REPLACE IMAGE: swap src with your own product photo -->
+              <img
+                src="../images/products/placeholder-earrings.jpg"
+                alt="Multani Turquoise Studs"
+                onerror="this.onerror=null;this.src='../images/products/placeholder-earrings.svg';"
+              >
+            </div>
+            <div class="cart-upsell-info">
+              <h3 class="cart-upsell-name">Multani Turquoise Studs</h3>
+              <p class="cart-upsell-price">Rs. 2,450</p>
+            </div>
+            <button type="button" class="btn btn-outline cart-upsell-add-btn" data-upsell-id="zv-studs">+ Add</button>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Shared 4-Column Dark Espresso Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
+        <div class="footer-brand-col">
           <h3>Zaverat</h3>
-          <p>Handcrafted heritage jewellery store built by Group 07 for CL1000 ICT Final Project.</p>
+          <p>
+            Heirloom handmade jewellery crafted in Pakistan using recycled 925 silver, 18k gold vermeil,
+            and natural gemstones.
+          </p>
+          <p class="ai-disclosure">
+            AI Image Disclosure: Placeholder product imagery is used until replaced with studio photography.
+          </p>
         </div>
+
         <div>
-          <h4>Shop &amp; Discover</h4>
+          <h4>Artisanal Shop</h4>
           <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
             <li><a href="../pages/shop.html">Shop All</a></li>
-            <li><a href="../pages/product-detail.html">Product Detail</a></li>
-            <li><a href="../pages/style-quiz.html">Style Quiz</a></li>
-            <li><a href="../pages/reviews.html">Customer Reviews</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Bespoke &amp; Craft</h4>
-          <ul class="footer-links">
             <li><a href="../pages/custom-builder.html">Custom Builder</a></li>
-            <li><a href="../pages/materials.html">Materials &amp; Gemstones</a></li>
+            <li><a href="../pages/materials.html">Materials &amp; Gems</a></li>
             <li><a href="../pages/size-guide.html">Size Guide</a></li>
-            <li><a href="../pages/about.html">About &amp; Artisans</a></li>
-            <li><a href="../pages/sustainability.html">Sustainability</a></li>
-            <li><a href="../pages/workshops.html">Workshops</a></li>
+            <li><a href="../pages/style-quiz.html">Style Quiz</a></li>
           </ul>
         </div>
+
         <div>
-          <h4>Care &amp; Orders</h4>
+          <h4>Customer Care</h4>
           <ul class="footer-links">
-            <li><a href="../pages/cart.html">Shopping Cart</a></li>
-            <li><a href="../pages/checkout.html">Checkout</a></li>
-            <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
-            <li><a href="../pages/wishlist.html">Wishlist</a></li>
-            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
             <li><a href="../pages/faqs.html">FAQs</a></li>
+            <li><a href="../pages/care-repair.html">Care &amp; Repair</a></li>
+            <li><a href="../pages/order-tracking.html">Order Tracking</a></li>
+            <li><a href="../pages/reviews.html">Customer Reviews</a></li>
             <li><a href="../pages/contact.html">Contact Us</a></li>
           </ul>
         </div>
+
+        <div class="footer-newsletter-col">
+          <h4>Artisan Newsletter</h4>
+          <p>Receive small-batch launch previews and Islamabad bench workshop invites.</p>
+          <form class="newsletter-form cart-newsletter-form" id="cartNewsletterForm" action="#" method="post">
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <div class="cart-newsletter-row">
+              <input id="newsletter-email" name="email" type="email" placeholder="you@example.com" required>
+              <button class="btn btn-primary" type="submit">Join</button>
+            </div>
+          </form>
+          <address class="cart-footer-address">
+            <strong>Islamabad Studio:</strong> Street 12, F-6 Markaz, Islamabad<br>
+            Mon&ndash;Sat: 11:00 AM &ndash; 7:00 PM &bull; studio@zaverat.pk
+          </address>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+        <p>&copy; <span data-current-year>2026</span> Zaverat Handmade Jewellery. All Rights Reserved.</p>
+        <p>CL1000 ICT Fall 2026 Project &bull; Group 07 &bull; Member 2 (26i-3089 &mdash; Hasana Fatima)</p>
       </div>
     </div>
   </footer>
 
+  <!-- Scoped Search Modal for Navbar Search Button -->
+  <div id="cartSearchModal" class="cart-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cartSearchModalTitle" hidden>
+    <div class="cart-modal-dialog card">
+      <div class="cart-modal-header">
+        <h2 id="cartSearchModalTitle">Search Handcrafted Pieces</h2>
+        <button class="cart-modal-close" type="button" aria-label="Close search modal">&times;</button>
+      </div>
+      <div class="cart-modal-body">
+        <label class="sr-only" for="cartSearchInput">Search jewellery</label>
+        <input id="cartSearchInput" class="cart-search-input" type="search" placeholder="Search chokers, jhumkas, rings, silver...">
+        <div id="cartSearchResults" class="cart-search-results"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Order Review Confirmation Modal -->
+  <div id="cartCheckoutModal" class="cart-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cartCheckoutModalTitle" hidden>
+    <div class="cart-modal-dialog card">
+      <div class="cart-modal-header">
+        <h2 id="cartCheckoutModalTitle">Review Your Zaverat Order</h2>
+        <button class="cart-modal-close" type="button" data-checkout-close aria-label="Close order review modal">&times;</button>
+      </div>
+      <div class="cart-modal-body">
+        <div class="cart-checkout-summary-box">
+          <div class="cart-checkout-summary-row">
+            <span>Selected Pieces</span>
+            <strong id="cartModalItemCount">3 handcrafted pieces</strong>
+          </div>
+          <div class="cart-checkout-summary-row">
+            <span>Shipping Status</span>
+            <strong id="cartModalShippingStatus">Complimentary Insured Shipping (FREE)</strong>
+          </div>
+          <div class="cart-checkout-summary-row" id="cartModalGiftRow" hidden>
+            <span>Heirloom Gift Note</span>
+            <strong id="cartModalGiftNote">Complimentary heirloom gift box included</strong>
+          </div>
+          <div class="cart-checkout-summary-row cart-checkout-total-row">
+            <span>Final Total (PKR)</span>
+            <strong id="cartModalTotal">PKR 23,200</strong>
+          </div>
+        </div>
+        <div class="cart-checkout-modal-actions">
+          <button type="button" class="btn btn-outline" data-checkout-close>Continue Editing</button>
+          <a class="btn btn-primary" id="cartModalConfirmBtn" href="../pages/checkout.html">Confirm &amp; Go to Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-toast-container" aria-live="polite" aria-atomic="true"></div>
+
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+  <script src="../js/cart.js"></script>
 </body>
 </html>
