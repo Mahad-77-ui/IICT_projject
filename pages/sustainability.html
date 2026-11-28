@@ -4,9 +4,1052 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sustainability — Zaverat</title>
+  <meta name="description" content="Zaverat's commitment to ethical sourcing, fair artisan partnerships, reclaimed materials, and thoughtful packaging. Luxury jewellery with a conscience.">
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* =========================================================================
+       Zaverat — Sustainability Page
+       Palette: Burgundy #5E3A24 | Deep Burgundy #674228 | Gold #C29963
+                Gold Muted rgba(194,153,99,.36) | Ivory #FAF7F2 | Cream #F3ECE0
+                Charcoal #2A211B | Charcoal Soft #5C4E44
+       Typography: Palatino Linotype (serif) | Segoe UI (sans)
+       ========================================================================= */
+
+    /* ---- CSS Variables ---------------------------------------------------- */
+    :root {
+      --zv-burgundy:      #5E3A24;
+      --zv-burgundy-deep: #674228;
+      --zv-gold:          #C29963;
+      --zv-gold-muted:    rgba(194, 153, 99, 0.36);
+      --zv-gold-light:    rgba(194, 153, 99, 0.18);
+      --zv-ivory:         #FAF7F2;
+      --zv-cream:         #F3ECE0;
+      --zv-charcoal:      #2A211B;
+      --zv-charcoal-soft: #5C4E44;
+      --zv-serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+      --zv-sans:  "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    /* ---- Page Base --------------------------------------------------------- */
+    body.sust-page {
+      background-color: var(--zv-ivory);
+      color: var(--zv-charcoal);
+      font-family: var(--zv-sans);
+    }
+
+    .sust-page figure { margin: 0; }
+
+    .sust-page h1,
+    .sust-page h2,
+    .sust-page h3,
+    .sust-page h4 {
+      font-family: var(--zv-serif);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-top: 0;
+    }
+
+    /* ---- Header & Nav Overrides ------------------------------------------- */
+    .sust-page .announcement-bar {
+      background-color: var(--zv-burgundy);
+      color: var(--zv-ivory);
+      border-bottom: 1px solid rgba(194, 153, 99, 0.28);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+    .sust-page .site-header {
+      background-color: var(--zv-ivory);
+      border-bottom: 1px solid var(--zv-gold-muted);
+      box-shadow: 0 2px 16px rgba(42, 33, 27, 0.05);
+    }
+    .sust-page .brand {
+      font-family: var(--zv-serif);
+      color: var(--zv-charcoal);
+      letter-spacing: 0.08em;
+    }
+    .sust-page .nav-link {
+      color: var(--zv-charcoal);
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+    .sust-page .nav-link:hover,
+    .sust-page .nav-link.is-active {
+      color: var(--zv-burgundy);
+      border-bottom-color: var(--zv-gold);
+    }
+    .sust-page .icon-link {
+      background-color: var(--zv-cream);
+      border-color: var(--zv-gold-muted);
+      color: var(--zv-charcoal);
+    }
+    .sust-page .icon-link:hover {
+      border-color: var(--zv-burgundy);
+      color: var(--zv-burgundy);
+    }
+    .sust-page .badge-count {
+      background-color: var(--zv-burgundy);
+      color: var(--zv-ivory);
+    }
+    .sust-page .nav-toggle {
+      border-color: var(--zv-gold-muted);
+      color: var(--zv-charcoal);
+    }
+
+    /* Mobile nav */
+    @media (max-width: 960px) {
+      .sust-page .nav-menu {
+        background-color: var(--zv-ivory);
+        border-bottom-color: var(--zv-gold-muted);
+        z-index: 120;
+      }
+    }
+
+    /* ---- Footer Overrides ------------------------------------------------- */
+    .sust-page .site-footer {
+      background-color: var(--zv-charcoal);
+      color: #DDD4C7;
+      border-top: 2px solid var(--zv-gold);
+    }
+    .sust-page .site-footer h3,
+    .sust-page .site-footer h4 {
+      color: var(--zv-ivory);
+      font-family: var(--zv-serif);
+    }
+    .sust-page .footer-links a:hover { color: var(--zv-gold); }
+    .sust-page .ai-disclosure { color: var(--zv-gold); }
+
+    /* ---- Section Primitives ----------------------------------------------- */
+    .sust-section {
+      padding: 5rem 0;
+      position: relative;
+    }
+    .sust-section--ivory  { background-color: var(--zv-ivory); }
+    .sust-section--cream  {
+      background-color: var(--zv-cream);
+      border-top: 1px solid rgba(194, 153, 99, 0.2);
+      border-bottom: 1px solid rgba(194, 153, 99, 0.2);
+    }
+    .sust-section--burgundy {
+      background-color: var(--zv-burgundy);
+      color: var(--zv-ivory);
+    }
+    .sust-section--burgundy h2,
+    .sust-section--burgundy h3 { color: var(--zv-ivory); }
+    .sust-section--deep {
+      background-color: var(--zv-burgundy-deep);
+      color: var(--zv-ivory);
+    }
+    .sust-section--deep h2,
+    .sust-section--deep h3 { color: var(--zv-ivory); }
+
+    /* ---- Editorial Kicker ------------------------------------------------- */
+    .sust-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--zv-sans);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--zv-burgundy);
+      margin-bottom: 0.9rem;
+    }
+    .sust-kicker::before,
+    .sust-kicker::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background-color: var(--zv-gold);
+      flex-shrink: 0;
+    }
+    .sust-kicker--only::after { display: none; }
+    .sust-section--burgundy .sust-kicker,
+    .sust-section--deep .sust-kicker {
+      color: var(--zv-gold);
+    }
+
+    /* ---- Section Intro Centred -------------------------------------------- */
+    .sust-intro {
+      max-width: 660px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+    }
+    .sust-intro .sust-kicker { justify-content: center; }
+    .sust-intro h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+      line-height: 1.18;
+      margin-bottom: 0.9rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-section--burgundy .sust-intro h2,
+    .sust-section--deep .sust-intro h2 { color: var(--zv-ivory); }
+    .sust-intro p {
+      color: var(--zv-charcoal-soft);
+      font-size: 1.03rem;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+    .sust-section--burgundy .sust-intro p,
+    .sust-section--deep .sust-intro p { color: rgba(250, 247, 242, 0.84); }
+
+    /* ---- Gold Rule -------------------------------------------------------- */
+    .sust-rule {
+      width: 52px;
+      height: 1px;
+      background-color: var(--zv-gold);
+      margin: 1.1rem auto 0;
+    }
+
+    /* ---- Luxury Buttons --------------------------------------------------- */
+    .sust-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.9rem;
+      font-family: var(--zv-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.25s ease, color 0.25s ease,
+                  border-color 0.25s ease, transform 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+    .sust-btn--gold {
+      background-color: var(--zv-gold);
+      color: var(--zv-charcoal);
+      border-color: var(--zv-gold);
+    }
+    .sust-btn--gold:hover,
+    .sust-btn--gold:focus-visible {
+      background-color: #D4AE7C;
+      border-color: #D4AE7C;
+      color: var(--zv-charcoal);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(194, 153, 99, 0.3);
+    }
+    .sust-btn--burgundy {
+      background-color: var(--zv-burgundy);
+      color: var(--zv-ivory);
+      border-color: var(--zv-burgundy);
+    }
+    .sust-btn--burgundy:hover,
+    .sust-btn--burgundy:focus-visible {
+      background-color: var(--zv-burgundy-deep);
+      border-color: var(--zv-burgundy-deep);
+      color: var(--zv-ivory);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(94, 58, 36, 0.3);
+    }
+    .sust-btn--ghost-light {
+      background-color: transparent;
+      color: var(--zv-ivory);
+      border-color: rgba(194, 153, 99, 0.65);
+    }
+    .sust-btn--ghost-light:hover,
+    .sust-btn--ghost-light:focus-visible {
+      background-color: rgba(194, 153, 99, 0.14);
+      border-color: var(--zv-gold);
+      color: var(--zv-ivory);
+      transform: translateY(-1px);
+    }
+    .sust-btn--ghost-dark {
+      background-color: transparent;
+      color: var(--zv-charcoal);
+      border-color: var(--zv-gold-muted);
+    }
+    .sust-btn--ghost-dark:hover,
+    .sust-btn--ghost-dark:focus-visible {
+      background-color: var(--zv-gold-light);
+      border-color: var(--zv-gold);
+      color: var(--zv-charcoal);
+      transform: translateY(-1px);
+    }
+
+    /* ===================================================================
+       A. HERO SECTION
+       =================================================================== */
+    .sust-hero {
+      background: linear-gradient(140deg, var(--zv-burgundy-deep) 0%, var(--zv-burgundy) 55%, #4A2C18 100%);
+      color: var(--zv-ivory);
+      padding: 4.5rem 0 5.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .sust-hero::after {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(194, 153, 99, 0.18);
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Decorative diamond accent top-right */
+    .sust-hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
+      border: 60px solid rgba(194, 153, 99, 0.05);
+      transform: rotate(45deg);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .sust-hero .container { position: relative; z-index: 1; }
+
+    /* Breadcrumb in hero */
+    .sust-hero .sust-breadcrumb {
+      margin-bottom: 2.5rem;
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+      color: rgba(250, 247, 242, 0.65);
+    }
+    .sust-hero .sust-breadcrumb a {
+      color: var(--zv-gold);
+      text-decoration: none;
+    }
+    .sust-hero .sust-breadcrumb a:hover { color: var(--zv-ivory); }
+    .sust-hero .sust-breadcrumb span { margin: 0 0.4rem; }
+
+    /* Hero two-column layout */
+    .sust-hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 4rem;
+      align-items: center;
+    }
+
+    /* Hero copy */
+    .sust-hero-copy .sust-kicker { color: var(--zv-gold); }
+    .sust-hero-copy h1 {
+      color: var(--zv-ivory);
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.5rem;
+    }
+    .sust-hero-copy .hero-subtitle {
+      font-family: var(--zv-serif);
+      font-size: clamp(1rem, 1.6vw, 1.22rem);
+      font-style: italic;
+      color: var(--zv-gold);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Gold ornament line */
+    .sust-ornament {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 1.4rem 0;
+    }
+    .sust-ornament-line { width: 60px; height: 1px; background-color: var(--zv-gold); }
+    .sust-ornament-diamond {
+      width: 7px; height: 7px;
+      border: 1px solid var(--zv-gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .sust-hero-copy .lead {
+      color: rgba(250, 247, 242, 0.86);
+      font-size: 1.08rem;
+      line-height: 1.8;
+      max-width: 52ch;
+      margin-bottom: 2.25rem;
+    }
+
+    /* Hero image frame */
+    .sust-hero-frame {
+      position: relative;
+      padding: 1rem;
+      border: 1px solid rgba(194, 153, 99, 0.42);
+      background-color: rgba(42, 33, 27, 0.5);
+    }
+    .sust-hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(194, 153, 99, 0.15);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .sust-hero-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background-color: var(--zv-charcoal);
+      position: relative;
+    }
+    .sust-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .sust-hero-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 0.9rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.65);
+    }
+    .sust-hero-caption span:last-child { color: var(--zv-gold); }
+
+    /* ===================================================================
+       B. OUR COMMITMENT SECTION
+       =================================================================== */
+    .sust-commitment-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    /* Photo side */
+    .sust-photo-wrap {
+      border: 1px solid var(--zv-gold-muted);
+      padding: 0.85rem;
+      background-color: var(--zv-cream);
+      position: relative;
+    }
+    .sust-photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(194, 153, 99, 0.12);
+      pointer-events: none;
+    }
+    .sust-photo-inner {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background-color: var(--zv-charcoal);
+    }
+    .sust-photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .sust-photo-note {
+      padding: 0.9rem 0.3rem 0.15rem;
+      font-size: 0.84rem;
+      color: var(--zv-charcoal-soft);
+      font-style: italic;
+    }
+
+    /* Copy side */
+    .sust-commitment-copy h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      line-height: 1.18;
+      margin-bottom: 1.3rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-commitment-copy p {
+      color: var(--zv-charcoal-soft);
+      font-size: 1.01rem;
+      line-height: 1.8;
+      margin-bottom: 1.15rem;
+    }
+
+    /* Philosophy quote highlight */
+    .sust-philosophy-quote {
+      margin: 1.75rem 0 0;
+      padding: 1.6rem 1.9rem;
+      background-color: var(--zv-cream);
+      border-left: 3px solid var(--zv-gold);
+      border-top: 1px solid rgba(194, 153, 99, 0.2);
+      border-right: 1px solid rgba(194, 153, 99, 0.2);
+      border-bottom: 1px solid rgba(194, 153, 99, 0.2);
+    }
+    .sust-philosophy-quote blockquote {
+      margin: 0 0 0.6rem;
+      font-family: var(--zv-serif);
+      font-size: 1.22rem;
+      line-height: 1.52;
+      font-style: italic;
+      color: var(--zv-burgundy);
+    }
+    .sust-philosophy-quote cite {
+      font-style: normal;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--zv-charcoal-soft);
+    }
+
+    /* ===================================================================
+       C. FOUR PILLARS
+       =================================================================== */
+    .sust-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .sust-pillar-card {
+      background-color: var(--zv-ivory);
+      border: 1px solid rgba(194, 153, 99, 0.3);
+      padding: 2.1rem 1.7rem 2.3rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+    }
+    .sust-pillar-card:hover {
+      border-color: var(--zv-gold);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(42, 33, 27, 0.08);
+    }
+
+    /* Gold top bar on hover */
+    .sust-pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background-color: var(--zv-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .sust-pillar-card:hover::before { transform: scaleX(1); }
+
+    .sust-pillar-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.4rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid rgba(194, 153, 99, 0.22);
+    }
+    .sust-pillar-icon {
+      width: 44px; height: 44px;
+      border: 1px solid var(--zv-gold-muted);
+      display: flex; align-items: center; justify-content: center;
+      background-color: var(--zv-cream);
+      color: var(--zv-burgundy);
+      font-family: var(--zv-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .sust-pillar-num {
+      font-family: var(--zv-serif);
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      color: var(--zv-gold);
+      font-weight: 600;
+    }
+    .sust-pillar-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-pillar-card p {
+      font-size: 0.95rem;
+      line-height: 1.72;
+      color: var(--zv-charcoal-soft);
+      margin-bottom: 0;
+      flex: 1;
+    }
+
+    /* ===================================================================
+       D. RESPONSIBLE MATERIALS
+       =================================================================== */
+    .sust-materials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+    }
+    .sust-material-block {
+      background-color: var(--zv-ivory);
+      border: 1px solid rgba(194, 153, 99, 0.28);
+      overflow: hidden;
+      transition: border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+    .sust-material-block:hover {
+      border-color: var(--zv-burgundy);
+      box-shadow: 0 14px 32px rgba(42, 33, 27, 0.08);
+    }
+    .sust-material-media {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background-color: var(--zv-charcoal);
+      position: relative;
+    }
+    .sust-material-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .sust-material-block:hover .sust-material-media img {
+      transform: scale(1.03);
+    }
+    /* Gold label overlay */
+    .sust-material-label {
+      position: absolute;
+      bottom: 0; left: 0;
+      background-color: rgba(94, 58, 36, 0.88);
+      color: var(--zv-gold);
+      font-family: var(--zv-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 0.42rem 0.85rem;
+    }
+    .sust-material-body {
+      padding: 1.75rem 1.65rem 2rem;
+    }
+    .sust-material-body h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.65rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-material-body p {
+      font-size: 0.96rem;
+      line-height: 1.73;
+      color: var(--zv-charcoal-soft);
+      margin-bottom: 0;
+    }
+    .sust-material-gold-rule {
+      width: 36px; height: 1px;
+      background-color: var(--zv-gold);
+      margin-bottom: 1rem;
+    }
+
+    /* ===================================================================
+       E. OUR ARTISANS
+       =================================================================== */
+    .sust-artisans-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 4.5rem;
+      align-items: start;
+    }
+    .sust-artisans-visual { position: relative; }
+    .sust-artisans-photo-wrap {
+      border: 1px solid var(--zv-gold-muted);
+      padding: 0.85rem;
+      background-color: var(--zv-cream);
+      position: relative;
+    }
+    .sust-artisans-photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(194, 153, 99, 0.12);
+      pointer-events: none;
+    }
+    .sust-artisans-photo-inner {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background-color: var(--zv-charcoal);
+    }
+    .sust-artisans-photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .sust-artisans-photo-note {
+      padding: 0.9rem 0.3rem 0.15rem;
+      font-size: 0.84rem;
+      color: var(--zv-charcoal-soft);
+      font-style: italic;
+    }
+
+    /* Copy side */
+    .sust-artisans-copy h2 {
+      font-size: clamp(1.9rem, 2.9vw, 2.5rem);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-artisans-copy .sust-kicker { color: var(--zv-burgundy); }
+    .sust-artisans-intro {
+      color: var(--zv-charcoal-soft);
+      font-size: 1.01rem;
+      line-height: 1.78;
+      margin-bottom: 2rem;
+    }
+
+    /* Three principles */
+    .sust-principles { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .sust-principle-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.1rem;
+      align-items: start;
+      padding: 1.4rem 1.5rem;
+      background-color: var(--zv-ivory);
+      border: 1px solid rgba(194, 153, 99, 0.28);
+      transition: border-color 0.25s ease;
+    }
+    .sust-principle-item:hover { border-color: var(--zv-gold); }
+    .sust-principle-emblem {
+      width: 40px; height: 40px;
+      border: 1px solid var(--zv-gold);
+      display: flex; align-items: center; justify-content: center;
+      background-color: var(--zv-cream);
+      color: var(--zv-burgundy);
+      font-family: var(--zv-serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .sust-principle-text h4 {
+      font-size: 1.08rem;
+      margin-bottom: 0.3rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-principle-text p {
+      font-size: 0.93rem;
+      line-height: 1.68;
+      color: var(--zv-charcoal-soft);
+      margin-bottom: 0;
+    }
+
+    /* ===================================================================
+       F. THOUGHTFUL PACKAGING
+       =================================================================== */
+    .sust-packaging-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4rem;
+      align-items: center;
+    }
+    .sust-packaging-copy h2 {
+      font-size: clamp(1.85rem, 2.9vw, 2.5rem);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-packaging-copy .sust-kicker { color: var(--zv-burgundy); }
+    .sust-packaging-copy p {
+      color: var(--zv-charcoal-soft);
+      font-size: 1.01rem;
+      line-height: 1.78;
+      margin-bottom: 1.1rem;
+    }
+    .sust-packaging-bullets {
+      list-style: none;
+      margin: 0 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .sust-packaging-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.97rem;
+      color: var(--zv-charcoal-soft);
+      line-height: 1.6;
+    }
+    .sust-packaging-bullets li::before {
+      content: "";
+      display: inline-block;
+      width: 20px; height: 1px;
+      background-color: var(--zv-gold);
+      flex-shrink: 0;
+    }
+
+    /* ===================================================================
+       G. SUSTAINABILITY JOURNEY TIMELINE
+       =================================================================== */
+    .sust-timeline-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2rem;
+      position: relative;
+      padding-top: 0.5rem;
+    }
+    /* Horizontal connector line */
+    .sust-timeline-track::before {
+      content: "";
+      position: absolute;
+      top: 1.9rem;
+      left: 5.5%;
+      right: 5.5%;
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(194, 153, 99, 0.5) 10%,
+        rgba(194, 153, 99, 0.5) 90%,
+        transparent 100%);
+    }
+    .sust-timeline-stage {
+      position: relative;
+      padding-top: 3.2rem;
+    }
+    .sust-timeline-marker {
+      position: absolute;
+      top: 0.6rem; left: 0;
+      width: 2.4rem; height: 2.4rem;
+      background-color: var(--zv-burgundy);
+      border: 1px solid var(--zv-gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--zv-serif);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--zv-gold);
+      z-index: 1;
+    }
+    .sust-timeline-label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--zv-gold);
+      margin-bottom: 0.4rem;
+    }
+    .sust-timeline-stage h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: var(--zv-ivory);
+    }
+    .sust-timeline-stage p {
+      font-size: 0.95rem;
+      line-height: 1.72;
+      color: rgba(250, 247, 242, 0.84);
+      margin-bottom: 0;
+    }
+
+    /* ===================================================================
+       H. OUR PROMISE (Full-width burgundy)
+       =================================================================== */
+    .sust-promise {
+      background-color: var(--zv-burgundy-deep);
+      color: var(--zv-ivory);
+      padding: 6rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sust-promise::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(194, 153, 99, 0.2);
+      pointer-events: none;
+    }
+    /* Background decorative diamond */
+    .sust-promise::after {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 500px; height: 500px;
+      border: 1px solid rgba(194, 153, 99, 0.06);
+      transform: translate(-50%, -50%) rotate(45deg);
+      pointer-events: none;
+    }
+    .sust-promise .container { position: relative; z-index: 1; }
+    .sust-promise-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .sust-promise h2 {
+      font-size: clamp(1.85rem, 3.4vw, 2.9rem);
+      line-height: 1.18;
+      color: var(--zv-ivory);
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+    .sust-promise p {
+      font-size: 1.08rem;
+      line-height: 1.78;
+      color: rgba(250, 247, 242, 0.84);
+      margin-bottom: 0;
+    }
+    /* Gold decorative separators */
+    .sust-promise-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .sust-promise-ornament span {
+      display: block;
+      width: 60px; height: 1px;
+      background-color: var(--zv-gold);
+      opacity: 0.6;
+    }
+    .sust-promise-ornament i {
+      display: block;
+      width: 7px; height: 7px;
+      border: 1px solid var(--zv-gold);
+      transform: rotate(45deg);
+    }
+
+    /* ===================================================================
+       I. FINAL CALL TO ACTION
+       =================================================================== */
+    .sust-cta {
+      text-align: center;
+      position: relative;
+    }
+    .sust-cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .sust-cta h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+      line-height: 1.2;
+      margin-bottom: 0.9rem;
+      color: var(--zv-charcoal);
+    }
+    .sust-cta p {
+      color: var(--zv-charcoal-soft);
+      font-size: 1.03rem;
+      line-height: 1.72;
+      margin-bottom: 2.25rem;
+    }
+    .sust-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* ===================================================================
+       SCROLL REVEAL (Progressive Enhancement)
+       =================================================================== */
+    .sust-has-reveal [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .sust-has-reveal [data-reveal].sust-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-reveal-delay="100"] { transition-delay: 0.1s !important; }
+    [data-reveal-delay="200"] { transition-delay: 0.2s !important; }
+    [data-reveal-delay="300"] { transition-delay: 0.3s !important; }
+    [data-reveal-delay="400"] { transition-delay: 0.4s !important; }
+
+    /* ===================================================================
+       REDUCED MOTION
+       =================================================================== */
+    @media (prefers-reduced-motion: reduce) {
+      .sust-has-reveal [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .sust-btn,
+      .sust-pillar-card,
+      .sust-material-block,
+      .sust-material-media img,
+      .sust-pillar-card::before {
+        transition: none;
+        transform: none;
+      }
+    }
+
+    /* ===================================================================
+       RESPONSIVE — 1080px
+       =================================================================== */
+    @media (max-width: 1080px) {
+      .sust-hero-layout { gap: 2.5rem; }
+      .sust-pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sust-commitment-grid,
+      .sust-artisans-grid,
+      .sust-packaging-layout { gap: 3rem; }
+    }
+
+    /* ===================================================================
+       RESPONSIVE — 900px (tablet landscape)
+       =================================================================== */
+    @media (max-width: 900px) {
+      .sust-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .sust-hero-copy .lead { max-width: 100%; }
+      .sust-commitment-grid,
+      .sust-artisans-grid,
+      .sust-packaging-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      /* Reverse packaging so image comes first on mobile */
+      .sust-packaging-layout .sust-photo-wrap { order: -1; }
+      .sust-materials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sust-timeline-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.25rem;
+      }
+      .sust-timeline-track::before { display: none; }
+      .sust-section { padding: 4rem 0; }
+    }
+
+    /* ===================================================================
+       RESPONSIVE — 640px (mobile)
+       =================================================================== */
+    @media (max-width: 640px) {
+      .sust-hero { padding: 3rem 0 3.5rem; }
+      .sust-hero::after { inset: 8px; }
+      .sust-hero-copy h1 { font-size: 2.2rem; }
+      .sust-pillars-grid,
+      .sust-materials-grid { grid-template-columns: 1fr; }
+      .sust-timeline-track {
+        grid-template-columns: 1fr;
+        margin-left: 1.2rem;
+        padding-left: 2rem;
+        border-left: 1px solid rgba(194, 153, 99, 0.4);
+        gap: 2rem;
+      }
+      .sust-timeline-stage { padding-top: 0; padding-left: 0; }
+      .sust-timeline-marker { top: -0.1rem; left: -3.1rem; }
+      .sust-timeline-track::before { display: none; }
+      .sust-promise { padding: 4rem 0; }
+      .sust-promise::before { inset: 10px; }
+      .sust-cta-actions .sust-btn { width: 100%; }
+      .sust-section { padding: 3.25rem 0; }
+      .sust-intro { margin-bottom: 2.5rem; }
+    }
+
+    /* ===================================================================
+       RESPONSIVE — 375px (small mobile)
+       =================================================================== */
+    @media (max-width: 400px) {
+      .sust-hero-copy h1 { font-size: 1.9rem; }
+      .sust-btn { padding: 0.8rem 1.4rem; font-size: 0.8rem; }
+      .sust-promise h2 { font-size: 1.7rem; }
+    }
+  </style>
 </head>
-<body>
+<body class="sust-page sust-has-reveal">
+
+  <!-- =====================================================================
+       HEADER (Preserved exactly as original)
+       ===================================================================== -->
   <header class="site-header">
     <div class="announcement-bar">
       Handcrafted in small batches &middot; Free insured shipping on orders over PKR 10,000
@@ -45,27 +1088,448 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> <span>/</span> <span>Sustainability</span>
-        </nav>
-        <span class="eyebrow">Member 4 &middot; 26i-3092 (Muhammad Ali)</span>
-        <h1>Ethical Sourcing &amp; Sustainability</h1>
-        <p class="lead">Our commitment to fair artisan wages, reclaimed metals, and plastic-free packaging.</p>
-      </div>
-    </section>
 
-    <section class="section">
+    <!-- =================================================================
+         A. HERO SECTION — "Beauty With a Conscience"
+         ================================================================= -->
+    <section class="sust-hero" aria-labelledby="sust-hero-title">
       <div class="container">
-        <div class="placeholder-panel">
-          <h2>Impact Pillars &amp; Transparent Supply Chain</h2>
-          <p>Placeholder for recycled brass &amp; silver metrics, eco-packaging breakdown, and artisan wage commitments.</p>
+        <!-- Breadcrumb -->
+        <nav class="sust-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Sustainability</span>
+        </nav>
+
+        <div class="sust-hero-layout">
+          <!-- Left: copy -->
+          <div class="sust-hero-copy">
+            <span class="sust-kicker sust-kicker--only" data-reveal>Our Responsibility &middot; Zaverat</span>
+            <h1 id="sust-hero-title" data-reveal>Beauty With<br>a Conscience</h1>
+            <p class="hero-subtitle" data-reveal>Ethically Crafted. Thoughtfully Sourced. Made to Last.</p>
+
+            <div class="sust-ornament" data-reveal>
+              <span class="sust-ornament-line"></span>
+              <span class="sust-ornament-diamond"></span>
+              <span class="sust-ornament-line"></span>
+            </div>
+
+            <p class="lead" data-reveal>
+              At Zaverat, every piece of jewellery carries more than beauty — it carries a commitment. A commitment to the hands that shaped it, to the materials it was made from, and to the traditions it honours. We believe responsible craftsmanship is not an exception in luxury; it is its very foundation.
+            </p>
+
+            <a href="#sust-pillars" class="sust-btn sust-btn--gold" data-reveal>
+              Explore Our Commitments
+            </a>
+          </div>
+
+          <!-- Right: hero image -->
+          <div class="sust-hero-frame" data-reveal>
+            <div class="sust-hero-media">
+              <img
+                src="../images/banners/about-hero-jewellery.jpg"
+                alt="Traditional South Asian jewellery craftsmanship — intricate gold and gemstone work"
+                loading="eager"
+              >
+            </div>
+            <div class="sust-hero-caption">
+              <span>Heritage Craftsmanship</span>
+              <span>Zaverat Atelier</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- =================================================================
+         B. OUR COMMITMENT — "Jewellery That Respects Its Origins"
+         ================================================================= -->
+    <section class="sust-section sust-section--ivory" aria-labelledby="sust-commit-title">
+      <div class="container">
+        <div class="sust-commitment-grid">
+          <!-- Left: photograph -->
+          <div class="sust-artisans-visual" data-reveal>
+            <div class="sust-photo-wrap">
+              <div class="sust-photo-inner">
+                <img
+                  src="../images/banners/about-heritage-craft.jpg"
+                  alt="Artisan hands carefully working on a traditional jewellery piece at the Zaverat workshop"
+                  loading="lazy"
+                >
+              </div>
+              <p class="sust-photo-note">Master craftspeople at the Zaverat atelier — where every detail is intentional.</p>
+            </div>
+          </div>
+
+          <!-- Right: editorial copy -->
+          <div class="sust-commitment-copy" data-reveal>
+            <span class="sust-kicker sust-kicker--only">Our Sustainability Philosophy</span>
+            <h2 id="sust-commit-title">Jewellery That<br>Respects Its Origins</h2>
+
+            <p>
+              Responsible jewellery is not simply a trend — it is a returning to what fine craftsmanship has always meant: care, intention, and respect for every element involved. At Zaverat, our commitment to sustainability begins long before a piece reaches your hands.
+            </p>
+            <p>
+              We prioritise the careful selection of materials, working with suppliers who share our values of transparency and responsibility. We produce in small, deliberate batches rather than chasing volume — ensuring that each creation receives the full attention it deserves, while reducing unnecessary excess.
+            </p>
+            <p>
+              Our artisan partnerships are built on mutual respect, recognising that the preservation of traditional South Asian jewellery skills depends on creating conditions where craftspeople are valued, compensated fairly, and given the dignity their expertise deserves.
+            </p>
+            <p>
+              We design jewellery with longevity at its heart — pieces that do not follow seasons but transcend them, intended to be worn, passed down, and treasured for generations.
+            </p>
+
+            <div class="sust-philosophy-quote">
+              <blockquote>
+                "True luxury is not only measured by beauty, but by the care behind its creation."
+              </blockquote>
+              <cite>— The Zaverat Philosophy</cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         C. FOUR PILLARS OF RESPONSIBLE CRAFT
+         ================================================================= -->
+    <section class="sust-section sust-section--cream" id="sust-pillars" aria-labelledby="sust-pillars-title">
+      <div class="container">
+        <div class="sust-intro" data-reveal>
+          <span class="sust-kicker">Our Commitments</span>
+          <h2 id="sust-pillars-title">Four Pillars of Responsible Craft</h2>
+          <p>Every decision we make — from material selection to delivery — is guided by four enduring principles that define what responsible luxury means to us.</p>
+          <div class="sust-rule"></div>
+        </div>
+
+        <div class="sust-pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="sust-pillar-card" data-reveal data-reveal-delay="100">
+            <div class="sust-pillar-top">
+              <div class="sust-pillar-icon" aria-hidden="true">&#9671;</div>
+              <span class="sust-pillar-num">01</span>
+            </div>
+            <h3>Responsible Materials</h3>
+            <p>We carefully consider every material that enters our atelier. Where available, we explore reclaimed and recycled metals — silver and brass — to reduce the demand for newly extracted resources. Our gemstone sourcing prioritises suppliers who operate with transparency, traceability, and ethical intent.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="sust-pillar-card" data-reveal data-reveal-delay="200">
+            <div class="sust-pillar-top">
+              <div class="sust-pillar-icon" aria-hidden="true">&#10022;</div>
+              <span class="sust-pillar-num">02</span>
+            </div>
+            <h3>Fair Artisan Partnerships</h3>
+            <p>The hands behind Zaverat jewellery deserve recognition, respect, and fair compensation. We build long-term relationships with our craftspeople — not transactional ones. By honouring their expertise and preserving traditional South Asian jewellery-making skills, we ensure that this irreplaceable heritage continues to thrive.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="sust-pillar-card" data-reveal data-reveal-delay="300">
+            <div class="sust-pillar-top">
+              <div class="sust-pillar-icon" aria-hidden="true">&#9681;</div>
+              <span class="sust-pillar-num">03</span>
+            </div>
+            <h3>Thoughtful Production</h3>
+            <p>We produce in small, considered batches — never driven by overstock or disposable fashion cycles. This approach allows us to use materials carefully, minimise excess inventory, and ensure that each piece is crafted with full attention and intention. Quality, not quantity, is our guiding measure.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="sust-pillar-card" data-reveal data-reveal-delay="400">
+            <div class="sust-pillar-top">
+              <div class="sust-pillar-icon" aria-hidden="true">&#9633;</div>
+              <span class="sust-pillar-num">04</span>
+            </div>
+            <h3>Conscious Packaging</h3>
+            <p>A Zaverat piece arrives presented with the same thoughtfulness as it was crafted. Our packaging uses recyclable materials, reusable jewellery boxes, and minimal plastic — because how we deliver beauty matters as much as the beauty itself. We continually seek to reduce our packaging footprint.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         D. RESPONSIBLE MATERIALS — "Materials With a Meaning"
+         ================================================================= -->
+    <section class="sust-section sust-section--ivory" aria-labelledby="sust-materials-title">
+      <div class="container">
+        <div class="sust-intro" data-reveal>
+          <span class="sust-kicker">What We Work With</span>
+          <h2 id="sust-materials-title">Materials With a Meaning</h2>
+          <p>Every element in a Zaverat piece is chosen with care — for its beauty, its durability, and the story of how it came to be.</p>
+          <div class="sust-rule"></div>
+        </div>
+
+        <div class="sust-materials-grid">
+          <!-- Block 1: Reclaimed Metals -->
+          <article class="sust-material-block" data-reveal data-reveal-delay="100">
+            <div class="sust-material-media">
+              <img
+                src="../images/banners/sustainability-materials.svg"
+                alt="Reclaimed silver and brass materials arranged on a jeweller's workbench"
+                loading="lazy"
+              >
+              <span class="sust-material-label">Reclaimed Metals</span>
+            </div>
+            <div class="sust-material-body">
+              <div class="sust-material-gold-rule"></div>
+              <h3>Reclaimed Metals</h3>
+              <p>
+                Silver and brass carry remarkable lives before they reach us. We actively explore opportunities to work with reclaimed and recycled metal — reducing the environmental demand for newly extracted ore without compromising on quality or character. Metal that has lived before brings its own depth to what comes next.
+              </p>
+            </div>
+          </article>
+
+          <!-- Block 2: Thoughtfully Selected Gemstones -->
+          <article class="sust-material-block" data-reveal data-reveal-delay="200">
+            <div class="sust-material-media">
+              <img
+                src="../images/banners/about-heritage-craft.jpg"
+                alt="Naturally sourced gemstones displayed with care — emeralds, rubies, and pearls"
+                loading="lazy"
+              >
+              <span class="sust-material-label">Gemstone Sourcing</span>
+            </div>
+            <div class="sust-material-body">
+              <div class="sust-material-gold-rule"></div>
+              <h3>Thoughtfully Selected Gemstones</h3>
+              <p>
+                Transparency matters when it comes to gemstones. We work with suppliers who can speak clearly about where their stones come from and how they are handled. While perfect traceability across the entire supply chain remains a broader industry challenge, our commitment is to ask the right questions and to choose suppliers who take responsibility seriously.
+              </p>
+            </div>
+          </article>
+
+          <!-- Block 3: Materials That Last -->
+          <article class="sust-material-block" data-reveal data-reveal-delay="300">
+            <div class="sust-material-media">
+              <img
+                src="../images/banners/about-hero-jewellery.jpg"
+                alt="Heirloom-quality Zaverat jewellery crafted to last generations — golden necklace and bangles"
+                loading="lazy"
+              >
+              <span class="sust-material-label">Built to Last</span>
+            </div>
+            <div class="sust-material-body">
+              <div class="sust-material-gold-rule"></div>
+              <h3>Materials That Last</h3>
+              <p>
+                The most sustainable piece of jewellery is one that never needs replacing. We select durable materials — quality silver, solid brass, and genuine gemstones — and pair them with timeless designs that resist the disposability of fast fashion. A Zaverat piece is intended to be treasured for years, not seasons.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         E. OUR ARTISANS — "People Are at the Heart of Every Creation"
+         ================================================================= -->
+    <section class="sust-section sust-section--cream" aria-labelledby="sust-artisans-title">
+      <div class="container">
+        <div class="sust-artisans-grid">
+          <!-- Left: photo -->
+          <div class="sust-artisans-visual" data-reveal>
+            <div class="sust-artisans-photo-wrap">
+              <div class="sust-artisans-photo-inner">
+                <img
+                  src="../images/artisans/artisan-kamran.jpg"
+                  alt="A master jewellery artisan at the Zaverat atelier carefully crafting a traditional piece by hand"
+                  loading="lazy"
+                >
+              </div>
+              <p class="sust-artisans-photo-note">Our craftspeople bring decades of refined skill to every creation.</p>
+            </div>
+          </div>
+
+          <!-- Right: copy + principles -->
+          <div class="sust-artisans-copy" data-reveal>
+            <span class="sust-kicker sust-kicker--only">The People Behind the Pieces</span>
+            <h2 id="sust-artisans-title">People Are at the Heart<br>of Every Creation</h2>
+
+            <p class="sust-artisans-intro">
+              Behind every Zaverat piece is a craftsperson who has spent years — often decades — refining their skill. These are individuals who carry knowledge passed down through families and communities, and who bring an irreplaceable human touch to every detail.
+            </p>
+            <p class="sust-artisans-intro">
+              Responsible luxury means recognising that the value of jewellery is inseparable from the people who make it. We believe that supporting our artisans — genuinely, not performatively — is as central to our identity as the jewellery itself.
+            </p>
+
+            <ul class="sust-principles" aria-label="Artisan partnership principles">
+              <li class="sust-principle-item">
+                <div class="sust-principle-emblem" aria-hidden="true">I</div>
+                <div class="sust-principle-text">
+                  <h4>Fair and Respectful Compensation</h4>
+                  <p>We ensure that the craftspeople who create Zaverat jewellery receive wages that reflect the true worth of their expertise, time, and skill — not the minimum acceptable.</p>
+                </div>
+              </li>
+              <li class="sust-principle-item">
+                <div class="sust-principle-emblem" aria-hidden="true">II</div>
+                <div class="sust-principle-text">
+                  <h4>Preserving Traditional Skills</h4>
+                  <p>South Asian jewellery-making traditions represent centuries of accumulated knowledge. By creating meaningful, sustained work for traditional craftspeople, we actively contribute to keeping these skills alive.</p>
+                </div>
+              </li>
+              <li class="sust-principle-item">
+                <div class="sust-principle-emblem" aria-hidden="true">III</div>
+                <div class="sust-principle-text">
+                  <h4>Long-Term Artisan Relationships</h4>
+                  <p>We prioritise lasting relationships over one-off engagements — building the trust and continuity that allow craftspeople to invest in their work with confidence and pride.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         F. THOUGHTFUL PACKAGING — "Beautifully Presented, Thoughtfully Packed"
+         ================================================================= -->
+    <section class="sust-section sust-section--ivory" aria-labelledby="sust-packaging-title">
+      <div class="container">
+        <div class="sust-packaging-layout">
+          <!-- Left: copy -->
+          <div class="sust-packaging-copy" data-reveal>
+            <span class="sust-kicker sust-kicker--only">How We Present</span>
+            <h2 id="sust-packaging-title">Beautifully Presented,<br>Thoughtfully Packed</h2>
+            <p>
+              The experience of receiving a Zaverat piece should feel as considered as the piece itself. We believe that packaging is not mere formality — it is part of the gift. And gifts should not come at the planet's expense.
+            </p>
+            <p>
+              Our packaging philosophy centres on materials that can be reused, recycled, or at the very least, do not linger unnecessarily. Rigid jewellery boxes are designed to be kept. Wrapping uses natural, recyclable materials. Plastic is minimised wherever possible.
+            </p>
+
+            <ul class="sust-packaging-bullets" aria-label="Packaging commitments">
+              <li>Recyclable outer packaging and materials</li>
+              <li>Reusable, keepsake-quality jewellery boxes</li>
+              <li>Minimal plastic in packaging and sealing</li>
+              <li>Natural textures — kraft, linen, and unbleached card</li>
+              <li>Thoughtful presentation without unnecessary excess</li>
+              <li>Ongoing reduction of our packaging footprint</li>
+            </ul>
+          </div>
+
+          <!-- Right: packaging photograph -->
+          <div class="sust-artisans-visual" data-reveal>
+            <div class="sust-photo-wrap">
+              <div class="sust-photo-inner">
+                <img
+                  src="../images/banners/sustainability-packaging.svg"
+                  alt="Zaverat jewellery presented in an elegant, reusable keepsake box on an ivory linen surface with natural accents"
+                  loading="lazy"
+                >
+              </div>
+              <p class="sust-photo-note">Packaging designed to be kept, not discarded — as lasting as the jewellery within.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         G. SUSTAINABILITY JOURNEY — "Progress, One Step at a Time"
+         ================================================================= -->
+    <section class="sust-section sust-section--burgundy" aria-labelledby="sust-journey-title">
+      <div class="container">
+        <div class="sust-intro" data-reveal>
+          <span class="sust-kicker">Our Journey</span>
+          <h2 id="sust-journey-title">Progress, One Step at a Time</h2>
+          <p>Sustainability is not a destination — it is a direction. These milestones represent our evolving commitments as we build a more responsible brand.</p>
+          <div class="sust-rule"></div>
+        </div>
+
+        <div class="sust-timeline-track" role="list">
+          <!-- Stage 1 -->
+          <div class="sust-timeline-stage" role="listitem" data-reveal data-reveal-delay="100">
+            <div class="sust-timeline-marker" aria-hidden="true">01</div>
+            <span class="sust-timeline-label">Thoughtful Beginnings</span>
+            <h3>Building Awareness</h3>
+            <p>We began by honestly examining our own processes — asking where our materials come from, who is involved, and what impact our choices have. This awareness is the foundation of every commitment that followed.</p>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="sust-timeline-stage" role="listitem" data-reveal data-reveal-delay="200">
+            <div class="sust-timeline-marker" aria-hidden="true">02</div>
+            <span class="sust-timeline-label">Responsible Materials</span>
+            <h3>Sourcing with Intent</h3>
+            <p>We began prioritising reclaimed metals and transparent gemstone sourcing — actively seeking suppliers whose values align with our own, and asking harder questions about provenance and practice.</p>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="sust-timeline-stage" role="listitem" data-reveal data-reveal-delay="300">
+            <div class="sust-timeline-marker" aria-hidden="true">03</div>
+            <span class="sust-timeline-label">Artisan Empowerment</span>
+            <h3>Strengthening Relationships</h3>
+            <p>We deepened our commitment to the craftspeople who bring Zaverat to life — formalising fair compensation structures, building longer-term partnerships, and creating conditions where traditional skills are preserved with pride.</p>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="sust-timeline-stage" role="listitem" data-reveal data-reveal-delay="400">
+            <div class="sust-timeline-marker" aria-hidden="true">04</div>
+            <span class="sust-timeline-label">A More Conscious Future</span>
+            <h3>Continuously Improving</h3>
+            <p>Our sustainability journey is ongoing. We continue to review our packaging, production practices, and supply chain relationships — with the commitment to improve, rather than the pretence of perfection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         H. OUR PROMISE — Full-width burgundy statement
+         ================================================================= -->
+    <section class="sust-promise" aria-labelledby="sust-promise-title">
+      <div class="container">
+        <div class="sust-promise-inner" data-reveal>
+          <span class="sust-kicker">Our Pledge</span>
+
+          <div class="sust-promise-ornament" aria-hidden="true">
+            <span></span>
+            <i></i>
+            <span></span>
+          </div>
+
+          <h2 id="sust-promise-title">
+            Luxury Should Leave a Lasting Impression,<br>Not a Lasting Footprint.
+          </h2>
+
+          <div class="sust-promise-ornament" aria-hidden="true">
+            <span></span>
+            <i></i>
+            <span></span>
+          </div>
+
+          <p>
+            We do not claim perfection. The jewellery industry — like all industries — faces complex challenges that no single brand can solve alone. What we do commit to is making thoughtful choices, wherever and whenever they are within our reach. Choosing materials carefully. Honouring the people who craft for us. Presenting our jewellery without unnecessary waste. Designing pieces meant to outlast trends. These are the intentions that guide us — and the standard we hold ourselves to.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         I. FINAL CALL TO ACTION — "Choose Jewellery With a Story"
+         ================================================================= -->
+    <section class="sust-section sust-section--cream sust-cta" aria-labelledby="sust-cta-title">
+      <div class="container">
+        <div class="sust-cta-inner" data-reveal>
+          <span class="sust-kicker">Discover Zaverat</span>
+          <h2 id="sust-cta-title">Choose Jewellery With a Story</h2>
+          <p>
+            Discover thoughtfully designed pieces that celebrate craftsmanship, heritage, and lasting beauty. Each Zaverat creation is a small act of intention — made to be worn with pride and passed forward with meaning.
+          </p>
+          <div class="sust-cta-actions">
+            <a href="../pages/shop.html" class="sust-btn sust-btn--burgundy">
+              Explore Collection
+            </a>
+            <a href="../pages/about.html" class="sust-btn sust-btn--ghost-dark">
+              Discover Our Story
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- =====================================================================
+       FOOTER (Preserved exactly as original)
+       ===================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -114,8 +1578,78 @@
     </div>
   </footer>
 
+  <!-- =====================================================================
+       JAVASCRIPT — Existing global scripts (preserved)
+       ===================================================================== -->
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+
+  <!-- =====================================================================
+       JAVASCRIPT — Page-specific (sustainability.html only)
+       ===================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---- Scroll Reveal ------------------------------------------------- */
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        var revealEls = document.querySelectorAll('[data-reveal]');
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var delay = el.getAttribute('data-reveal-delay');
+              if (delay) {
+                el.style.transitionDelay = delay + 'ms';
+              }
+              el.classList.add('sust-visible');
+              observer.unobserve(el);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealEls.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        /* Immediately show everything if reduced motion or no IntersectionObserver */
+        document.querySelectorAll('[data-reveal]').forEach(function (el) {
+          el.classList.add('sust-visible');
+        });
+      }
+
+      /* ---- Smooth Scroll for anchor links ------------------------------- */
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      /* ---- Mobile Nav Toggle (defensive — app.js may also handle this) -- */
+      var navToggle = document.querySelector('.nav-toggle');
+      var navMenu   = document.querySelector('.nav-menu');
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function () {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!expanded));
+          navMenu.classList.toggle('is-open');
+        });
+      }
+
+    }());
+  </script>
+
 </body>
 </html>
