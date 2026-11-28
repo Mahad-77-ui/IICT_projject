@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Multani Chandbali Earrings illustration">
+  <defs>
+    <linearGradient id="mc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#EAE0D0"/>
+    </linearGradient>
+    <linearGradient id="mc-brass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DDA94B"/>
+      <stop offset="55%" stop-color="#B17B32"/>
+      <stop offset="100%" stop-color="#6F4523"/>
+    </linearGradient>
+    <radialGradient id="mc-carnelian" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E36D4B"/>
+      <stop offset="65%" stop-color="#B03A24"/>
+      <stop offset="100%" stop-color="#6D1E12"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#mc-bg)"/>
+  <!-- Left Chandbali -->
+  <g transform="translate(136, 56)">
+    <circle cx="0" cy="18" r="14" fill="url(#mc-brass)" stroke="#5B3619" stroke-width="1.5"/>
+    <circle cx="0" cy="18" r="7" fill="url(#mc-carnelian)"/>
+    <line x1="0" y1="32" x2="0" y2="48" stroke="url(#mc-brass)" stroke-width="3.5"/>
+    <!-- Crescent body -->
+    <path d="M-38 88 A40 40 0 1 0 38 88 A28 28 0 1 1 -38 88 Z" fill="url(#mc-brass)" stroke="#5B3619" stroke-width="1.6"/>
+    <!-- Center drop -->
+    <circle cx="0" cy="72" r="9" fill="url(#mc-carnelian)" stroke="#E7C266" stroke-width="1.8"/>
+    <!-- Pearl fringe -->
+    <g fill="#FAF7F2" stroke="#C89B3C" stroke-width="1.1">
+      <circle cx="-28" cy="130" r="4.5"/>
+      <circle cx="-14" cy="139" r="5"/>
+      <circle cx="0" cy="143" r="6"/>
+      <circle cx="14" cy="139" r="5"/>
+      <circle cx="28" cy="130" r="4.5"/>
+    </g>
+  </g>
+  <!-- Right Chandbali -->
+  <g transform="translate(264, 70)">
+    <circle cx="0" cy="18" r="14" fill="url(#mc-brass)" stroke="#5B3619" stroke-width="1.5"/>
+    <circle cx="0" cy="18" r="7" fill="url(#mc-carnelian)"/>
+    <line x1="0" y1="32" x2="0" y2="48" stroke="url(#mc-brass)" stroke-width="3.5"/>
+    <path d="M-38 88 A40 40 0 1 0 38 88 A28 28 0 1 1 -38 88 Z" fill="url(#mc-brass)" stroke="#5B3619" stroke-width="1.6"/>
+    <circle cx="0" cy="72" r="9" fill="url(#mc-carnelian)" stroke="#E7C266" stroke-width="1.8"/>
+    <g fill="#FAF7F2" stroke="#C89B3C" stroke-width="1.1">
+      <circle cx="-28" cy="130" r="4.5"/>
+      <circle cx="-14" cy="139" r="5"/>
+      <circle cx="0" cy="143" r="6"/>
+      <circle cx="14" cy="139" r="5"/>
+      <circle cx="28" cy="130" r="4.5"/>
+    </g>
+  </g>
+</svg>
