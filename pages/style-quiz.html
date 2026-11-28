@@ -56,12 +56,121 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section quiz-section" aria-labelledby="quiz-section-heading">
       <div class="container">
-        <div class="placeholder-panel">
-          <h2>Quiz Flow &amp; Curated Match Results</h2>
-          <p>Placeholder for multi-step quiz questions, progress bar, saved result persistence via <code>ZaveratStorage.saveQuizState()</code>, and matched product cards.</p>
-        </div>
+        <h2 id="quiz-section-heading" class="sr-only">Personal Jewellery Style Quiz</h2>
+
+        <!-- 1. Saved Result Banner -->
+        <aside id="saved-quiz-banner" class="card saved-quiz-banner" aria-label="Saved style quiz result" hidden>
+          <div class="saved-quiz-banner-body">
+            <span class="meta-pill saved-quiz-badge">Saved Style Profile</span>
+            <h3 class="saved-quiz-heading">
+              Your matched persona: <span id="saved-persona-name">Heritage Connoisseur</span>
+            </h3>
+            <p id="saved-persona-summary" class="saved-quiz-summary">
+              You previously completed the Zaverat Style Quiz. Jump straight to your curated pieces or retake the quiz anytime.
+            </p>
+          </div>
+          <div class="saved-quiz-actions">
+            <button type="button" id="view-saved-matches-btn" class="btn btn-primary">
+              View Saved Matches
+            </button>
+            <button type="button" id="banner-retake-quiz-btn" class="btn btn-outline">
+              Retake Quiz
+            </button>
+          </div>
+        </aside>
+
+        <!-- 2. Interactive Multi-Step Quiz Container -->
+        <section id="quiz-container" class="card quiz-card" aria-labelledby="quiz-question-title">
+          <div class="quiz-progress-header">
+            <div class="quiz-progress-meta">
+              <span id="quiz-step-label" class="quiz-step-label">Question 1 of 5</span>
+              <span id="quiz-progress-percent" class="quiz-progress-percent">20%</span>
+            </div>
+            <div
+              id="quiz-progress-track"
+              class="quiz-progress-track"
+              role="progressbar"
+              aria-label="Style quiz progress"
+              aria-valuemin="1"
+              aria-valuemax="5"
+              aria-valuenow="1"
+            >
+              <div id="quiz-progress-fill" class="quiz-progress-fill" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <div class="quiz-question-body">
+            <h2 id="quiz-question-title" class="quiz-question-title">Question 1 of 5</h2>
+            <p id="quiz-question-hint" class="quiz-question-hint">Choose the option that best reflects your personal style.</p>
+
+            <div
+              id="quiz-options-grid"
+              class="quiz-options-grid"
+              role="radiogroup"
+              aria-labelledby="quiz-question-title"
+              aria-describedby="quiz-question-hint"
+            ></div>
+          </div>
+
+          <div
+            id="quiz-validation-msg"
+            class="quiz-validation-msg"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          >
+            Please select an option before continuing to the next question.
+          </div>
+
+          <div class="quiz-nav-controls">
+            <button type="button" id="quiz-prev-btn" class="btn btn-outline" disabled>
+              Previous
+            </button>
+            <div class="quiz-nav-forward">
+              <button type="button" id="quiz-next-btn" class="btn btn-primary">
+                Next
+              </button>
+              <button type="button" id="quiz-submit-btn" class="btn btn-primary" hidden>
+                See My Matches
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Curated Match Results Section -->
+        <section id="quiz-results-section" class="quiz-results-section" aria-labelledby="persona-title" hidden>
+          <article class="card persona-summary-card">
+            <div class="persona-summary-header">
+              <span class="eyebrow">Your Zaverat Style Persona</span>
+              <h2 id="persona-title" class="persona-title">Style Persona</h2>
+              <p id="persona-description" class="lead persona-description"></p>
+              <ul id="persona-tags" class="persona-tags" aria-label="Style profile attributes"></ul>
+            </div>
+            <div class="persona-actions">
+              <button type="button" id="retake-quiz-btn" class="btn btn-outline">
+                Retake Quiz
+              </button>
+              <a class="btn btn-primary" href="../pages/shop.html">
+                Browse Full Collection
+              </a>
+            </div>
+          </article>
+
+          <div class="quiz-matches-block">
+            <div class="quiz-matches-header">
+              <div>
+                <span class="eyebrow">Curated For You</span>
+                <h3>Recommended Handcrafted Pieces</h3>
+              </div>
+              <p class="quiz-matches-note">Selected from our artisan catalogue to complement your style profile.</p>
+            </div>
+
+            <div id="quiz-matched-products" class="grid grid-3 quiz-products-grid" aria-live="polite"></div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -117,5 +226,6 @@
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+  <script src="../js/style-quiz.js"></script>
 </body>
 </html>
