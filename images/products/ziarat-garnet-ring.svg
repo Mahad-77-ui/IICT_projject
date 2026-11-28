@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Ziarat Garnet Filigree Ring illustration">
+  <defs>
+    <linearGradient id="zg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#EAE0D0"/>
+    </linearGradient>
+    <linearGradient id="zg-brass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFB256"/>
+      <stop offset="55%" stop-color="#AD7830"/>
+      <stop offset="100%" stop-color="#6B4221"/>
+    </linearGradient>
+    <radialGradient id="zg-garnet" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#B83B4B"/>
+      <stop offset="60%" stop-color="#751825"/>
+      <stop offset="100%" stop-color="#420912"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#zg-bg)"/>
+  <!-- Antique brass ring shank -->
+  <ellipse cx="200" cy="174" rx="72" ry="54" fill="none" stroke="url(#zg-brass)" stroke-width="18"/>
+  <ellipse cx="200" cy="174" rx="62" ry="44" fill="none" stroke="#5B3619" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <!-- Filigree crown setting -->
+  <ellipse cx="200" cy="104" rx="44" ry="34" fill="url(#zg-brass)" stroke="#5B3619" stroke-width="2"/>
+  <ellipse cx="200" cy="104" rx="34" ry="25" fill="none" stroke="#F6E2B3" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <!-- Oval Almandine Garnet -->
+  <ellipse cx="200" cy="104" rx="26" ry="19" fill="url(#zg-garnet)" stroke="#E7C266" stroke-width="2"/>
+  <ellipse cx="192" cy="97" rx="7" ry="3.5" fill="#F29AA6" opacity="0.65"/>
+  <!-- Shoulder granules -->
+  <circle cx="148" cy="122" r="4.5" fill="#DFB256" stroke="#5B3619" stroke-width="1"/>
+  <circle cx="252" cy="122" r="4.5" fill="#DFB256" stroke="#5B3619" stroke-width="1"/>
+</svg>

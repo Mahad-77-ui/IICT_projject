@@ -5,6 +5,388 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop Jewellery — Zaverat</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .shop-toolbar {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .shop-toolbar-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .shop-search-wrap {
+      flex: 1 1 280px;
+      position: relative;
+    }
+
+    .shop-search-input {
+      width: 100%;
+      padding: 0.7rem 0.95rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .shop-search-input:focus {
+      outline: 2px solid rgba(200, 155, 60, 0.35);
+      border-color: var(--color-primary);
+    }
+
+    .shop-filter-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 0.85rem;
+      align-items: end;
+    }
+
+    .shop-filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .shop-filter-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .shop-select {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: border-color var(--transition);
+    }
+
+    .shop-select:hover,
+    .shop-select:focus {
+      border-color: var(--color-primary);
+      outline: none;
+    }
+
+    .shop-checkbox-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 40px;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background-color: var(--color-bg);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .shop-checkbox-wrap input[type="checkbox"] {
+      accent-color: var(--color-primary);
+      width: 1rem;
+      height: 1rem;
+      cursor: pointer;
+    }
+
+    .shop-toolbar-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .shop-result-count {
+      margin: 0;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .shop-reset-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.88rem;
+    }
+
+    #shopProductGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+      gap: 1.5rem;
+    }
+
+    #shopProductGrid:empty {
+      display: none;
+    }
+
+    .shop-product-card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.15rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: shopCardIn 0.18s ease both;
+    }
+
+    .shop-product-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .shop-product-media {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      margin-bottom: 1rem;
+      aspect-ratio: 4 / 3;
+    }
+
+    .shop-product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .shop-product-badge {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: rgba(44, 36, 32, 0.85);
+      color: #fff;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .shop-wish-btn {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      width: 2.15rem;
+      height: 2.15rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background-color: var(--color-surface);
+      color: var(--color-primary);
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .shop-wish-btn.is-active,
+    .shop-wish-btn:hover {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #fff;
+    }
+
+    .shop-product-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .shop-product-meta {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .shop-product-title {
+      font-size: 1.08rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .shop-product-title a {
+      color: var(--color-text);
+    }
+
+    .shop-product-title a:hover {
+      color: var(--color-primary);
+    }
+
+    .shop-product-desc {
+      font-size: 0.87rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.65rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* fallback for non-webkit browsers */
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      max-height: 2.6em; /* approx two lines */
+    }
+
+    .shop-product-rating {
+      font-size: 0.83rem;
+      color: var(--color-primary-dark);
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .shop-product-rating span {
+      color: var(--color-text-muted);
+      font-weight: 400;
+    }
+
+    .shop-product-pricing {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: auto;
+      margin-bottom: 0.85rem;
+    }
+
+    .shop-product-price {
+      font-size: 1.04rem;
+      color: var(--color-primary-dark);
+    }
+
+    .shop-stock-badge.in-stock {
+      background-color: #e6f2ea;
+      color: var(--color-success);
+    }
+
+    .shop-stock-badge.out-of-stock {
+      background-color: #fbeaea;
+      color: var(--color-danger);
+    }
+
+    .shop-product-actions {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .shop-product-actions .btn {
+      width: 100%;
+      padding: 0.58rem 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    .shop-product-actions .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .shop-empty-state {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border: 2px dashed var(--color-border);
+      background-color: var(--color-surface);
+      border-radius: var(--radius-md);
+      margin-top: 1rem;
+    }
+
+    .shop-empty-state h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .shop-empty-state p {
+      color: var(--color-text-muted);
+      max-width: 48ch;
+      margin: 0 auto 1.25rem;
+    }
+
+    .shop-toast-container {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      display: grid;
+      gap: 0.5rem;
+      z-index: 400;
+    }
+
+    .shop-toast {
+      background-color: var(--color-text);
+      color: #fff;
+      padding: 0.7rem 1rem 0.7rem 1.1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      animation: shopToastIn 0.22s ease;
+    }
+
+    .shop-toast.is-wish {
+      border-left: 3px solid var(--color-primary);
+    }
+
+    .shop-toast.is-cart {
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .shop-toast.is-removing {
+      animation: shopToastOut 0.2s ease forwards;
+    }
+
+    @keyframes shopToastIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes shopToastOut {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(8px); }
+    }
+
+    /* Gemstone meta pill inside card */
+    .shop-gem-pill {
+      display: inline-block;
+      padding: 0.18rem 0.52rem;
+      border-radius: 999px;
+      background-color: var(--color-accent-soft);
+      color: var(--color-primary-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* "Made to Order" badge variant */
+    .shop-stock-badge.made-to-order {
+      background-color: #f5ebd6;
+      color: var(--color-primary-dark);
+    }
+
+    @keyframes shopCardIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -58,10 +440,83 @@
 
     <section class="section">
       <div class="container">
-        <div class="placeholder-panel">
-          <h2>Catalogue &amp; Filter Workspace</h2>
-          <p>Placeholder for category filters, price range sorting, search bar, and dynamic product grid rendered from <code>window.ZAVERAT_DATA.products</code>.</p>
-          <a class="btn btn-primary" href="../pages/product-detail.html">Preview Product Detail</a>
+        <div class="shop-toolbar" role="region" aria-label="Catalogue filters and sorting">
+          <div class="shop-toolbar-top">
+            <div class="shop-search-wrap">
+              <label class="sr-only" for="shopSearchInput">Search jewellery catalogue</label>
+              <input
+                id="shopSearchInput"
+                class="shop-search-input"
+                type="search"
+                placeholder="Search necklaces, emeralds, silver..."
+                autocomplete="off"
+              >
+            </div>
+          </div>
+
+          <div class="shop-filter-row">
+            <div class="shop-filter-group">
+              <label for="shopCategoryFilter">Category</label>
+              <select id="shopCategoryFilter" class="shop-select">
+                <option value="All">All</option>
+                <option value="Necklaces">Necklaces</option>
+                <option value="Earrings">Earrings</option>
+                <option value="Cuffs &amp; Bracelets">Cuffs &amp; Bracelets</option>
+                <option value="Rings">Rings</option>
+              </select>
+            </div>
+
+            <div class="shop-filter-group">
+              <label for="shopMetalFilter">Metal / Material</label>
+              <select id="shopMetalFilter" class="shop-select">
+                <option value="All Metals">All Metals</option>
+                <option value="925 Silver">925 Silver</option>
+                <option value="18k Gold Vermeil">18k Gold Vermeil</option>
+                <option value="Antique Brass">Antique Brass</option>
+              </select>
+            </div>
+
+            <div class="shop-filter-group">
+              <label for="shopPriceFilter">Max Price</label>
+              <select id="shopPriceFilter" class="shop-select">
+                <option value="all">All Prices</option>
+                <option value="4000">Under PKR 4,000</option>
+                <option value="8000">Under PKR 8,000</option>
+                <option value="15000">Under PKR 15,000</option>
+              </select>
+            </div>
+
+            <div class="shop-filter-group">
+              <label for="shopSortSelect">Sort By</label>
+              <select id="shopSortSelect" class="shop-select">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating-desc">Top Rated</option>
+              </select>
+            </div>
+
+            <div class="shop-filter-group">
+              <span class="sr-only">Availability</span>
+              <label class="shop-checkbox-wrap" for="shopInStockOnly">
+                <input type="checkbox" id="shopInStockOnly">
+                <span>In-Stock Only</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="shop-toolbar-bottom">
+            <p id="shopResultCount" class="shop-result-count" aria-live="polite">Showing 0 pieces</p>
+            <button id="shopResetBtn" type="button" class="btn btn-outline shop-reset-btn">Reset Filters</button>
+          </div>
+        </div>
+
+        <div id="shopProductGrid" class="grid-4"></div>
+
+        <div id="shopEmptyState" class="shop-empty-state" hidden>
+          <h2>No Matching Pieces Found</h2>
+          <p>Try widening your price limit, clearing your search keyword, or resetting your category and metal filters.</p>
+          <button id="shopClearFiltersBtn" type="button" class="btn btn-primary">Clear All Filters</button>
         </div>
       </div>
     </section>
@@ -110,13 +565,488 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; <span data-current-year>2026</span> Zaverat &mdash; Group 07 (CL1000 ICT Final Project). All rights reserved.</p>
-        <p class="ai-disclosure">AI Image Disclosure: [Placeholder &mdash; List any AI-generated image tools/prompts used on the site here, or state "All imagery uses original/placeholder SVGs only."]</p>
+        <p class="ai-disclosure">AI Image Disclosure: All product illustrations on this site use custom-crafted inline/file SVG vector artwork created for academic prototyping.</p>
       </div>
     </div>
   </footer>
 
+  <div class="shop-toast-container" aria-live="polite" aria-atomic="true"></div>
+
   <script src="../js/data.js"></script>
   <script src="../js/storage.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+    /**
+     * Zaverat — Shop Catalogue Controller
+     * Member 1 · 26i-3090 · Muhammad Bilal Mahad Sarwar
+     *
+     * Responsibilities:
+     *  - Renders product cards from window.ZAVERAT_DATA.products into #shopProductGrid
+     *  - Multi-criteria live filtering: search, category, metal, max-price, in-stock
+     *  - Sort modes: featured | price-asc | price-desc | rating-desc (Top Rated)
+     *  - URL query param pre-selection on load (?category=, ?metal=, ?search=, ?q=)
+     *  - Wishlist toggle via ZaveratStorage.toggleWishlist → updates heart icon +
+     *    #wishlist-count badge + toast — no page reload
+     *  - Add to Cart via ZaveratStorage.addToCart → updates #cart-count badge + toast
+     *    — no page reload
+     *  - Tracks recently viewed via ZaveratStorage.addRecentlyViewed on card-link click
+     *  - Empty-state display with "Clear All Filters" button
+     *  - Animated slide-in toasts with wish / cart colour-coding
+     */
+    (function () {
+      "use strict";
+
+      /* ─── Utilities ──────────────────────────────────────────────────── */
+
+      function escapeHtml(value) {
+        return String(value == null ? "" : value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      /**
+       * Resolves a product image path stored as "images/products/foo.svg"
+       * to "../images/products/foo.svg" so it works from the pages/ directory.
+       */
+      function resolveImage(path) {
+        if (!path) return "../images/logo.svg";
+        // Already absolute or already relative-with-double-dot → keep as-is
+        if (/^(https?:|data:|\/|\.\.\/)/i.test(path)) return path;
+        return "../" + String(path).replace(/^\.?\//, "");
+      }
+
+      /**
+       * Formats a numeric PKR amount with locale-formatted thousands separator.
+       * @param {number} amount
+       * @returns {string}  e.g. "PKR 14,500"
+       */
+      function formatPKR(amount) {
+        return "PKR " + Number(amount || 0).toLocaleString("en-PK");
+      }
+
+      /**
+       * Builds a row of filled/empty star characters for accessibility-friendly
+       * rating display.  Uses filled ★ for the integer portion.
+       * @param {number} rating  0–5
+       * @returns {string}  HTML string
+       */
+      function buildStarsHtml(rating) {
+        const r = Math.round(Number(rating || 0) * 2) / 2; // round to 0.5
+        let html = "";
+        for (let i = 1; i <= 5; i++) {
+          if (r >= i) {
+            html += '<span class="shop-star" aria-hidden="true">&#9733;</span>';
+          } else if (r >= i - 0.5) {
+            html += '<span class="shop-star" aria-hidden="true" style="opacity:0.55">&#9733;</span>';
+          } else {
+            html += '<span style="color:var(--color-border)" aria-hidden="true">&#9733;</span>';
+          }
+        }
+        return html;
+      }
+
+      /* ─── Toast system ───────────────────────────────────────────────── */
+
+      /**
+       * Shows a brief animated toast notification at the bottom-right.
+       * @param {string}  message
+       * @param {"wish"|"cart"|""} [tone]
+       */
+      function showToast(message, tone) {
+        const container = document.querySelector(".shop-toast-container");
+        if (!container) return;
+
+        const toast = document.createElement("div");
+        toast.className = "shop-toast" + (tone === "wish" ? " is-wish" : tone === "cart" ? " is-cart" : "");
+        toast.setAttribute("role", "status");
+        toast.setAttribute("aria-live", "polite");
+        toast.textContent = message;
+        container.appendChild(toast);
+
+        // Auto-dismiss with fade-out animation
+        window.setTimeout(function () {
+          toast.classList.add("is-removing");
+          toast.addEventListener("animationend", function () {
+            toast.remove();
+          }, { once: true });
+        }, 2800);
+      }
+
+      /* ─── Header badge sync (no full page reload) ────────────────────── */
+
+      /**
+       * Immediately updates #wishlist-count and #cart-count badges in the navbar
+       * by reading directly from ZaveratStorage — called after every cart/wishlist
+       * mutation so badges reflect the new state without waiting for a re-render.
+       */
+      function syncHeaderBadges() {
+        var storage = window.ZaveratStorage;
+        if (!storage) return;
+
+        var wishlistBadge = document.getElementById("wishlist-count");
+        var cartBadge     = document.getElementById("cart-count");
+
+        if (wishlistBadge) {
+          wishlistBadge.textContent = String(storage.getWishlistCount());
+        }
+        if (cartBadge) {
+          cartBadge.textContent = String(storage.getCartCount());
+        }
+      }
+
+      /* ─── Data access ────────────────────────────────────────────────── */
+
+      function getProducts() {
+        if (window.ZAVERAT_DATA && Array.isArray(window.ZAVERAT_DATA.products)) {
+          return window.ZAVERAT_DATA.products;
+        }
+        return [];
+      }
+
+      /* ─── Card HTML builder ──────────────────────────────────────────── */
+
+      /**
+       * Builds the full HTML string for one product card.
+       * @param {Object}   product
+       * @param {string[]} wishlist  current wishlist IDs from storage
+       * @returns {string}
+       */
+      function buildCardHtml(product, wishlist) {
+        var safeId       = escapeHtml(product.id);
+        var safeName     = escapeHtml(product.name);
+        var safeCategory = escapeHtml(product.category);
+        var safeMetal    = escapeHtml(product.metal);
+        var safeGemstone = escapeHtml(product.gemstone);
+        var safeDesc     = escapeHtml(product.description);
+        var detailUrl    = "product-detail.html?id=" + encodeURIComponent(product.id);
+        var isWished     = wishlist.includes(product.id);
+
+        // Stock status: distinguish true out-of-stock from "made to order"
+        var stockClass, stockLabel;
+        if (product.inStock) {
+          stockClass = "in-stock";
+          stockLabel = "In Stock";
+        } else {
+          // Show "Made to Order" for out-of-stock pieces in a handmade store
+          stockClass = "made-to-order";
+          stockLabel = "Made to Order";
+        }
+
+        var badgeHtml = product.badge
+          ? '<span class="shop-product-badge">' + escapeHtml(product.badge) + "</span>"
+          : "";
+
+        var addBtnLabel   = product.inStock ? "Add to Cart" : "Made to Order";
+        var addBtnDisabled = product.inStock ? "" : " disabled aria-disabled=\"true\"";
+
+        var starsHtml   = buildStarsHtml(product.rating);
+        var ratingText  = Number(product.rating || 0).toFixed(1);
+        var reviewsText = Number(product.reviewsCount || 0);
+
+        return (
+          '<article class="card shop-product-card" data-product-id="' + safeId + '">' +
+
+            /* ── Product image with overlay controls ── */
+            '<div class="shop-product-media">' +
+              '<a href="' + detailUrl + '" class="shop-card-img-link" data-product-id="' + safeId + '" aria-label="View details for ' + safeName + '">' +
+                '<img src="' + escapeHtml(resolveImage(product.image)) + '"' +
+                  ' alt="' + safeName + ' — ' + safeMetal + ' with ' + safeGemstone + '"' +
+                  ' loading="lazy" width="400" height="300">' +
+              '</a>' +
+              badgeHtml +
+              '<button type="button"' +
+                ' class="shop-wish-btn' + (isWished ? " is-active" : "") + '"' +
+                ' data-action="toggle-wish"' +
+                ' data-product-id="' + safeId + '"' +
+                ' aria-label="' + (isWished ? "Remove from wishlist: " : "Save to wishlist: ") + safeName + '"' +
+                ' aria-pressed="' + String(isWished) + '">' +
+                (isWished ? "&#9829;" : "&#9825;") +
+              '</button>' +
+            '</div>' +
+
+            /* ── Product information panel ── */
+            '<div class="shop-product-info">' +
+
+              /* Category · Metal */
+              '<p class="shop-product-meta">' + safeCategory + ' &middot; ' + safeMetal + '</p>' +
+
+              /* Gemstone pill */
+              '<span class="shop-gem-pill">' + safeGemstone + '</span>' +
+
+              /* Title linking to product-detail */
+              '<h3 class="shop-product-title">' +
+                '<a href="' + detailUrl + '" data-action="view-detail" data-product-id="' + safeId + '">' +
+                  safeName +
+                '</a>' +
+              '</h3>' +
+
+              /* 2-line description */
+              '<p class="shop-product-desc">' + safeDesc + '</p>' +
+
+              /* Star rating + review count */
+              '<p class="shop-product-rating"' +
+                ' aria-label="Rated ' + ratingText + ' out of 5 based on ' + reviewsText + ' reviews">' +
+                starsHtml + ' ' + ratingText +
+                '<span> (' + reviewsText + ' reviews)</span>' +
+              '</p>' +
+
+              /* Price + stock badge */
+              '<div class="shop-product-pricing">' +
+                '<strong class="shop-product-price">' + escapeHtml(formatPKR(product.price)) + '</strong>' +
+                '<span class="meta-pill shop-stock-badge ' + stockClass + '">' + stockLabel + '</span>' +
+              '</div>' +
+
+              /* Action buttons */
+              '<div class="shop-product-actions">' +
+                '<button type="button"' +
+                  ' class="btn btn-primary"' +
+                  ' data-action="add-to-cart"' +
+                  ' data-product-id="' + safeId + '"' +
+                  addBtnDisabled + '>' +
+                  addBtnLabel +
+                '</button>' +
+                '<a class="btn btn-outline" href="' + detailUrl + '"' +
+                  ' data-action="view-detail" data-product-id="' + safeId + '">View Details</a>' +
+              '</div>' +
+
+            '</div>' +
+          '</article>'
+        );
+      }
+
+      /* ─── Main catalogue controller ──────────────────────────────────── */
+
+      function initShopCatalogue() {
+        var searchInput    = document.getElementById("shopSearchInput");
+        var categorySelect = document.getElementById("shopCategoryFilter");
+        var metalSelect    = document.getElementById("shopMetalFilter");
+        var priceSelect    = document.getElementById("shopPriceFilter");
+        var inStockCheck   = document.getElementById("shopInStockOnly");
+        var sortSelect     = document.getElementById("shopSortSelect");
+        var resultCountEl  = document.getElementById("shopResultCount");
+        var resetBtn       = document.getElementById("shopResetBtn");
+        var clearBtn       = document.getElementById("shopClearFiltersBtn");
+        var gridEl         = document.getElementById("shopProductGrid");
+        var emptyStateEl   = document.getElementById("shopEmptyState");
+
+        if (!gridEl) return;
+
+        /* ── URL query param pre-selection ── */
+        function applyUrlParams() {
+          var params       = new URLSearchParams(window.location.search);
+          var catParam     = params.get("category");
+          var searchParam  = params.get("search") || params.get("q");
+          var metalParam   = params.get("metal");
+          var sortParam    = params.get("sort");
+
+          if (catParam && categorySelect) {
+            var catMatch = Array.from(categorySelect.options).find(function (opt) {
+              return opt.value.toLowerCase() === catParam.toLowerCase();
+            });
+            if (catMatch) categorySelect.value = catMatch.value;
+          }
+
+          if (metalParam && metalSelect) {
+            var metalMatch = Array.from(metalSelect.options).find(function (opt) {
+              return opt.value.toLowerCase() === metalParam.toLowerCase();
+            });
+            if (metalMatch) metalSelect.value = metalMatch.value;
+          }
+
+          if (searchParam && searchInput) {
+            searchInput.value = searchParam;
+          }
+
+          if (sortParam && sortSelect) {
+            var sortMatch = Array.from(sortSelect.options).find(function (opt) {
+              return opt.value === sortParam;
+            });
+            if (sortMatch) sortSelect.value = sortMatch.value;
+          }
+        }
+
+        /* ── Filter + sort pipeline ── */
+        function getFilteredProducts() {
+          var query      = searchInput ? searchInput.value.trim().toLowerCase() : "";
+          var category   = categorySelect ? categorySelect.value : "All";
+          var metal      = metalSelect ? metalSelect.value : "All Metals";
+          var priceRaw   = priceSelect ? priceSelect.value : "all";
+          var maxPrice   = priceRaw === "all" ? Infinity : Number(priceRaw);
+          var inStockOnly = Boolean(inStockCheck && inStockCheck.checked);
+          var sortMode   = sortSelect ? sortSelect.value : "featured";
+
+          var filtered = getProducts().filter(function (p) {
+            // Category filter
+            if (category !== "All" && p.category !== category) return false;
+            // Metal filter
+            if (metal !== "All Metals" && p.metal !== metal) return false;
+            // Max-price filter  (strict less-than so "Under 4000" excludes exactly 4000)
+            if (Number(p.price || 0) >= maxPrice) return false;
+            // In-stock toggle
+            if (inStockOnly && !p.inStock) return false;
+            // Full-text search across name, category, metal, gemstone, description
+            if (query) {
+              var haystack = [p.name, p.category, p.metal, p.gemstone, p.description]
+                .join(" ").toLowerCase();
+              if (!haystack.includes(query)) return false;
+            }
+            return true;
+          });
+
+          // Sort
+          if (sortMode === "price-asc") {
+            filtered.sort(function (a, b) { return Number(a.price || 0) - Number(b.price || 0); });
+          } else if (sortMode === "price-desc") {
+            filtered.sort(function (a, b) { return Number(b.price || 0) - Number(a.price || 0); });
+          } else if (sortMode === "rating-desc") {
+            filtered.sort(function (a, b) {
+              return (Number(b.rating || 0) - Number(a.rating || 0)) ||
+                     (Number(b.reviewsCount || 0) - Number(a.reviewsCount || 0));
+            });
+          }
+          // "featured" keeps original data.js order (no-op)
+
+          return filtered;
+        }
+
+        /* ── Render ── */
+        function renderCatalogue() {
+          var items    = getFilteredProducts();
+          var wishlist = window.ZaveratStorage ? window.ZaveratStorage.getWishlist() : [];
+
+          // Update result count label
+          if (resultCountEl) {
+            resultCountEl.textContent = "Showing " + items.length +
+              (items.length === 1 ? " piece" : " pieces");
+          }
+
+          // Show/hide empty state
+          if (!items.length) {
+            gridEl.innerHTML = "";
+            if (emptyStateEl) emptyStateEl.hidden = false;
+            return;
+          }
+          if (emptyStateEl) emptyStateEl.hidden = true;
+
+          // Render cards
+          gridEl.innerHTML = items.map(function (product) {
+            return buildCardHtml(product, wishlist);
+          }).join("");
+        }
+
+        /* ── Reset all filters to defaults ── */
+        function resetAllFilters() {
+          if (searchInput)    searchInput.value     = "";
+          if (categorySelect) categorySelect.value  = "All";
+          if (metalSelect)    metalSelect.value     = "All Metals";
+          if (priceSelect)    priceSelect.value     = "all";
+          if (inStockCheck)   inStockCheck.checked  = false;
+          if (sortSelect)     sortSelect.value      = "featured";
+          renderCatalogue();
+        }
+
+        /* ── Filter control listeners ── */
+        if (searchInput)    searchInput.addEventListener("input",   renderCatalogue);
+        if (categorySelect) categorySelect.addEventListener("change", renderCatalogue);
+        if (metalSelect)    metalSelect.addEventListener("change",    renderCatalogue);
+        if (priceSelect)    priceSelect.addEventListener("change",    renderCatalogue);
+        if (inStockCheck)   inStockCheck.addEventListener("change",   renderCatalogue);
+        if (sortSelect)     sortSelect.addEventListener("change",     renderCatalogue);
+        if (resetBtn)       resetBtn.addEventListener("click",        resetAllFilters);
+        if (clearBtn)       clearBtn.addEventListener("click",        resetAllFilters);
+
+        /* ── Delegated click handler on the product grid ── */
+        gridEl.addEventListener("click", function (event) {
+          var target = event.target;
+
+          /* Wishlist toggle */
+          var wishBtn = target.closest("[data-action='toggle-wish']");
+          if (wishBtn) {
+            event.preventDefault();
+            var productId = wishBtn.getAttribute("data-product-id");
+            if (!productId || !window.ZaveratStorage) return;
+
+            var product = getProducts().find(function (p) { return p.id === productId; });
+            var updated = window.ZaveratStorage.toggleWishlist(productId);
+            var active  = updated.includes(productId);
+
+            // Update the clicked button immediately (no full grid re-render needed)
+            wishBtn.classList.toggle("is-active", active);
+            wishBtn.setAttribute("aria-pressed", String(active));
+            wishBtn.setAttribute(
+              "aria-label",
+              (active ? "Remove from wishlist: " : "Save to wishlist: ") +
+              (product ? product.name : "this piece")
+            );
+            wishBtn.innerHTML = active ? "&#9829;" : "&#9825;";
+
+            // Sync header badges immediately
+            syncHeaderBadges();
+
+            // Feedback toast
+            showToast(
+              (product ? product.name : "Piece") +
+              (active ? " saved to wishlist ♥" : " removed from wishlist"),
+              "wish"
+            );
+            return;
+          }
+
+          /* Add to Cart */
+          var cartBtn = target.closest("[data-action='add-to-cart']");
+          if (cartBtn && !cartBtn.disabled) {
+            event.preventDefault();
+            var productId = cartBtn.getAttribute("data-product-id");
+            if (!productId || !window.ZaveratStorage) return;
+
+            var product = getProducts().find(function (p) { return p.id === productId; });
+            if (!product || !product.inStock) return;
+
+            window.ZaveratStorage.addToCart(productId, 1);
+
+            // Sync header badges immediately
+            syncHeaderBadges();
+
+            // Feedback toast
+            showToast(
+              (product ? product.name : "Piece") + " added to your bag",
+              "cart"
+            );
+            return;
+          }
+
+          /* Track recently viewed when user navigates to product detail */
+          var detailLink = target.closest("[data-action='view-detail']");
+          if (detailLink) {
+            var productId = detailLink.getAttribute("data-product-id");
+            if (productId && window.ZaveratStorage) {
+              window.ZaveratStorage.addRecentlyViewed(productId);
+            }
+            // Let the natural navigation proceed (no preventDefault)
+          }
+        });
+
+        /* ── Keep badges in sync if another tab / script mutates storage ── */
+        window.addEventListener("zaverat:storage-updated", function (event) {
+          // Only sync badges here — don't re-render the full grid on every
+          // storage write (that would fight with the wishlist heart toggle
+          // optimistic update above and cause flicker).
+          syncHeaderBadges();
+        });
+
+        /* ── Boot sequence ── */
+        applyUrlParams();   // honour any ?category= / ?search= / ?metal= in the URL
+        renderCatalogue();  // initial render
+        syncHeaderBadges(); // set badge counts on page load
+      }
+
+      /* ─── Entry point ────────────────────────────────────────────────── */
+      document.addEventListener("DOMContentLoaded", initShopCatalogue);
+
+    })();
+  </script>
 </body>
 </html>

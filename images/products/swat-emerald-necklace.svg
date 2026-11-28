@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Swat Emerald Pendant Necklace illustration">
+  <defs>
+    <linearGradient id="se-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#EDE2D0"/>
+    </linearGradient>
+    <linearGradient id="se-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0D27A"/>
+      <stop offset="50%" stop-color="#C89B3C"/>
+      <stop offset="100%" stop-color="#8C5A3C"/>
+    </linearGradient>
+    <linearGradient id="se-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4FA974"/>
+      <stop offset="50%" stop-color="#286B46"/>
+      <stop offset="100%" stop-color="#154229"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#se-bg)"/>
+  <circle cx="200" cy="150" r="108" fill="none" stroke="#C89B3C" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <!-- Gold vermeil chain -->
+  <path d="M110 46 Q152 128 200 146 Q248 128 290 46" fill="none" stroke="url(#se-gold)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M116 48 Q154 124 200 142 Q246 124 284 48" fill="none" stroke="#F6E3A4" stroke-width="1.2" stroke-dasharray="3 4"/>
+  <!-- Bail -->
+  <ellipse cx="200" cy="152" rx="7" ry="10" fill="none" stroke="url(#se-gold)" stroke-width="4"/>
+  <!-- Gold filigree frame -->
+  <polygon points="200,160 236,196 226,244 200,260 174,244 164,196" fill="url(#se-gold)" stroke="#6B4229" stroke-width="1.8"/>
+  <!-- Faceted Swat Emerald -->
+  <polygon points="200,170 226,198 218,236 200,248 182,236 174,198" fill="url(#se-emerald)" stroke="#E7C266" stroke-width="1.5"/>
+  <polygon points="200,180 216,200 210,228 200,237 190,228 184,200" fill="#3E8E61" opacity="0.7"/>
+  <path d="M188 192 L200 180 L212 192" fill="none" stroke="#A6E8C2" stroke-width="1.8" opacity="0.75"/>
+  <!-- Side pearl accents -->
+  <circle cx="158" cy="206" r="5" fill="#FAF7F2" stroke="#C89B3C" stroke-width="1.4"/>
+  <circle cx="242" cy="206" r="5" fill="#FAF7F2" stroke="#C89B3C" stroke-width="1.4"/>
+  <circle cx="200" cy="270" r="6" fill="#FAF7F2" stroke="#C89B3C" stroke-width="1.4"/>
+</svg>
